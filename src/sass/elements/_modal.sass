@@ -129,6 +129,7 @@ html.mfp-helper
       font-size: 18px
       text-transform: uppercase
       margin-right: 40px
+      cursor: pointer
       &:last-child
         margin-right: 0
       &::after
@@ -150,10 +151,11 @@ html.mfp-helper
     position: relative
     z-index: 2
     margin-top: 30px
+    margin-bottom: 50px
     display: flex
 
   &__text
-    flex: 0 0 36%
+    flex: 0 1 36%
     padding: 0 20px 0 0
     p
       font-size: 17px
@@ -186,9 +188,30 @@ html.mfp-helper
           padding-left: 0
         &:last-child
           padding-left: 10px
+    &-table-row
+      display: flex
+      table
+        padding-right: 30px
+        &:last-child
+          padding-right: 0
 
   &__image
-    flex: 0 1 auto
+    flex: 0 2 auto
     margin-left: auto
+    display: flex
+    flex-direction: column
     img
       max-width: 100%
+      margin-left: auto
+    figure
+      flex: 1 1 auto
+      display: flex
+      flex-direction: column
+      margin: 0
+      figcaption
+        color: $colorRed
+        font-size: 14px
+        line-height: 1.48
+        font-weight: 300
+        font-style: italic
+        padding: 20px 0px 0px 50px
