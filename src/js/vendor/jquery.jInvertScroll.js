@@ -96,6 +96,9 @@
             if (diff != 0) {
               // Current percentual position
               scrollPercent = (currY / diff).toFixed(4);
+
+              // make scrolling smoother
+              scrollPercent = scrollPercent / 2
             }
 
             // Call the onScroll callback
@@ -106,6 +109,7 @@
             // do the position calculation for each element
             $.each(elements, function (i, el) {
               var deltaW = el.width() - winWidth;
+              console.log(deltaW)
               if (deltaW <= 0) {
                 deltaW = el.width();
               }
