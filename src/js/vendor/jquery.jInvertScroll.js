@@ -110,14 +110,22 @@
                 deltaW = el.width();
               }
               var pos = Math.floor(deltaW * scrollPercent) * -1;
-              el.css('left', pos);
+              el.css({
+                'transform': 'translate3d('+pos+'px,0,0)'
+              });
+              // el.css({
+              //   'transform': 'translateX('+pos+'px)'
+              // });
             });
         }
 
         function setlisteners() {
             // Listen for the actual scroll event
-            $(window).on('scroll resize', onscroll);
-            $([document, window]).on('ready resize', calc);
+            $(window).on('scroll', debounce(onscroll,5));
+            $([document, window]).on('ready', calc);
+
+            $(window).on('resize', debounce(onscroll,150));
+            $([document, window]).on('resize', debounce(calc, 300));
         }
 
 
