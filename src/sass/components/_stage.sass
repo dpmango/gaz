@@ -49,8 +49,8 @@
 .stage-background
   width: 70%
   top: auto
-  // stage nav + road offset
-  bottom: calc(5vh + 84px + 165px)
+  // stage nav + road offset - 10 road boarder
+  bottom: calc(5vh + 84px + 155px)
   z-index: 10
   pointer-events: none
 
@@ -70,6 +70,7 @@
     margin: auto 8.3% auto 50%
     padding: 30px 0px 30px 50px
     cursor: pointer
+    pointer-events: all
     &:hover
       .stage-text__title
         span::after

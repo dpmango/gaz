@@ -109,7 +109,6 @@
             // do the position calculation for each element
             $.each(elements, function (i, el) {
               var deltaW = el.width() - winWidth;
-              console.log(deltaW)
               if (deltaW <= 0) {
                 deltaW = el.width();
               }

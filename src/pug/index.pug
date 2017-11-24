@@ -7,7 +7,7 @@ block content
   .stages(js-stage-global data-stage="1")
     // PHOTOS
     .stage-photos
-      .stage-photos__wrapper
+      .stage-photos__wrapper(js-trigger-fancybox data-for-gallery="1")
         img(src='img/stagePhoto-1.png' srcset='img/stagePhoto-1@2x.png 2x')
     
     
@@ -72,3 +72,29 @@ block content
           i.icon.icon-stageNav12
         li.stage-nav__li(data-stage="13")
           i.icon.icon-stageNav13
+
+
+  // GALLERY
+  .gallery(js-fancybox data-gallery="1")
+    span(href="img/gallery/1_1.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_3.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_4.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_5.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_6.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_7.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_8.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_9.jpg" data-fancybox="stage1" data-caption="Caption")
+
+    span(href="img/gallery/1_10.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_11.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_12.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_13.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_14.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_15.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_16.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_17.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_20.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_21.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_22.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_25.jpg" data-fancybox="stage1" data-caption="Caption")
+    span(href="img/gallery/1_26.jpg" data-fancybox="stage1" data-caption="Caption")

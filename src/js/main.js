@@ -113,6 +113,69 @@ $(document).ready(function(){
 
   })
 
+  //////////
+  // GALLERY
+  //////////
+  $().fancybox({
+    selector : '[js-fancybox] > span',
+    loop     : true,
+    infobar  : false,
+    protect  : true,
+    buttons : [
+      // 'slideShow',
+      // 'fullScreen',
+      // 'thumbs',
+      // 'share',
+      //'download',
+      //'zoom',
+      'close'
+    ],
+    image : {
+      // Wait for images to load before displaying
+      // Requires predefined image dimensions
+      // If 'auto' - will zoom in thumbnail if 'width' and 'height' attributes are found
+      preload : "auto"
+    },
+    // Transition effect between slides
+    //
+    // Possible values:
+    //   false            - disable
+    //   "fade'
+    //   "slide'
+    //   "circular'
+    //   "tube'
+    //   "zoom-in-out'
+    //   "rotate'
+    //
+    transitionEffect : "zoom-in-out",
+    thumbs   : {
+      autoStart : true
+    },
+    btnTpl : {
+
+        close : '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
+                    '<i class="icon icon-gallery-close"></i>' +
+                '</button>',
+
+        // Arrows
+        arrowLeft : '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
+                        '<i class="icon icon-gallery-left"></i>' +
+                      '</button>',
+
+        arrowRight : '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
+                      '<i class="icon icon-gallery-right"></i>' +
+                    '</button>'
+    },
+
+  });
+
+  $('[js-trigger-fancybox]').on('click', function(){
+    var galleryId = $(this).data('for-gallery');
+
+    if ( galleryId ){
+      $('[data-gallery="'+galleryId+'"]').find('span').first().click()
+    }
+  })
 
   //////////
   // MODALS

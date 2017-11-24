@@ -1,236 +1,263 @@
 $sprite: (
+	gallery-close: (
+		offset-x: -222px,
+		offset-y: 0px,
+		width: 73px,
+		height: 73px,
+		total-width: 500px,
+		total-height: 420px,
+		image: '../img/sprite.png'
+	),
+	gallery-left: (
+		offset-x: -111px,
+		offset-y: 0px,
+		width: 101px,
+		height: 198px,
+		total-width: 500px,
+		total-height: 420px,
+		image: '../img/sprite.png'
+	),
+	gallery-right: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 101px,
+		height: 198px,
+		total-width: 500px,
+		total-height: 420px,
+		image: '../img/sprite.png'
+	),
 	stageNav-1-active: (
-		offset-x: -115px,
+		offset-x: -305px,
 		offset-y: 0px,
 		width: 91px,
 		height: 46px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-1: (
-		offset-x: 0px,
-		offset-y: -106px,
+		offset-x: -305px,
+		offset-y: -56px,
 		width: 91px,
 		height: 46px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-2-active: (
-		offset-x: -216px,
-		offset-y: 0px,
+		offset-x: -305px,
+		offset-y: -112px,
 		width: 90px,
 		height: 46px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-2: (
-		offset-x: -101px,
-		offset-y: -106px,
+		offset-x: -305px,
+		offset-y: -168px,
 		width: 90px,
 		height: 46px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-3-active: (
 		offset-x: 0px,
-		offset-y: 0px,
+		offset-y: -208px,
 		width: 105px,
 		height: 43px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-3: (
-		offset-x: 0px,
-		offset-y: -53px,
+		offset-x: -115px,
+		offset-y: -208px,
 		width: 105px,
 		height: 43px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-4-active: (
 		offset-x: -68px,
-		offset-y: -218px,
+		offset-y: -312px,
 		width: 58px,
 		height: 47px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-4: (
 		offset-x: 0px,
-		offset-y: -218px,
+		offset-y: -312px,
 		width: 58px,
 		height: 47px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-5-active: (
-		offset-x: -316px,
+		offset-x: -406px,
 		offset-y: -179px,
 		width: 49px,
 		height: 51px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-5: (
-		offset-x: -316px,
+		offset-x: -406px,
 		offset-y: -118px,
 		width: 49px,
 		height: 51px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-6-active: (
-		offset-x: -316px,
-		offset-y: -59px,
+		offset-x: -406px,
+		offset-y: 0px,
 		width: 52px,
 		height: 49px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-6: (
-		offset-x: -316px,
-		offset-y: 0px,
+		offset-x: -406px,
+		offset-y: -59px,
 		width: 52px,
 		height: 49px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-7-active: (
-		offset-x: -378px,
-		offset-y: -250px,
+		offset-x: -161px,
+		offset-y: -369px,
 		width: 35px,
 		height: 48px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-7: (
-		offset-x: -120px,
-		offset-y: -275px,
+		offset-x: -116px,
+		offset-y: -369px,
 		width: 35px,
 		height: 48px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-8-active: (
-		offset-x: -378px,
-		offset-y: -61px,
+		offset-x: -58px,
+		offset-y: -369px,
 		width: 48px,
 		height: 51px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-8: (
-		offset-x: -378px,
-		offset-y: 0px,
+		offset-x: 0px,
+		offset-y: -369px,
 		width: 48px,
 		height: 51px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-9-active: (
-		offset-x: 0px,
-		offset-y: -162px,
+		offset-x: -222px,
+		offset-y: -139px,
 		width: 64px,
 		height: 46px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav-9: (
-		offset-x: -216px,
-		offset-y: -56px,
+		offset-x: -222px,
+		offset-y: -83px,
 		width: 64px,
 		height: 46px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav10-active: (
 		offset-x: -204px,
-		offset-y: -218px,
+		offset-y: -312px,
 		width: 58px,
 		height: 46px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav10: (
 		offset-x: -136px,
-		offset-y: -218px,
+		offset-y: -312px,
 		width: 58px,
 		height: 46px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav11-active: (
-		offset-x: -378px,
-		offset-y: -122px,
+		offset-x: -468px,
+		offset-y: 0px,
 		width: 32px,
 		height: 54px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav11: (
-		offset-x: -378px,
-		offset-y: -186px,
+		offset-x: -468px,
+		offset-y: -64px,
 		width: 32px,
 		height: 54px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav12-active: (
-		offset-x: -155px,
-		offset-y: -162px,
+		offset-x: 0px,
+		offset-y: -261px,
 		width: 71px,
 		height: 41px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav12: (
-		offset-x: -74px,
-		offset-y: -162px,
+		offset-x: -81px,
+		offset-y: -261px,
 		width: 71px,
 		height: 41px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav13-active: (
-		offset-x: 0px,
-		offset-y: -275px,
+		offset-x: -406px,
+		offset-y: -240px,
 		width: 50px,
 		height: 49px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 	stageNav13: (
-		offset-x: -60px,
-		offset-y: -275px,
+		offset-x: -406px,
+		offset-y: -299px,
 		width: 50px,
 		height: 49px,
-		total-width: 426px,
-		total-height: 324px,
+		total-width: 500px,
+		total-height: 420px,
 		image: '../img/sprite.png'
 	),
 );
@@ -289,6 +316,15 @@ $sprite: (
 
 
 
+	.icon-gallery-close {
+		@include sprite(gallery-close)
+	}
+	.icon-gallery-left {
+		@include sprite(gallery-left)
+	}
+	.icon-gallery-right {
+		@include sprite(gallery-right)
+	}
 	.icon-stageNav-1-active {
 		@include sprite(stageNav-1-active)
 	}
