@@ -1,4 +1,56 @@
 // INDEX
 
-.hello
-  display: none
+.stages
+  flex: 1 1 auto
+  display: flex
+  flex-direction: column
+
+
+.stage
+  position: relative
+  flex: 1 1 auto
+  display: flex
+  flex-direction: column
+
+// PHOTOS
+.stage-photos
+
+// BG
+.stage-background
+
+
+.stage-text
+  color: $colorRed
+  margin: auto 8.3% auto 50%
+  padding: 30px 0px 30px 50px
+  cursor: pointer
+  &__title
+    font-size: 67px
+    font-family: 'a_BodoniOrtoTitul', serif
+    text-transform: uppercase
+    span
+      position: relative
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        bottom: 2px
+        height: 3px
+        left: 0
+        right: 0
+        z-index: 1
+        background: $colorRed
+        transition: all $transitionSpeed ease-out
+  &__short
+    margin-top: 30px
+    font-size: 20px
+  &:hover
+    .stage-text__title
+      span::after
+        opacity: 0
+        bottom: 5px
+
+
+
+// TIMELINE
+.stage-timeline

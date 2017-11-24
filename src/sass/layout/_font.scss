@@ -1,0 +1,11 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=cyrillic');
+@font-face {
+    font-family: 'a_BodoniOrtoTitul';
+    src: url('../fonts/ABodoniOrtoTitulBlack.eot');
+    src: url('../fonts/ABodoniOrtoTitulBlack.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ABodoniOrtoTitulBlack.woff') format('woff'),
+        url('../fonts/ABodoniOrtoTitulBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
