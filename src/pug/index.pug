@@ -7,7 +7,8 @@ block content
   .stages
     
     // STAGE
-    .stage-photos
+    .stage-photos.scroll
+    
       
     .stage-background.scroll
       img(src='img/stage1-bg.png' srcset="img/stage1-bg@2x.png 2x")
@@ -19,10 +20,16 @@ block content
     
     // TIMELINE
     .stage-timeline.scroll
-      .stage-timeline__road
-        img(src='img/road.png' srcset="img/road@2x.png 2x")
-    
-    
+      .stage-timeline__wrapper
+        .stage-timeline__road
+          img(src='img/road.png' srcset="img/road@2x.png 2x")
+        
+        .stage-timeline__cars
+          .stage-car.stage-car--1_1
+            img(src='img/car1_1.png' srcset='img/car1_1@2x.png 2x')
+          .stage-car.stage-car--1_2
+            img(src='img/car1_2.png' srcset='img/car1_2@2x.png 2x')
+
   // STAGE NAV
   .stage-nav
     .stage-nav__wrapper
