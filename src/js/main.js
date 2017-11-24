@@ -169,13 +169,38 @@ $(document).ready(function(){
 
   });
 
-  $('[js-trigger-fancybox]').on('click', function(){
-    var galleryId = $(this).data('for-gallery');
+  // TRIGGER WITH TRANSPARENT BG CLICK THROUG
+  var ctx = document.createElement("canvas").getContext("2d");
 
-    if ( galleryId ){
-      $('[data-gallery="'+galleryId+'"]').find('span').first().click()
+  $('[js-png-clickthrough]').on("mousedown", function(event) {
+
+    // Get click coordinates
+    var x = event.pageX - this.offsetLeft,
+        y = event.pageY - this.offsetTop,
+        w = ctx.canvas.width = this.width,
+        h = ctx.canvas.height = this.height,
+        alpha;
+
+    // Draw image to canvas
+    // and read Alpha channel value
+    ctx.drawImage(this, 0, 0, w, h);
+    alpha = ctx.getImageData(x, y, 1, 1).data[3]; // [0]R [1]G [2]B [3]A
+
+    // If pixel is transparent,
+    // retrieve the element underneath and trigger it's click event
+    if( alpha===0 ) {
+      $(this).hide();
+      $(document.elementFromPoint(event.clientX, event.clientY)).trigger("click");
+      $(this).show();
+    } else {
+      var galleryId = $(this).data('for-gallery');
+
+      if ( galleryId ){
+        $('[data-gallery="'+galleryId+'"]').find('span').first().click()
+      }
     }
-  })
+  });
+
 
   //////////
   // MODALS

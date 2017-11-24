@@ -7,8 +7,8 @@ block content
   .stages(js-stage-global data-stage="1")
     // PHOTOS
     .stage-photos
-      .stage-photos__wrapper(js-trigger-fancybox data-for-gallery="1")
-        img(src='img/stagePhoto-1.png' srcset='img/stagePhoto-1@2x.png 2x')
+      .stage-photos__wrapper()
+        img(js-png-clickthrough js-trigger-fancybox data-for-gallery="1" src='img/stagePhoto-1.png' srcset='img/stagePhoto-1@2x.png 2x')
     
     
     // BACKGROUND
