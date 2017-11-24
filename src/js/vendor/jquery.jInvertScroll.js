@@ -121,7 +121,7 @@
 
         function setlisteners() {
             // Listen for the actual scroll event
-            $(window).on('scroll', debounce(onscroll,5));
+            $(window).on('scroll', throttle(onscroll,5));
             $([document, window]).on('ready', calc);
 
             $(window).on('resize', debounce(onscroll,150));
