@@ -47,12 +47,12 @@ $(document).ready(function(){
   svg4everybody();
 
   // Viewport units buggyfill
-  window.viewportUnitsBuggyfill.init({
-    force: true,
-    hacks: window.viewportUnitsBuggyfillHacks,
-    refreshDebounceWait: 250,
-    appendToBody: true
-  });
+  // window.viewportUnitsBuggyfill.init({
+  //   force: true,
+  //   hacks: window.viewportUnitsBuggyfillHacks,
+  //   refreshDebounceWait: 250,
+  //   appendToBody: true
+  // });
 
 
  	// Prevent # behavior
@@ -73,6 +73,16 @@ $(document).ready(function(){
     $('.hamburger').toggleClass('active');
     $('.mobile-navi').toggleClass('active');
   });
+
+
+  //////////
+  // HORIZONTAL SCROLLER
+  //////////
+
+  $.jInvertScroll([
+    '.scroll'
+  ]);
+
   //////////
   // MODALS
   //////////
