@@ -17,7 +17,7 @@ block content
     
     // TEXT
     .stage-text.scroll
-      .stage-text__wrapper(js-popup)
+      .stage-text__wrapper(js-popup data-mfp-src="[data-popup='stage1_car_1']")
         .stage-text__top
           .stage-text__title <span>Проект</span> <br> <span>века</span>
           .stage-text__logo
@@ -84,7 +84,6 @@ block content
     span(href="img/gallery/1_7.jpg" data-fancybox="stage1" data-caption="Caption")
     span(href="img/gallery/1_8.jpg" data-fancybox="stage1" data-caption="Caption")
     span(href="img/gallery/1_9.jpg" data-fancybox="stage1" data-caption="Caption")
-
     span(href="img/gallery/1_10.jpg" data-fancybox="stage1" data-caption="Caption")
     span(href="img/gallery/1_11.jpg" data-fancybox="stage1" data-caption="Caption")
     span(href="img/gallery/1_12.jpg" data-fancybox="stage1" data-caption="Caption")
@@ -98,3 +97,67 @@ block content
     span(href="img/gallery/1_22.jpg" data-fancybox="stage1" data-caption="Caption")
     span(href="img/gallery/1_25.jpg" data-fancybox="stage1" data-caption="Caption")
     span(href="img/gallery/1_26.jpg" data-fancybox="stage1" data-caption="Caption")
+
+  
+  // POPUPS
+  // to be refactored for ajax
+  .popup-dialog.mfp-hide(data-popup="stage1_car_1")
+    .popup__top
+      .popup__logo
+        img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
+      .popup__title Газ-AA
+      
+      .popup__navigation
+        a(href="#" js-popup) газ-А
+        a(href="#" js-popup) проект века
+        a(href="#" js-popup) лица периода
+    
+    .popup__content
+      .popup__text
+        p.t-caption
+          i В народе известен как полуторка. Машину называли так из-за грузоподъёмности в полторы тонны. Изначально образцом послужил американский грузовик «Форд» модели АА образца 1930 года, но впоследствии автомобиль был перепроектирован по отечественным чертежам.
+        p Даже в самом начале работы завода конструкторы старались создавать машины, которые бы отличались от американских прототипов. На газовских машинах были усилены картеры сцепления и рулевые механизмы, изменена форма радиаторов, дюймовая резьба была заменена на метрическую.  
+        p К концу 1932 года завод выпускал по 60 грузовиков ГАЗ-АА в сутки.
+        p Полуторки смело можно назвать самым массовым советским автомобилем первой половины XX века. Их можно было встретить на дорогах страны вплоть до конца 60-х годов. Очень востребованы эти машины были и в годы Великой Отечественной войны. Например, именно на полуторках эваку- ировали людей из блокадного Ленинграда и привозили продовольствие в осаждённый город. Дело в том, что ГАЗ-АА был легче другого отечественного грузовика тех лет — ЗИС-5 — и поэтому на нём было безопаснее передвигаться по льду.
+
+      .popup__chars
+        .popup__chars-heading Годы производства: 1932 — 1938
+        table
+          tr
+            td Длина:
+            td 5335 мм
+          tr
+            td Ширина:
+            td 2030 мм
+          tr
+            td Высота:
+            td 1870 мм
+          tr
+            td
+            td 
+          tr
+            td Клиренс:
+            td 200 мм
+          tr
+            td
+            td 
+          tr
+            td Колёсная база:
+            td 3340 мм
+          tr
+            td
+            td 
+          tr
+            td Масса:
+            td 1750 кг
+          tr
+            td
+            td 
+          tr
+            td Грузоподъемность:
+            td 1500 кг
+
+      .popup__image
+        img(src='img/popup/popupStage1_car_1.png' srcset='img/popup/popupStage1_car_1@2x.png 2x')
+        
+        
