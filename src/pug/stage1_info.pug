@@ -1,0 +1,39 @@
+---
+title: ГАЗ спецпроект
+---
+extends shared/_layout
+block content
+  
+  .popup-dialog
+    .popup-bg-image.popup-bg-image--bottom 
+      img(src='img/popup/popupBgStage1_info.png' srcset='img/popup/popupBgStage1_info@2x.png 2x')
+      
+    .popup__top
+      .popup__logo
+        img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
+      .popup__title Проект века
+      
+      .popup__navigation
+        a(href="stage1_car_1.html" ) газ-А
+        a(href="stage1_car_2.html" ) газ-АА
+        a(href="stage1_faces.html" ) лица периода
+
+    .popup__content
+      .popup__text
+        p.t-caption
+          i За два года до того, как заводской гудок возвестил о запуске первого в СССР автомобильного завода конвейерной сборки, был подписан этот документ.
+
+        img(src='img/popup/popupStage1_info_1.png' srcset='img/popup/popupStage1_info_1@2x.png 2x')
+      
+      .popup__text.popup__text--narrow
+        p Американская Ford Motor Company и Высший совет народного хозяйства СССР заключили соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. 
+
+        p После того как ударили по рукам, приступили к строительству. 2 мая 1930 года под Нижним Новгородом был заложен первый камень в фундамент будущего автомобильного завода. Через полтора года строительство уже было окончено. А 1 января 1932 года автозавод начал полноценный рабочий процесс. В этот же день в ремонтно-механическом цехе состоялась общезаводская профсоюзная конференция, на которой было принято решение присвоить автозаводу имя председателя Совета народных комиссаров Вячеслава Молотова. 
+
+        p 29 января 1932 года с конвейера сошёл первый автомобиль — грузовик НАЗ-АА. Впоследствии более известный как ГАЗ-АА. 
+
+      .popup__image
+        img(src='img/popup/popupStage1_info_2.png' srcset='img/popup/popupStage1_info_2@2x.png 2x')
+        
+        
+  include components/_stage-nav

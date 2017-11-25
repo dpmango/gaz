@@ -5,8 +5,9 @@ html(lang="ru")
     include _head
 
   body
-    .page
-      block content
+    #barba-wrapper
+      .page(class=bodyClass)
+        block content
 
     block scripts
       include _scripts

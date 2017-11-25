@@ -79,18 +79,24 @@ $(document).ready(function(){
   // HORIZONTAL SCROLLER
   //////////
 
-  $.jInvertScroll([
-    '.scroll'
-  ], {
-  	width: 'auto',	// Page width (auto or int value)
-  	height: 'auto',	// Page height (the shorter, the faster the scroll)
-  	onScroll: function(percent) {
-  		// Callback function that will be called each time the user
-  		// scrolls up or down, useful for animating other parts
-  		// on the page depending on how far the user has scrolled down
-  		// values go from 0.0 to 1.0 (with 4 decimals precision)
-	   }
-  });
+  if( $('.homepage').length > 0 ){
+    initHomeScroll();
+  }
+
+  function initHomeScroll(){
+    $.jInvertScroll([
+      '.scroll'
+    ], {
+    	width: 'auto',	// Page width (auto or int value)
+    	height: 'auto',	// Page height (the shorter, the faster the scroll)
+    	onScroll: function(percent) {
+    		// Callback function that will be called each time the user
+    		// scrolls up or down, useful for animating other parts
+    		// on the page depending on how far the user has scrolled down
+    		// values go from 0.0 to 1.0 (with 4 decimals precision)
+  	   }
+    });
+  }
 
 
 
@@ -225,38 +231,59 @@ $(document).ready(function(){
   }, 100));
 
   //////////
-  // MODALS
+  // BARBA PJAX
   //////////
 
-  // Magnific Popup
-  // var startWindowScroll = 0;
-  $('[js-popup]').magnificPopup({
-    type: 'inline',
-    fixedContentPos: true,
-    fixedBgPos: true,
-    overflowY: 'auto',
-    closeBtnInside: true,
-    preloader: false,
-    midClick: true,
-    removalDelay: 300,
-    mainClass: 'popup-buble',
-    callbacks: {
-      beforeOpen: function() {
-        // startWindowScroll = _window.scrollTop();
-        // $('html').addClass('mfp-helper');
-      },
-      close: function() {
-        // $('html').removeClass('mfp-helper');
-        // _window.scrollTop(startWindowScroll);
-      }
+  Barba.Pjax.Dom.containerClass = "page";
+
+  var FadeTransition = Barba.BaseTransition.extend({
+    start: function() {
+      Promise
+        .all([this.newContainerLoading, this.fadeOut()])
+        .then(this.fadeIn.bind(this));
+    },
+
+    fadeOut: function() {
+      return $(this.oldContainer).animate({ opacity: .5 }, 200).promise();
+    },
+
+    fadeIn: function() {
+      var _this = this;
+      var $el = $(this.newContainer);
+
+      $(this.oldContainer).hide();
+
+      $el.css({
+        visibility : 'visible',
+        opacity : .5
+      });
+
+      $el.animate({ opacity: 1 }, 200, function() {
+        document.body.scrollTop = 0;
+        _this.done();
+      });
     }
   });
 
-  $('[js-close-popup]').on('click', function(e){
-    $.magnificPopup.close();
+  Barba.Pjax.getTransition = function() {
+    return FadeTransition;
+  };
 
-    e.preventDefault();
-  })
+  Barba.Prefetch.init();
+  Barba.Pjax.start();
+
+  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+    // console.log(oldStatus.url.split("/").pop())
+    // if ( oldStatus.url.split("/").pop() !== "homepage.html" ){
+    //   $('body').css('height', 'auto')
+    // } else {
+    //   initHomeScroll();
+    // }
+
+    if ( $(container).not('.homepage').length > 0 ) {
+      $('body').css('height', 'auto')
+    }
+  });
 
 
 });
