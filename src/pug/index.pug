@@ -20,7 +20,7 @@ block content
       
     // TEXT
     .stage-text.scroll
-      .stage-text__wrapper(js-popup data-mfp-src="[data-popup='stage1_info']")
+      a.stage-text__wrapper(href="stage1_info.html")
         .stage-text__top
           .stage-text__title <span>Проект</span> <br> <span>века</span>
           .stage-text__logo
@@ -38,10 +38,10 @@ block content
           img(src='img/road.png' srcset="img/road@2x.png 2x")
         
         .stage-timeline__cars
-          .stage-car.stage-car--1_1
-            img(js-popup data-mfp-src="[data-popup='stage1_car_1']" src='img/car1_1.png' srcset='img/car1_1@2x.png 2x')
-          .stage-car.stage-car--1_2
-            img(js-popup data-mfp-src="[data-popup='stage1_car_2']" src='img/car1_2.png' srcset='img/car1_2@2x.png 2x')
+          a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
+            img(src='img/car1_1.png' srcset='img/car1_1@2x.png 2x')
+          a.stage-car.stage-car--1_2(href="stage1_car_2.html")
+            img(src='img/car1_2.png' srcset='img/car1_2@2x.png 2x')
 
 
 
