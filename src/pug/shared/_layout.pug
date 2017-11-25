@@ -4,9 +4,9 @@ html(lang="ru")
   head
     include _head
 
-  body(class=bodyClass)
+  body
     #barba-wrapper
-      .page
+      .page(class=bodyClass)
         block content
 
     block scripts

@@ -80,6 +80,10 @@ $(document).ready(function(){
   //////////
 
   if( $('.homepage').length > 0 ){
+    initHomeScroll();
+  }
+
+  function initHomeScroll(){
     $.jInvertScroll([
       '.scroll'
     ], {
@@ -240,7 +244,7 @@ $(document).ready(function(){
     },
 
     fadeOut: function() {
-      return $(this.oldContainer).animate({ opacity: 0 }).promise();
+      return $(this.oldContainer).animate({ opacity: .5 }, 200).promise();
     },
 
     fadeIn: function() {
@@ -251,10 +255,11 @@ $(document).ready(function(){
 
       $el.css({
         visibility : 'visible',
-        opacity : 0
+        opacity : .5
       });
 
-      $el.animate({ opacity: 1 }, 400, function() {
+      $el.animate({ opacity: 1 }, 200, function() {
+        document.body.scrollTop = 0;
         _this.done();
       });
     }
@@ -266,5 +271,19 @@ $(document).ready(function(){
 
   Barba.Prefetch.init();
   Barba.Pjax.start();
+
+  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+    // console.log(oldStatus.url.split("/").pop())
+    // if ( oldStatus.url.split("/").pop() !== "homepage.html" ){
+    //   $('body').css('height', 'auto')
+    // } else {
+    //   initHomeScroll();
+    // }
+
+    if ( $(container).not('.homepage').length > 0 ) {
+      $('body').css('height', 'auto')
+    }
+  });
+
 
 });
