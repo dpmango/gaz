@@ -12,9 +12,7 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'svg4everybody/dist/svg4everybody.min.js'),
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.js'),
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.hacks.js'),
-      path.resolve('bower_components', 'magnific-popup/dist/jquery.magnific-popup.min.js'),
       path.resolve('bower_components', 'fancybox/dist/jquery.fancybox.min.js'),
-
       config.src.js + '/vendor/**/*.js'
      ])
     .pipe(plumber({ errorHandler: config.errorHandler }))

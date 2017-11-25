@@ -91,7 +91,7 @@ $(document).ready(function(){
     		// on the page depending on how far the user has scrolled down
     		// values go from 0.0 to 1.0 (with 4 decimals precision)
   	   }
-    });  
+    });
   }
 
 
@@ -227,38 +227,11 @@ $(document).ready(function(){
   }, 100));
 
   //////////
-  // MODALS
+  // BARBA PJAX
   //////////
 
-  // Magnific Popup
-  // var startWindowScroll = 0;
-  $('[js-popup]').magnificPopup({
-    type: 'inline',
-    fixedContentPos: true,
-    fixedBgPos: true,
-    overflowY: 'auto',
-    closeBtnInside: true,
-    preloader: false,
-    midClick: true,
-    removalDelay: 300,
-    mainClass: 'popup-buble',
-    callbacks: {
-      beforeOpen: function() {
-        // startWindowScroll = _window.scrollTop();
-        // $('html').addClass('mfp-helper');
-      },
-      close: function() {
-        // $('html').removeClass('mfp-helper');
-        // _window.scrollTop(startWindowScroll);
-      }
-    }
-  });
+  Barba.Pjax.Dom.containerClass = "page";
 
-  $('[js-close-popup]').on('click', function(e){
-    $.magnificPopup.close();
-
-    e.preventDefault();
-  })
-
+  Barba.Pjax.start();
 
 });
