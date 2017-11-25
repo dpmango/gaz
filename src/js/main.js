@@ -201,6 +201,28 @@ $(document).ready(function(){
     }
   });
 
+  $('[js-png-hover]').on("mousemove", throttle(function(event) {
+    // Get click coordinates
+    var x = event.pageX - this.offsetLeft,
+        y = event.pageY - this.offsetTop,
+        w = ctx.canvas.width = this.width,
+        h = ctx.canvas.height = this.height,
+        alpha;
+
+    // Draw image to canvas
+    // and read Alpha channel value
+    ctx.drawImage(this, 0, 0, w, h);
+    alpha = ctx.getImageData(x, y, 1, 1).data[3]; // [0]R [1]G [2]B [3]A
+
+    // If pixel is transparent,
+    // retrieve the element underneath and trigger it's click event
+    if( alpha===0 ) {
+      $(this).removeClass('is-hovered');
+
+    } else {
+      $(this).addClass('is-hovered')
+    }
+  }, 100));
 
   //////////
   // MODALS
@@ -232,7 +254,7 @@ $(document).ready(function(){
 
   $('[js-close-popup]').on('click', function(e){
     $.magnificPopup.close();
-    
+
     e.preventDefault();
   })
 
