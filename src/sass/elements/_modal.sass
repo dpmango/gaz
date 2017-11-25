@@ -105,6 +105,10 @@ html.mfp-helper
     right: 0
     img
       max-width: 100%
+    &--bottom
+      top: auto
+      // bottom: calc(5vh + 84px)
+      bottom: 0
   &__top
     position: relative
     z-index: 2
@@ -172,6 +176,14 @@ html.mfp-helper
       font-weight: 300
       font-style: italic
       color: $colorRed
+    span
+      color: $colorRed
+      display: inline-block
+    img
+      max-width: 100%
+
+    &--narrow
+      flex-basis: 25%
 
   &__chars
     flex: 0 1 auto
@@ -221,3 +233,16 @@ html.mfp-helper
         font-weight: 300
         font-style: italic
         padding: 20px 0px 0px 50px
+
+  &__faces
+    &-col
+      flex: 0 1 50%
+      display: flex
+      .popup__text
+        margin-top: 5%
+    &-image
+      flex: 0 1 auto
+      padding-right: 20px
+      margin-right: 2%
+      img
+        max-width: 100%

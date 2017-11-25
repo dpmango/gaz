@@ -14,10 +14,12 @@ block content
     // BACKGROUND
     .stage-background.scroll
       img(src='img/stageBg-1.png' srcset="img/stageBg-1@2x.png 2x")
-    
+      img(src='img/stageBg-1.png' srcset="img/stageBg-1@2x.png 2x")
+      
+      
     // TEXT
     .stage-text.scroll
-      .stage-text__wrapper(js-popup data-mfp-src="[data-popup='stage1_car_1']")
+      .stage-text__wrapper(js-popup data-mfp-src="[data-popup='stage1_info']")
         .stage-text__top
           .stage-text__title <span>Проект</span> <br> <span>века</span>
           .stage-text__logo
@@ -112,7 +114,7 @@ block content
       
       .popup__navigation
         a(data-mfp-src="[data-popup='stage1_car_2']" js-popup) газ-А
-        a(js-close-popup) проект века
+        a(data-mfp-src="[data-popup='stage1_info']" js-popup) проект века
         a(data-mfp-src="[data-popup='stage1_faces']" js-popup) лица периода
     
     .popup__content
@@ -176,7 +178,7 @@ block content
       
       .popup__navigation
         a(data-mfp-src="[data-popup='stage1_car_1']" js-popup) газ-А
-        a(js-close-popup) проект века
+        a(data-mfp-src="[data-popup='stage1_info']" js-popup) проект века
         a(data-mfp-src="[data-popup='stage1_faces']" js-popup) лица периода
     
     .popup__content
@@ -248,3 +250,75 @@ block content
         figure
           img(src='img/popup/popupStage1_car_3.png' srcset='img/popup/popupStage1_car_3@2x.png 2x')
           figcaption Автомобиль ГАЗ-А в подарок наркому тяжелого <br> машиностроения СССР Серго Орджоникидзе.<br> 1935 г.
+
+  // next
+  .popup-dialog.mfp-hide(data-popup="stage1_faces")
+    .popup-bg-image.popup-bg-image--bottom 
+      img(src='img/popup/popupBgStage1_faces.png' srcset='img/popup/popupBgStage1_faces@2x.png 2x')
+      
+    .popup__top
+      .popup__logo
+        img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
+      .popup__title лица периода
+      
+      .popup__navigation
+        a(data-mfp-src="[data-popup='stage1_car_1']" js-popup) газ-А
+        a(data-mfp-src="[data-popup='stage1_car_2']" js-popup) газ-АА
+        a(data-mfp-src="[data-popup='stage1_info']" js-popup) проект века
+
+    .popup__content
+      .popup__faces-col
+        .popup__faces-image
+          img(src='img/popup/popupStage1_face_1.png' srcset='img/popup/popupStage1_face_1@2x.png 2x')
+
+        .popup__text
+          p <span>Сергей Дьяконов</span> возглавлял завод с 1932 по 1938 гг. Он сыграл неоценимую роль в становлении и развитии Горьковского автозавода. За время своей работы он сумел запустить в производство более 17 модификаций автомобилей. 
+
+          p В марте 1934 года был удостоен ордена Ленина, который получил за успешное освоение производства автомашин нескольких модификаций. В 1938 году подвергся гонениям, был репрессирован. Сегодня его имя носит одна из улиц в Нижнем Новгороде.
+      
+      .popup__faces-col
+        .popup__faces-image
+          img(src='img/popup/popupStage1_face_2.png' srcset='img/popup/popupStage1_face_2@2x.png 2x')
+
+        .popup__text
+          p <span>Андрей Александрович Липгарт</span> с 1933 по 1951 год был главным конструктором Горьковского автомобильного завода. 
+
+          p Под его началом сформировалась конструкторская школа отечественного автомобилестроения. Пятикратный лауреат Сталинских премий Липгарт спроектировал 67 моделей автомобилей, 27 из которых пошли в производство. 
+
+  // next
+  .popup-dialog.mfp-hide(data-popup="stage1_info")
+    .popup-bg-image.popup-bg-image--bottom 
+      img(src='img/popup/popupBgStage1_info.png' srcset='img/popup/popupBgStage1_info@2x.png 2x')
+      
+    .popup__top
+      .popup__logo
+        img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
+      .popup__title Проект века
+      
+      .popup__navigation
+        a(data-mfp-src="[data-popup='stage1_car_1']" js-popup) газ-А
+        a(data-mfp-src="[data-popup='stage1_car_2']" js-popup) газ-АА
+        a(data-mfp-src="[data-popup='stage1_faces']" js-popup) лица периода
+
+    .popup__content
+      .popup__text
+        p.t-caption
+          i За два года до того, как заводской гудок возвестил о запуске первого в СССР автомобильного завода конвейерной сборки, был подписан этот документ.
+
+        img(src='img/popup/popupStage1_info_1.png' srcset='img/popup/popupStage1_info_1@2x.png 2x')
+      
+      .popup__text.popup__text--narrow
+        p Американская Ford Motor Company и Высший совет народного хозяйства СССР заключили соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. 
+
+        p После того как ударили по рукам, приступили к строительству. 2 мая 1930 года под Нижним Новгородом был заложен первый камень в фундамент будущего автомобильного завода. Через полтора года строительство уже было окончено. А 1 января 1932 года автозавод начал полноценный рабочий процесс. В этот же день в ремонтно-механическом цехе состоялась общезаводская профсоюзная конференция, на которой было принято решение присвоить автозаводу имя председателя Совета народных комиссаров Вячеслава Молотова. 
+
+        p 29 января 1932 года с конвейера сошёл первый автомобиль — грузовик НАЗ-АА. Впоследствии более известный как ГАЗ-АА. 
+
+      .popup__image
+        img(src='img/popup/popupStage1_info_2.png' srcset='img/popup/popupStage1_info_2@2x.png 2x')
+        
+          
+    
+        
+        
+        
