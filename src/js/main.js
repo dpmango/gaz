@@ -90,12 +90,20 @@ $(document).ready(function(){
     	width: 'auto',	// Page width (auto or int value)
     	height: 'auto',	// Page height (the shorter, the faster the scroll)
     	onScroll: function(percent) {
-    		// Callback function that will be called each time the user
-    		// scrolls up or down, useful for animating other parts
-    		// on the page depending on how far the user has scrolled down
-    		// values go from 0.0 to 1.0 (with 4 decimals precision)
+        // get back multiplier
+        var sPercent = percent * 2;
+
+        // get sections
+        var totalSections = $('.stage-background img').length;
+        var currentSection = Math.ceil(sPercent * totalSections)
+
+        setStagePhoto(currentSection);
   	   }
     });
+  }
+
+  function setStagePhoto(num){
+    $('.stage-photos__wrapper').find('img:nth-child('+num+')').addClass('is-active').siblings().removeClass('is-active');
   }
 
 
@@ -107,8 +115,11 @@ $(document).ready(function(){
     var section = $(this).data('stage');
 
     if ( section ){
-      // do scrolling?
-      //
+
+      var totalSections = $('.stage-background img').length;
+
+      $('body, html').animate({
+          scrollTop: _document.height() / section }, 1000);
 
       // set class
       $(this).siblings().removeClass('is-active');
@@ -182,7 +193,7 @@ $(document).ready(function(){
 
     // Get click coordinates
     var x = event.pageX - this.offsetLeft,
-        y = event.pageY - this.offsetTop,
+        y = event.offsetY - this.offsetTop,
         w = ctx.canvas.width = this.width,
         h = ctx.canvas.height = this.height,
         alpha;
@@ -210,7 +221,7 @@ $(document).ready(function(){
   $('[js-png-hover]').on("mousemove", throttle(function(event) {
     // Get click coordinates
     var x = event.pageX - this.offsetLeft,
-        y = event.pageY - this.offsetTop,
+        y = event.offsetY - this.offsetTop,
         w = ctx.canvas.width = this.width,
         h = ctx.canvas.height = this.height,
         alpha;
