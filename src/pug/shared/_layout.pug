@@ -5,6 +5,9 @@ html(lang="ru")
     include _head
 
   body
+    block header
+      include ../components/_mobile-header
+      
     #barba-wrapper
       .page(class=bodyClass)
         block content

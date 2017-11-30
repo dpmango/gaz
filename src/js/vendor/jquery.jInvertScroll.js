@@ -50,7 +50,9 @@
             longest = 0,
             totalHeight,
             winHeight,
-            winWidth;
+            winWidth,
+            scrollHandler,
+            resizeHandler;
 
         function init() {
             // Extract all selected elements from dom and save them into an array
@@ -123,11 +125,14 @@
         }
 
         function setlisteners() {
+            scrollHandler = throttle(onscroll,5);
+            resizeHandler = debounce(onscroll,150);
+
             // Listen for the actual scroll event
-            $(window).on('scroll', throttle(onscroll,5));
+            document.addEventListener('scroll', scrollHandler, false);
             $([document, window]).on('ready', calc);
 
-            $(window).on('resize', debounce(onscroll,150));
+            document.addEventListener('resize', resizeHandler, false);
             $([document, window]).on('resize', debounce(calc, 300));
         }
 
@@ -147,7 +152,9 @@
                 $('body').attr('style', '');
 
                 // Remove listeners
-                $(window).off('scroll resize', onscroll);
+                document.removeEventListener('scroll', scrollHandler, false);
+                document.removeEventListener('resize', resizeHandler, false);
+                // $(window).off('scroll resize', onscroll);
                 $([document, window]).off('ready resize', calc);
             }
         };

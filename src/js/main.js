@@ -69,9 +69,9 @@ $(document).ready(function(){
 	});
 
   // HAMBURGER TOGGLER
-  $('.hamburger').on('click', function(){
-    $('.hamburger').toggleClass('active');
-    $('.mobile-navi').toggleClass('active');
+  $('[js-hamburger]').on('click', function(){
+    $(this).toggleClass('is-active');
+    $('.mobile-navi').toggleClass('is-active');
   });
 
 
@@ -81,12 +81,14 @@ $(document).ready(function(){
 
   if( $('.homepage').length > 0 ){
     initHomeScroll();
+    initHammer();
 
     _window.on('resize', debounce(initHomeScroll, 300))
+    _window.on('resize', debounce(initHammer, 300))
   }
 
   function initHomeScroll(){
-    let scrollContainer = $.jInvertScroll([
+    var scrollContainer = $.jInvertScroll([
       '.scroll'
     ], {
       width: 'auto',	// Page width (auto or int value)
@@ -102,7 +104,6 @@ $(document).ready(function(){
         setStagePhoto(currentSection);
        }
     });
-
     if ( _window.width() > 800 ){
       scrollContainer.reinitialize();
     } else {
@@ -249,5 +250,49 @@ $(document).ready(function(){
     }
   }, 100));
 
+
+  //////////
+  // GALLERY
+  //////////
+  function initHammer(){
+    if ( _window.width() < 800 ){
+      var hammerContainer = document.querySelector('.stages')
+      var hammer = new Hammer( hammerContainer );
+      var delta = {
+        x: 0,
+        y: 0
+      }
+      var offset = {
+        x: 0,
+        y: 0
+      }
+
+      hammer.on('panleft panright panend', function(e){
+        if(e.type === 'panleft' || e.type === 'panright') {
+          delta.x = e.deltaX;
+          delta.y = e.deltaY;
+
+          $(hammerContainer).css({
+            'transform': 'translate3d('+delta.x+'px,0,0)'
+          })
+        }
+
+        if (e.type === "panend"){
+          offset.x += delta.x;
+          offset.y += delta.y;
+          delta.x = 0;
+          delta.y = 0;
+
+          $(hammerContainer).css({
+            'transform': 'translate3d('+offset.x+'px,0,0)'
+          })
+        }
+
+        console.log(delta, offset);
+
+        e.preventDefault();
+      });
+    }
+  }
 
 });

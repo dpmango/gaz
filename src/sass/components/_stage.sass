@@ -6,6 +6,10 @@
   left: 0
   transition: transform .1s linear
 
++r($tablet)
+  .scroll
+    position: static
+
 // управление параллаксом детей через width
 // Math.floor(deltaW * scrollPercent)
 
@@ -33,6 +37,11 @@
   .stages
     &::after
       bottom: calc(5vh + 54px)
+
++r($tablet)
+  .stages
+    &::after
+      bottom: 0
 
 // .stage
 //   position: relative
@@ -67,6 +76,9 @@
         cursor: pointer
         transform: translate3d(0,0,0) scale(1.02)
 
++r($tablet)
+  .stage-photos
+    display: none
 
 // BG
 .stage-background
@@ -112,16 +124,17 @@
     padding: 30px 0px 30px 50px
     cursor: pointer
     pointer-events: all
-    &:hover
-      .stage-text__title
-        span::after
-          opacity: 0
-          bottom: 5px
     &--color2
       color: #3c5460
   &__top
     display: flex
     align-items: flex-end
+    width: 100%
+    &:hover
+      .stage-text__title
+        span::after
+          opacity: 0
+          bottom: 5px
   &__title
     font-size: 67px
     font-family: 'a_BodoniOrtoTitul', serif
@@ -143,8 +156,13 @@
     margin-top: 30px
     font-size: 20px
   &__logo
-    flex: 0 1 auto
+    flex: 0 1 250px
     margin-left: 5%
+    img
+      max-width: 100%
+  &__mobile
+    display: none
+    margin: 70px -50px
     img
       max-width: 100%
 
@@ -178,6 +196,30 @@
     &__short
       font-size: 12px
 
++r($tablet)
+  .stage-text
+    width: 100vw
+    align-items: flex-start
+    &__wrapper
+      flex: 0 0 auto
+      width: 100vw
+      max-width: 100vw
+      margin: 100px 0 100px 0
+      padding: 30px 50px 30px 50px
+    &__mobile
+      display: block
+    &__title
+      font-size: 60px
+      margin-right: auto
+    &__short
+      font-size: 24px
+    &__top
+      flex-direction: row-reverse
+      align-items: center
+    &__logo
+      margin-left: 0
+      margin-right: 5%
+
 // TIMELINE
 .stage-timeline
   width: 280vw
@@ -205,7 +247,6 @@
 +r($wide)
   .stage-timeline
     bottom: calc(5vh + 64px)
-
     &__road
       img
         max-width: 1336px
@@ -222,6 +263,11 @@
     &__road
       img
         max-width: 1024px
+
++r($tablet)
+  .stage-timeline
+    &__road
+      max-width: 100%
 
 .stage-car
   flex: 0 0 auto
