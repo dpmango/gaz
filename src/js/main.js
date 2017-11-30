@@ -252,7 +252,7 @@ $(document).ready(function(){
 
 
   //////////
-  // GALLERY
+  // HAMMER - touch nav
   //////////
   function initHammer(){
     if ( _window.width() < 800 ){
@@ -267,14 +267,14 @@ $(document).ready(function(){
         y: 0
       }
 
-      hammer.on('panleft panright panend', function(e){
+      hammer.on('panleft panright panend', throttle(function(e){
         if(e.type === 'panleft' || e.type === 'panright') {
           delta.x = e.deltaX;
           delta.y = e.deltaY;
 
-          $(hammerContainer).css({
-            'transform': 'translate3d('+delta.x+'px,0,0)'
-          })
+          if ( offset.x + delta.x < 0 ){
+            setDelta();
+          }
         }
 
         if (e.type === "panend"){
@@ -283,15 +283,29 @@ $(document).ready(function(){
           delta.x = 0;
           delta.y = 0;
 
-          $(hammerContainer).css({
-            'transform': 'translate3d('+offset.x+'px,0,0)'
-          })
+          if ( offset.x < 0 ){
+            setOffset();
+          }
         }
 
-        console.log(delta, offset);
+        console.log(delta, offset)
 
         e.preventDefault();
-      });
+      }),5);
+
+
+      var setDelta = function(){
+        $(hammerContainer).css({
+          'transform': 'translate3d('+ (offset.x + delta.x) +'px,0,0)'
+        })
+      }
+
+      var setOffset = function(){
+        $(hammerContainer).css({
+          'transform': 'translate3d('+offset.x+'px,0,0)'
+        })
+      }
+
     }
   }
 
