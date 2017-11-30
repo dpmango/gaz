@@ -20,7 +20,8 @@
       right: 0
       z-index: 1
       background: linear-gradient( to top, #ded5c5 0%, #d8bb91 100%)
-      height: 140px
+      // height: 140px
+      top: 0
   &__menu
     position: relative
     z-index: 2
@@ -70,3 +71,33 @@
           +sprite('stageNav12-active')
         &-stageNav13
           +sprite('stageNav13-active')
+
++r($hd)
+  .stage-nav
+    &__menu
+      padding: 15px 40px
+
++r($wide)
+  .stage-nav
+    &__wrapper
+      &::after
+        // height: 122px
+    &__menu
+      padding: 5px 30px
+      min-height: 64px
+    &__li
+      transform-origin: center center
+      transform: scale(0.8)
+
++r($w1200)
+  .stage-nav
+    &__li
+      transform: scale(0.6)
+
++r($desktop)
+  .stage-nav
+    &__menu
+      padding: 0px 30px
+      min-height: 54px
+    &__li
+      transform: scale(0.5)
