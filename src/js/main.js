@@ -81,15 +81,17 @@ $(document).ready(function(){
 
   if( $('.homepage').length > 0 ){
     initHomeScroll();
+
+    _window.on('resize', debounce(initHomeScroll, 300))
   }
 
   function initHomeScroll(){
-    $.jInvertScroll([
+    let scrollContainer = $.jInvertScroll([
       '.scroll'
     ], {
-    	width: 'auto',	// Page width (auto or int value)
-    	height: 'auto',	// Page height (the shorter, the faster the scroll)
-    	onScroll: function(percent) {
+      width: 'auto',	// Page width (auto or int value)
+      height: 'auto',	// Page height (the shorter, the faster the scroll)
+      onScroll: function(percent) {
         // get back multiplier
         var sPercent = percent * 2;
 
@@ -98,8 +100,14 @@ $(document).ready(function(){
         var currentSection = Math.ceil(sPercent * totalSections)
 
         setStagePhoto(currentSection);
-  	   }
+       }
     });
+
+    if ( _window.width() > 800 ){
+      scrollContainer.reinitialize();
+    } else {
+      scrollContainer.destroy();
+    }
   }
 
   function setStagePhoto(num){
