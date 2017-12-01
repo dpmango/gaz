@@ -73,7 +73,7 @@ $(document).ready(function(){
   //////////
 
   function pageReady(){
-    if( $('.homepage').length > 0 ){
+    if( $(document).find('.homepage').length > 0 ){
       initSlick();
       listenScroll();
       initFancybox();
@@ -119,8 +119,15 @@ $(document).ready(function(){
       $('[js-stage-nav]').attr('data-stage', nextSlideIndex);
       setStageNav( nextSlideIndex );
       setStagePhoto(nextSlideIndex);
+
+      // histoy API
+      window.location.hash = '#section-'+ nextSlideIndex;
+
     });
 
+    if ( window.location.hash ){
+      slickEl.slick("slickGoTo", window.location.hash.split('-')[1] - 1)
+    }
 
   }
 
