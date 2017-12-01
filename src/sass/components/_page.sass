@@ -24,7 +24,7 @@
     top: 0
     right: 0
     img
-      max-width: 100%
+      width: 100%
     &--bottom
       top: auto
       // bottom: calc(5vh + 84px)
@@ -46,13 +46,17 @@
     font-size: 67px
     font-family: 'a_BodoniOrtoTitul', serif
     text-transform: uppercase
+    white-space: nowrap
+    +text-overflow
     color: $colorRed
 
   &__navigation
+    flex: 0 0 auto
     color: $colorRed
     font-family: 'a_BodoniOrtoTitul', serif
     text-transform: uppercase
     margin-left: auto
+    padding-left: 30px
     a
       display: inline-block
       position: relative
@@ -134,7 +138,7 @@
           padding-right: 0
 
   &__image
-    flex: 0 2 auto
+    flex: 0 4 auto
     margin-left: auto
     display: flex
     flex-direction: column
@@ -166,3 +170,174 @@
       margin-right: 2%
       img
         max-width: 100%
+
+
++r($xl)
+  .page
+    &__title
+      font-size: 60px
+
++r($hd)
+  .page
+    &__title
+      font-size: 55px
+    &__navigation
+      a
+        font-size: 17px
+        margin-right: 30px
+    &__text
+      p
+        font-size: 16px
+      i, p.t-caption
+        font-size: 24px
+
++r($wide)
+  .page-dialog
+    padding-bottom: calc(5vh + 64px)
+  .page
+    &__logo
+      flex-basis: 180px
+    &__title
+      font-size: 46px
+      margin-left: 25px
+
+
++r($w1200)
+  .page
+    &__title
+      font-size: 40px
+
+    &__text
+      p
+        font-size: 14px
+      i, p.t-caption
+        font-size: 20px
+
+    &__chars
+      font-size: 14px
+      table
+        font-size: 12px
+
+    &__image
+      flex-shrink: 6
+      figure
+        figcaption
+          font-size: 12px
+
+
++r($desktop)
+  .page-dialog
+    padding-bottom: calc(5vh + 54px)
+
+  .page
+    &__title
+      font-size: 38px
+
+    &__text
+      p
+        font-size: 12px
+      i, p.t-caption
+        font-size: 18px
+
+
+
++r($tablet)
+  .page-dialog
+    padding-top: 130px
+  .page
+    &__navigation
+      display: none
+
+    &__logo
+      flex-shrink: 2
+      flex-basis: 250px
+    &__title
+      font-size: 60px
+      margin-left: 50px
+
+      overflow: visible
+      text-overflow: normal
+      white-space: normal
+
+    &__content
+      flex-direction: column
+      width: 100%
+      &--order1
+        .page__image
+          order: 2
+        .page__text
+          order: 1
+        .page__chars
+          order: 3
+
+    &__text
+      flex: 0 0 auto
+      p
+        font-size: 24px
+
+      i, p.t-caption
+        font-size: 36px
+      &--narrow
+        flex: 0 0 auto
+
+    &__chars
+      width: 100%
+      flex: 0 0 auto
+      padding: 0
+      margin-top: 30px
+      &-table-row
+        flex-direction: column
+
+    &__image
+      margin-top: 30px
+      flex: 0 0 auto
+      figure
+        flex: 0 0 auto
+
+    &__faces
+      &-col
+        margin-top: 30px
+        flex-direction: column
+        flex: 0 0 auto
+
+      &-image
+        flex: 0 0 auto
+
++r($mobile)
+  .page-dialog
+    padding-top: 100px
+    padding-left: 30px
+
+  .page
+    &__top
+      padding-right: 30px
+      flex-direction: column
+      align-items: flex-start
+
+    &__title
+      font-size: 48px
+      margin-left: 0
+
+    &__logo
+      flex: 0 0 auto
+      margin-bottom: 40px
+      max-width: 300px
+
+    &__content
+      margin-top: 15px
+
+    &__text
+      p
+        font-size: 20px
+
+      i, p.t-caption
+        font-size: 27px
+
+
++r($mobile-s)
+  .page-dialog
+    padding-left: 20px
+
+  .page
+    &__top
+      padding-right: 20px

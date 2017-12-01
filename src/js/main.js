@@ -143,8 +143,12 @@ $(document).ready(function(){
   $(document).on('click', '[js-stage-nav] li', function(e){
     // navigate slick
     var section = $(this).data('stage');
-    slickEl.slick("slickGoTo", section - 1)
 
+    if( $(document).find('.homepage').length > 0 ){
+      slickEl.slick("slickGoTo", section - 1)
+    } else {
+      window.location.href = "/#section-" + section + ""
+    }
     e.preventDefault();
   });
 
@@ -330,6 +334,44 @@ $(document).ready(function(){
 
 
 
+  //////////
+  // TELEPORT PLUGIN
+  //////////
+
+  $('[js-teleport]').each(function(i, val) {
+    var self = $(val)
+    var objHtml = $(val).html();
+    var target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
+    var conditionMedia = $(val).data('teleport-condition').substring(1);
+    var conditionPosition = $(val).data('teleport-condition').substring(0, 1);
+
+    if (target && objHtml && conditionPosition) {
+      _window.resized(100, function() {
+        teleport()
+      })
+
+      function teleport() {
+        var condition;
+
+        if (conditionPosition === "<") {
+          condition = _window.width() < conditionMedia;
+        } else if (conditionPosition === ">") {
+          condition = _window.width() > conditionMedia;
+        }
+
+        if (condition) {
+          target.html(objHtml)
+          self.html('')
+        } else {
+          self.html(objHtml)
+          target.html("")
+        }
+
+      }
+
+      teleport();
+    }
+  })
 
   //////////
   // BARBA PJAX
@@ -383,6 +425,12 @@ $(document).ready(function(){
     // }
 
     pageReady();
+
+    // close mobile menu
+    if ( _window.width() < 800 ){
+      $('[js-hamburger]').toggleClass('is-active');
+      $('.mobile-navi').toggleClass('is-active');
+    }
   });
 
 
