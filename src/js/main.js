@@ -82,6 +82,9 @@ $(document).ready(function(){
 
   if( $('.homepage').length > 0 ){
     initSlick();
+    listenScroll();
+
+    _window.on('resize', debounce(listenScroll, 300))
   }
 
   var slickEl;
@@ -141,6 +144,32 @@ $(document).ready(function(){
       el.addClass('is-active');
     }
   }
+
+  //////////
+  // CUSTOM SCROLL FUNCTIONS
+  //////////
+  function listenScroll(){
+    var scrollListener
+
+    if ( _window.width() > 800 ){
+      scrollListener = debounce(function(e){
+        var delta = e.originalEvent.deltaY
+        if ( delta > 0 ){
+          slickEl.slick("slickNext")
+        } else if ( delta < 0 ){
+          slickEl.slick("slickPrev")
+        }
+      }, 300, {
+        'leading': true
+      });
+
+      _window.on('wheel', scrollListener);
+    } else {
+      _window.off('wheel', scrollListener);
+    }
+  }
+
+
 
 
   //////////
