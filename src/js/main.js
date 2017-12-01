@@ -95,7 +95,8 @@ $(document).ready(function(){
       arrows: false,
       infinite: false,
       speed: 300,
-      slidesToShow: 1
+      slidesToShow: 1,
+      adaptiveHeight: true
     }
 
     slickEl.slick(slickOptions);
