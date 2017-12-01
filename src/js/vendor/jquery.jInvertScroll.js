@@ -78,6 +78,7 @@
 
             // Set the body to the selected height
             $('body').css('height', config.height + 'px');
+            $('body').addClass('is-jInvertScroll')
         }
 
         function calc() {
@@ -150,6 +151,7 @@
             destroy: function() {
                 // Remove previously added inline styles
                 $('body').attr('style', '');
+                $('body').removeClass('is-jInvertScroll')
 
                 // Remove listeners
                 document.removeEventListener('scroll', scrollHandler, false);

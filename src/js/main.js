@@ -105,16 +105,19 @@ $(document).ready(function(){
        }
     });
     if ( _window.width() > 800 ){
-      scrollContainer.reinitialize();
+      if ( !$('body').is('.is-jInvertScroll') ){
+        scrollContainer.reinitialize();
+      }
     } else {
-      scrollContainer.destroy();
+      if ( $('body').is('.is-jInvertScroll') ){
+        scrollContainer.destroy();
+      }
     }
   }
 
   function setStagePhoto(num){
     $('.stage-photos__wrapper').find('img:nth-child('+num+')').addClass('is-active').siblings().removeClass('is-active');
   }
-
 
 
   //////////
@@ -227,6 +230,15 @@ $(document).ready(function(){
     }
   });
 
+  // mobile toggler
+  $('[js-start-gallery]').on('click', function(e){
+    var galleryId = $(this).data('for-gallery');
+
+    if ( galleryId ){
+      $('[data-gallery="'+galleryId+'"]').find('span').first().click()
+    }
+  })
+
   $('[js-png-hover]').on("mousemove", throttle(function(event) {
     // Get click coordinates
     var x = event.pageX - this.offsetLeft,
@@ -251,6 +263,20 @@ $(document).ready(function(){
   }, 100));
 
 
+  // stage car click handler
+  $('.stage-car').on('click', function(e){
+    if ( $(e.target).is('img') ){
+
+    } else {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+  });
+
+
+
+
   //////////
   // HAMMER - touch nav
   //////////
@@ -272,7 +298,7 @@ $(document).ready(function(){
           delta.x = e.deltaX;
           delta.y = e.deltaY;
 
-          if ( offset.x + delta.x < 0 ){
+          if ( offset.x + delta.x <= 0 ){
             setDelta();
           }
         }
@@ -283,7 +309,7 @@ $(document).ready(function(){
           delta.x = 0;
           delta.y = 0;
 
-          if ( offset.x < 0 ){
+          if ( offset.x <= 0 ){
             setOffset();
           }
         }

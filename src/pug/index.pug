@@ -20,7 +20,7 @@ block content
           .stage-text__title <span>Проект</span> <br> <span>века</span>
           .stage-text__logo
             img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
-        img.stage-text__mobile(data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
+        img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
         .stage-text__short Американская компания Ford Motor Company и Высший совет народного хозяйства СССР заключают соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. В итоге благодаря западным технологиям и советскому энтузиазму завод построили в рекордные сроки — за полтора года. В соответствии с соглашением ГАЗ получал техническую поддержку от Ford Motor Company на протяжении пяти лет после пуска завода.
       .stage-text__wrapper.stage-text__wrapper--color2
         a.stage-text__top(href="stage1_info.html")
@@ -31,7 +31,12 @@ block content
   
     // BACKGROUND
     .stage-background.scroll
-      img(src='img/stageBg-1.png' srcset="img/stageBg-1@2x.png 2x")
+      //- img(src='img/stageBg-1.png' srcset="img/stageBg-1@2x.png 2x")
+      picture
+        source(media="(min-width: 800px)" srcset="img/stageBg-1.png 1x, img/stageBg-1@2x.png 2x")
+        source(media="(max-width: 800px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
+        img(src="img/stageBg-1.png")
+            
       img(src='img/stageBg-2.png' srcset="img/stageBg-2@2x.png 2x")
               
               

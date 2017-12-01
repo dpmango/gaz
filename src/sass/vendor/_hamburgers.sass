@@ -12,11 +12,12 @@
   background-color: transparent
   border: 0
   overflow: visible
+  cursor: pointer
   &:hover
     opacity: 0.7
 
 .hamburger-box
-  width: 40px
+  width: 48px
   height: 24px
   display: inline-block
   position: relative
@@ -47,6 +48,21 @@
     top: -13px
   &::after
     bottom: -13px
+
++r($mobile-s)
+  .hamburger-box
+    width: 40px
+
+  .hamburger-inner
+    width: 40px
+    height: 4px
+    &::before, &::after
+      width: 40px
+      height: 4px
+    &::before
+      top: -10px
+    &::after
+      bottom: -10px
 
 
 .hamburger--squeeze
