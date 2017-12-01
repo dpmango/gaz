@@ -115,12 +115,58 @@
   .stage-background
     position: static
 
-// STAGE BACKGROUND CONTROLS
+// STAGE BACKGROUND CONTROLS + COLOR
 .stages
   &[data-stage="2"]
     .stage-slide
       &::after
         background: linear-gradient( to bottom, rgb(252,234,136) 0%, rgb(157,192,196) 100%)
+  &[data-stage="6"]
+    .stage-slide
+      &::after
+        background: linear-gradient( to bottom, rgb(0,204,163) 0%, rgb(128,210,82) 34%, rgb(255,216,0) 100%)
+
+
+
+.stage-slide
+  &[data-stage="2"]
+    .stage-text
+      color: #3c5460
+  &[data-stage="3"]
+    .stage-text
+      color: #f93115
+      &__short
+        color: #8a1211
+  &[data-stage="4"]
+    .stage-text
+      color: #566229
+  &[data-stage="5"]
+    .stage-text
+      color: #566229
+  &[data-stage="6"]
+    .stage-text
+      color: #059d7b
+  &[data-stage="7"]
+    .stage-text
+      color: #566229
+  &[data-stage="8"]
+    .stage-text
+      color: #566229
+  &[data-stage="9"]
+    .stage-text
+      color: #566229
+  &[data-stage="10"]
+    .stage-text
+      color: #566229
+  &[data-stage="11"]
+    .stage-text
+      color: #566229
+  &[data-stage="12"]
+    .stage-text
+      color: #566229
+  &[data-stage="13"]
+    .stage-text
+      color: #566229
 
 
 
@@ -141,35 +187,36 @@
     padding: 30px 0px 30px 50px
     cursor: pointer
     pointer-events: all
-    &--color2
-      color: #3c5460
+
   &__top
     display: flex
     align-items: flex-end
     width: 100%
     &:hover
       .stage-text__title
-        span::after
-          opacity: 0
-          bottom: 5px
+        text-decoration: none
+        // span::after
+        //   opacity: 0
+        //   bottom: 5px
   &__title
     font-size: 67px
     font-family: 'a_BodoniOrtoTitul', serif
     text-transform: uppercase
     word-break: break-all
-    span
-      position: relative
-      &::after
-        display: inline-block
-        content: ' '
-        position: absolute
-        bottom: 2px
-        height: 3px
-        left: 0
-        right: 0
-        z-index: 1
-        background: currentColor
-        transition: all $transitionSpeed ease-out
+    text-decoration: underline
+    // span
+    //   position: relative
+    //   &::after
+    //     display: inline-block
+    //     content: ' '
+    //     position: absolute
+    //     bottom: 2px
+    //     height: 3px
+    //     left: 0
+    //     right: 0
+    //     z-index: 1
+    //     background: currentColor
+    //     transition: all $transitionSpeed ease-out
   &__short
     margin-top: 30px
     font-size: 20px
