@@ -11,7 +11,8 @@ block content
       .stage-photos__wrapper
         img.is-active(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-1.png' srcset='img/stagePhoto-1@2x.png 2x')
         img(js-png-clickthrough js-png-hover data-for-gallery="2" src='img/stagePhoto-2.png' srcset='img/stagePhoto-2@2x.png 2x')
-    
+        img(js-png-clickthrough js-png-hover data-for-gallery="3" src='img/stagePhoto-3.png' srcset='img/stagePhoto-3@2x.png 2x')
+
     
     // SLIDING SECTION
     .stage-slider(js-main-slider)
@@ -82,7 +83,36 @@ block content
       
       // slide
       .stage-slide(data-stage="3")
-      
+        // TEXT
+        .stage-text
+          .stage-text__wrapper
+            a.stage-text__top(href="stage1_info.html")
+              .stage-text__title <span>Спорт —</span> <br> <span>это радость побед</span>
+            img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
+            .stage-text__short ГЛ-1 — первый советский гоночный автомобиль, созданный на промышленном предприятии. Предположительно, машина получила название ГЛ-1 в честь главного конструктора ГАЗа Андрея Липгарта. «Гоночная Липгарта» — так называли её конструкторы ГАЗа, в том числе и создатель автомобиля Евгений Агитов. С выпуска первого серийного советского гоночного авто прошло почти 80 лет, машины. ГАЗа поменяли свой облик, но традиция завоёвывать первые места в спортивных автомобильных состязаниях остаётся неизменной до сих пор.
+
+        // BACKGROUND
+        .stage-background
+          picture
+            source(media="(min-width: 800px)" srcset="img/stageBg-3.png 1x, img/stageBg-3@2x.png 2x")
+            source(media="(max-width: 800px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
+            img(src="img/stageBg-3.png")
+              
+        // TIMELINE
+        .stage-timeline
+          .stage-timeline__wrapper
+            .stage-timeline__road
+              // repeat-x like ?? -- refactor
+              img(src='img/road.png' srcset="img/road@2x.png 2x")
+              img(src='img/road.png' srcset="img/road@2x.png 2x")
+            
+            .stage-timeline__cars
+              a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
+                img(src='img/car1_1.png' srcset='img/car1_1@2x.png 2x')
+              a.stage-car.stage-car--1_2(href="stage1_car_2.html")
+                img(src='img/car1_2.png' srcset='img/car1_2@2x.png 2x')
+                
+                
       // slide
       .stage-slide(data-stage="4")
       

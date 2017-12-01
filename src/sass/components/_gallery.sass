@@ -22,20 +22,24 @@
   display: none
 
 // show thumbs
-@media all and (min-width: 800px)
-  .fancybox-thumbs
-    top: auto
-    width: auto
-    bottom: 0
-    left: 0
-    right: 0
-    height: 95px
-    padding: 10px
-    box-sizing: border-box
-    background: transparent
+// @media all and (min-width: 800px)
+.fancybox-thumbs
+  top: auto
+  width: auto
+  bottom: 0
+  left: 0
+  right: 0
+  height: 95px
+  padding: 10px
+  box-sizing: border-box
+  background: transparent
+.fancybox-show-thumbs .fancybox-inner
+  right: 0
+  bottom: 95px
+
+@media all and (max-width: 800px)
   .fancybox-show-thumbs .fancybox-inner
     right: 0
-    bottom: 95px
 
 .fancybox-thumbs > ul
   display: flex
@@ -55,3 +59,14 @@
 
 .fancybox-thumbs-active
   transform: scale(1.15)
+
+
++r($desktop)
+  .fancybox-toolbar
+    top: 0
+    right: 0
+    button
+      transform: scale(.5)
+
+  .fancybox-navigation
+    display: none !important
