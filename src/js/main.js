@@ -81,16 +81,14 @@ $(document).ready(function(){
   //////////
 
   if( $('.homepage').length > 0 ){
-    // initHomeScroll();
-    // initHammer();
-
-    // _window.on('resize', debounce(initHomeScroll, 300))
-    // _window.on('resize', debounce(initHammer, 300))
-
     initSlick();
   }
 
+  var slickEl;
+
   function initSlick(){
+    slickEl = $('[js-main-slider]');
+
     var slickOptions = {
       autoplay: false,
       dots: false,
@@ -100,36 +98,48 @@ $(document).ready(function(){
       slidesToShow: 1
     }
 
-    $('[js-main-slider]').slick(slickOptions)
+    slickEl.slick(slickOptions);
+
+    slickEl.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      var nextSlideIndex = nextSlide + 1;
+
+      // update states
+      $('[js-stage-global]').attr('data-stage', nextSlideIndex);
+      setStageNav( nextSlideIndex );
+      setStagePhoto(nextSlideIndex);
+    });
+
+
   }
 
+  //////////
+  // STAGE NAV
+  //////////
 
   function setStagePhoto(num){
     $('.stage-photos__wrapper').find('img:nth-child('+num+')').addClass('is-active').siblings().removeClass('is-active');
   }
 
-
-  //////////
-  // STAGE NAV
-  //////////
+  // click handler
   $('[js-stage-nav]').on('click', 'li', function(e){
+    // navigate slick
     var section = $(this).data('stage');
-
-    if ( section ){
-      //
-      // var totalSections = $('.stage-background img').length;
-      //
-      // $('body, html').animate({
-      //     scrollTop: _document.height() / section }, 1000);
-
-      // set class
-      $(this).siblings().removeClass('is-active');
-      $(this).addClass('is-active');
-    }
+    slickEl.slick("slickGoTo", section - 1)
 
     e.preventDefault();
+  });
 
-  })
+  function setStageNav(num){
+    var el = $('[js-stage-nav] li[data-stage='+num+']')
+    var section = el.data('stage');
+
+    if ( section ){
+      // set class
+      el.siblings().removeClass('is-active');
+      el.addClass('is-active');
+    }
+  }
+
 
   //////////
   // GALLERY
@@ -268,94 +278,5 @@ $(document).ready(function(){
 
   });
 
-
-
-
-  // function initHomeScroll(){
-  //   var scrollContainer = $.jInvertScroll([
-  //     '.scroll'
-  //   ], {
-  //     width: 'auto',	// Page width (auto or int value)
-  //     height: 'auto',	// Page height (the shorter, the faster the scroll)
-  //     onScroll: function(percent) {
-  //       // get back multiplier
-  //       var sPercent = percent * 2;
-  //
-  //       // get sections
-  //       var totalSections = $('.stage-background img').length;
-  //       var currentSection = Math.ceil(sPercent * totalSections)
-  //
-  //       setStagePhoto(currentSection);
-  //      }
-  //   });
-  //   if ( _window.width() > 800 ){
-  //     if ( !$('body').is('.is-jInvertScroll') ){
-  //       scrollContainer.reinitialize();
-  //     }
-  //   } else {
-  //     if ( $('body').is('.is-jInvertScroll') ){
-  //       scrollContainer.destroy();
-  //     }
-  //   }
-  // }
-  //
-  //
-  // //////////
-  // // HAMMER - touch nav
-  // //////////
-  // function initHammer(){
-  //   if ( _window.width() < 800 ){
-  //     var hammerContainer = document.querySelector('.stages')
-  //     var hammer = new Hammer( hammerContainer );
-  //     var delta = {
-  //       x: 0,
-  //       y: 0
-  //     }
-  //     var offset = {
-  //       x: 0,
-  //       y: 0
-  //     }
-  //
-  //     hammer.on('panleft panright panend', throttle(function(e){
-  //       if(e.type === 'panleft' || e.type === 'panright') {
-  //         delta.x = e.deltaX;
-  //         delta.y = e.deltaY;
-  //
-  //         if ( offset.x + delta.x <= 0 ){
-  //           setDelta();
-  //         }
-  //       }
-  //
-  //       if (e.type === "panend"){
-  //         offset.x += delta.x;
-  //         offset.y += delta.y;
-  //         delta.x = 0;
-  //         delta.y = 0;
-  //
-  //         if ( offset.x <= 0 ){
-  //           setOffset();
-  //         }
-  //       }
-  //
-  //       console.log(delta, offset)
-  //
-  //       e.preventDefault();
-  //     }),5);
-  //
-  //
-  //     var setDelta = function(){
-  //       $(hammerContainer).css({
-  //         'transform': 'translate3d('+ (offset.x + delta.x) +'px,0,0)'
-  //       })
-  //     }
-  //
-  //     var setOffset = function(){
-  //       $(hammerContainer).css({
-  //         'transform': 'translate3d('+offset.x+'px,0,0)'
-  //       })
-  //     }
-  //
-  //   }
-  // }
 
 });
