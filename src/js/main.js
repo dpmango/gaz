@@ -60,7 +60,7 @@ $(document).ready(function(){
   	.on('click', '[href="#"]', function(e) {
   		e.preventDefault();
   	})
-    
+
     // HAMBURGER TOGGLER
     .on('click', '[js-hamburger]', function(){
       $(this).toggleClass('is-active');
@@ -216,7 +216,7 @@ $(document).ready(function(){
       //   "zoom-in-out'
       //   "rotate'
       //
-      transitionEffect : "zoom-in-out",
+      transitionEffect : "slide",
       thumbs   : {
         autoStart : true
       },
