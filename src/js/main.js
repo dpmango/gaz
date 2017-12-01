@@ -94,10 +94,13 @@ $(document).ready(function(){
 
     var slickOptions = {
       autoplay: false,
+      accessibility: false,
       dots: false,
       arrows: false,
       infinite: false,
-      speed: 300,
+      speed: 1000,
+      useCSS: true,
+      cssEase: 'ease',
       slidesToShow: 1,
       adaptiveHeight: true
     }
