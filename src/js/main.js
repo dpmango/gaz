@@ -77,43 +77,32 @@ $(document).ready(function(){
 
   //////////
   // HORIZONTAL SCROLLER
+  // with slick carousel
   //////////
 
   if( $('.homepage').length > 0 ){
-    initHomeScroll();
-    initHammer();
+    // initHomeScroll();
+    // initHammer();
 
-    _window.on('resize', debounce(initHomeScroll, 300))
-    _window.on('resize', debounce(initHammer, 300))
+    // _window.on('resize', debounce(initHomeScroll, 300))
+    // _window.on('resize', debounce(initHammer, 300))
+
+    initSlick();
   }
 
-  function initHomeScroll(){
-    var scrollContainer = $.jInvertScroll([
-      '.scroll'
-    ], {
-      width: 'auto',	// Page width (auto or int value)
-      height: 'auto',	// Page height (the shorter, the faster the scroll)
-      onScroll: function(percent) {
-        // get back multiplier
-        var sPercent = percent * 2;
-
-        // get sections
-        var totalSections = $('.stage-background img').length;
-        var currentSection = Math.ceil(sPercent * totalSections)
-
-        setStagePhoto(currentSection);
-       }
-    });
-    if ( _window.width() > 800 ){
-      if ( !$('body').is('.is-jInvertScroll') ){
-        scrollContainer.reinitialize();
-      }
-    } else {
-      if ( $('body').is('.is-jInvertScroll') ){
-        scrollContainer.destroy();
-      }
+  function initSlick(){
+    var slickOptions = {
+      autoplay: false,
+      dots: false,
+      arrows: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1
     }
+
+    $('[js-main-slider]').slick(slickOptions)
   }
+
 
   function setStagePhoto(num){
     $('.stage-photos__wrapper').find('img:nth-child('+num+')').addClass('is-active').siblings().removeClass('is-active');
@@ -127,11 +116,11 @@ $(document).ready(function(){
     var section = $(this).data('stage');
 
     if ( section ){
-
-      var totalSections = $('.stage-background img').length;
-
-      $('body, html').animate({
-          scrollTop: _document.height() / section }, 1000);
+      //
+      // var totalSections = $('.stage-background img').length;
+      //
+      // $('body, html').animate({
+      //     scrollTop: _document.height() / section }, 1000);
 
       // set class
       $(this).siblings().removeClass('is-active');
@@ -197,6 +186,11 @@ $(document).ready(function(){
     },
 
   });
+
+
+  //////////
+  // PNG + CANVAS FUNCTIONS
+  //////////
 
   // TRIGGER WITH TRANSPARENT BG CLICK THROUG
   var ctx = document.createElement("canvas").getContext("2d");
@@ -277,62 +271,91 @@ $(document).ready(function(){
 
 
 
-  //////////
-  // HAMMER - touch nav
-  //////////
-  function initHammer(){
-    if ( _window.width() < 800 ){
-      var hammerContainer = document.querySelector('.stages')
-      var hammer = new Hammer( hammerContainer );
-      var delta = {
-        x: 0,
-        y: 0
-      }
-      var offset = {
-        x: 0,
-        y: 0
-      }
-
-      hammer.on('panleft panright panend', throttle(function(e){
-        if(e.type === 'panleft' || e.type === 'panright') {
-          delta.x = e.deltaX;
-          delta.y = e.deltaY;
-
-          if ( offset.x + delta.x <= 0 ){
-            setDelta();
-          }
-        }
-
-        if (e.type === "panend"){
-          offset.x += delta.x;
-          offset.y += delta.y;
-          delta.x = 0;
-          delta.y = 0;
-
-          if ( offset.x <= 0 ){
-            setOffset();
-          }
-        }
-
-        console.log(delta, offset)
-
-        e.preventDefault();
-      }),5);
-
-
-      var setDelta = function(){
-        $(hammerContainer).css({
-          'transform': 'translate3d('+ (offset.x + delta.x) +'px,0,0)'
-        })
-      }
-
-      var setOffset = function(){
-        $(hammerContainer).css({
-          'transform': 'translate3d('+offset.x+'px,0,0)'
-        })
-      }
-
-    }
-  }
+  // function initHomeScroll(){
+  //   var scrollContainer = $.jInvertScroll([
+  //     '.scroll'
+  //   ], {
+  //     width: 'auto',	// Page width (auto or int value)
+  //     height: 'auto',	// Page height (the shorter, the faster the scroll)
+  //     onScroll: function(percent) {
+  //       // get back multiplier
+  //       var sPercent = percent * 2;
+  //
+  //       // get sections
+  //       var totalSections = $('.stage-background img').length;
+  //       var currentSection = Math.ceil(sPercent * totalSections)
+  //
+  //       setStagePhoto(currentSection);
+  //      }
+  //   });
+  //   if ( _window.width() > 800 ){
+  //     if ( !$('body').is('.is-jInvertScroll') ){
+  //       scrollContainer.reinitialize();
+  //     }
+  //   } else {
+  //     if ( $('body').is('.is-jInvertScroll') ){
+  //       scrollContainer.destroy();
+  //     }
+  //   }
+  // }
+  //
+  //
+  // //////////
+  // // HAMMER - touch nav
+  // //////////
+  // function initHammer(){
+  //   if ( _window.width() < 800 ){
+  //     var hammerContainer = document.querySelector('.stages')
+  //     var hammer = new Hammer( hammerContainer );
+  //     var delta = {
+  //       x: 0,
+  //       y: 0
+  //     }
+  //     var offset = {
+  //       x: 0,
+  //       y: 0
+  //     }
+  //
+  //     hammer.on('panleft panright panend', throttle(function(e){
+  //       if(e.type === 'panleft' || e.type === 'panright') {
+  //         delta.x = e.deltaX;
+  //         delta.y = e.deltaY;
+  //
+  //         if ( offset.x + delta.x <= 0 ){
+  //           setDelta();
+  //         }
+  //       }
+  //
+  //       if (e.type === "panend"){
+  //         offset.x += delta.x;
+  //         offset.y += delta.y;
+  //         delta.x = 0;
+  //         delta.y = 0;
+  //
+  //         if ( offset.x <= 0 ){
+  //           setOffset();
+  //         }
+  //       }
+  //
+  //       console.log(delta, offset)
+  //
+  //       e.preventDefault();
+  //     }),5);
+  //
+  //
+  //     var setDelta = function(){
+  //       $(hammerContainer).css({
+  //         'transform': 'translate3d('+ (offset.x + delta.x) +'px,0,0)'
+  //       })
+  //     }
+  //
+  //     var setOffset = function(){
+  //       $(hammerContainer).css({
+  //         'transform': 'translate3d('+offset.x+'px,0,0)'
+  //       })
+  //     }
+  //
+  //   }
+  // }
 
 });

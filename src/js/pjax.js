@@ -51,7 +51,7 @@ $(document).ready(function(){
     // }
 
     if ( $(container).not('.homepage').length > 0 ) {
-      $('body').css('height', 'auto')
+      // $('body').css('height', 'auto')
     }
   });
 

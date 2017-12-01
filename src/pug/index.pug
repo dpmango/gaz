@@ -11,57 +11,110 @@ block content
       .stage-photos__wrapper
         img.is-active(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-1.png' srcset='img/stagePhoto-1@2x.png 2x')
         img(js-png-clickthrough js-png-hover data-for-gallery="2" src='img/stagePhoto-2.png' srcset='img/stagePhoto-2@2x.png 2x')
-
+    
+    
+    // SLIDING SECTION
+    .stage-slider(js-main-slider)
+      .stage-slide(data-stage="1")
       
-    // TEXT
-    .stage-text.scroll
-      .stage-text__wrapper
-        a.stage-text__top(href="stage1_info.html")
-          .stage-text__title <span>Проект</span> <br> <span>века</span>
-          .stage-text__logo
-            img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
-        img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
-        .stage-text__short Американская компания Ford Motor Company и Высший совет народного хозяйства СССР заключают соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. В итоге благодаря западным технологиям и советскому энтузиазму завод построили в рекордные сроки — за полтора года. В соответствии с соглашением ГАЗ получал техническую поддержку от Ford Motor Company на протяжении пяти лет после пуска завода.
-      .stage-text__wrapper.stage-text__wrapper--color2
-        a.stage-text__top(href="stage1_info.html")
-          .stage-text__title <span>Испытано</span> <br> <span>дорогами России</span>
-        .stage-text__short
-          p Практически нет уголка в нашей стране, где бы не оставили следы своих шин газов- ские автомобили. Они побывали во всех климатических зонах, прошли испытания в российском полюсе холода в Якутии, первыми преодолели непроходимые болота Забайкалья, участвовали во Всесоюзных автопробегах. За ходом таких испытаний следила вся страна. Участников горячо приветствовали в каждом населённом пункте, куда они прибывали.
-          p Газета «Правда» назвала участников одного из крупнейших пробегов 1933 года покорителями пустыни, а всё происходящее сравнила с полётом в стратосферу, который совершили к тому времени советские воздухоплаватели.
-  
-    // BACKGROUND
-    .stage-background.scroll
-      //- img(src='img/stageBg-1.png' srcset="img/stageBg-1@2x.png 2x")
-      picture
-        source(media="(min-width: 800px)" srcset="img/stageBg-1.png 1x, img/stageBg-1@2x.png 2x")
-        source(media="(max-width: 800px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
-        img(src="img/stageBg-1.png")
-            
-      img(src='img/stageBg-2.png' srcset="img/stageBg-2@2x.png 2x")
-              
-              
-    // TIMELINE
-    .stage-timeline.scroll
-      .stage-timeline__wrapper
-        .stage-timeline__road
-          // repeat-x like ?? -- refactor
-          img(src='img/road.png' srcset="img/road@2x.png 2x")
-          img(src='img/road.png' srcset="img/road@2x.png 2x")
-          img(src='img/road.png' srcset="img/road@2x.png 2x")
+        // TEXT
+        .stage-text
+          .stage-text__wrapper
+            a.stage-text__top(href="stage1_info.html")
+              .stage-text__title <span>Проект</span> <br> <span>века</span>
+              .stage-text__logo
+                img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
+            img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
+            .stage-text__short Американская компания Ford Motor Company и Высший совет народного хозяйства СССР заключают соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. В итоге благодаря западным технологиям и советскому энтузиазму завод построили в рекордные сроки — за полтора года. В соответствии с соглашением ГАЗ получал техническую поддержку от Ford Motor Company на протяжении пяти лет после пуска завода.
         
-        .stage-timeline__cars
-          a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
-            img(src='img/car1_1.png' srcset='img/car1_1@2x.png 2x')
-          a.stage-car.stage-car--1_2(href="stage1_car_2.html")
-            img(src='img/car1_2.png' srcset='img/car1_2@2x.png 2x')
+        // BACKGROUND
+        .stage-background
+          //- img(src='img/stageBg-1.png' srcset="img/stageBg-1@2x.png 2x")
+          picture
+            source(media="(min-width: 800px)" srcset="img/stageBg-1.png 1x, img/stageBg-1@2x.png 2x")
+            source(media="(max-width: 800px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
+            img(src="img/stageBg-1.png")
+              
+        // TIMELINE
+        .stage-timeline
+          .stage-timeline__wrapper
+            .stage-timeline__road
+              // repeat-x like ?? -- refactor
+              img(src='img/road.png' srcset="img/road@2x.png 2x")
+              img(src='img/road.png' srcset="img/road@2x.png 2x")
+            
+            .stage-timeline__cars
+              a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
+                img(src='img/car1_1.png' srcset='img/car1_1@2x.png 2x')
+              a.stage-car.stage-car--1_2(href="stage1_car_2.html")
+                img(src='img/car1_2.png' srcset='img/car1_2@2x.png 2x')
+                  
+      
+      // slide
+      .stage-slide(data-stage="2")
+      
+        // TEXT
+        .stage-text
+          .stage-text__wrapper.stage-text__wrapper--color2
+            a.stage-text__top(href="stage1_info.html")
+              .stage-text__title <span>Испытано</span> <br> <span>дорогами России</span>
+            .stage-text__short
+              p Практически нет уголка в нашей стране, где бы не оставили следы своих шин газов- ские автомобили. Они побывали во всех климатических зонах, прошли испытания в российском полюсе холода в Якутии, первыми преодолели непроходимые болота Забайкалья, участвовали во Всесоюзных автопробегах. За ходом таких испытаний следила вся страна. Участников горячо приветствовали в каждом населённом пункте, куда они прибывали.
+              p Газета «Правда» назвала участников одного из крупнейших пробегов 1933 года покорителями пустыни, а всё происходящее сравнила с полётом в стратосферу, который совершили к тому времени советские воздухоплаватели.
+          
+        // BACKGROUND
+        .stage-background
+          img(src='img/stageBg-2.png' srcset="img/stageBg-2@2x.png 2x")
+                  
+              
+        // TIMELINE
+        .stage-timeline
+          .stage-timeline__wrapper
+            .stage-timeline__road
+              // repeat-x like ?? -- refactor
+              img(src='img/road.png' srcset="img/road@2x.png 2x")
+              img(src='img/road.png' srcset="img/road@2x.png 2x")
 
-        .stage-timeline__cars
-          a.stage-car.stage-car--2_1(href="stage1_car_1.html" )
-            img(src='img/car2_1.png' srcset='img/car2_1@2x.png 2x')
-          a.stage-car.stage-car--2_2(href="stage1_car_2.html")
-            img(src='img/car2_2.png' srcset='img/car2_2@2x.png 2x')
+            .stage-timeline__cars
+              a.stage-car.stage-car--2_1(href="stage1_car_1.html" )
+                img(src='img/car2_1.png' srcset='img/car2_1@2x.png 2x')
+              a.stage-car.stage-car--2_2(href="stage1_car_2.html")
+                img(src='img/car2_2.png' srcset='img/car2_2@2x.png 2x')
+      
+      // slide
+      .stage-slide(data-stage="3")
+      
+      // slide
+      .stage-slide(data-stage="4")
+      
+      // slide
+      .stage-slide(data-stage="5")
+      
+      // slide
+      .stage-slide(data-stage="6")
+      
+      // slide
+      .stage-slide(data-stage="7")
 
-
+      // slide
+      .stage-slide(data-stage="8")
+      
+      // slide
+      .stage-slide(data-stage="9")
+      
+      // slide
+      .stage-slide(data-stage="10")
+      
+      // slide
+      .stage-slide(data-stage="11")
+      
+      // slide
+      .stage-slide(data-stage="12")
+      
+      // slide
+      .stage-slide(data-stage="13")
+      
+      
   include components/_stage-nav
 
 
