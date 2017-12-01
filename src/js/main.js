@@ -56,37 +56,40 @@ $(document).ready(function(){
 
 
  	// Prevent # behavior
-	$('[href="#"]').click(function(e) {
-		e.preventDefault();
-	});
+  $(document)
+  	.on('click', '[href="#"]', function(e) {
+  		e.preventDefault();
+  	})
+    
+    // HAMBURGER TOGGLER
+    .on('click', '[js-hamburger]', function(){
+      $(this).toggleClass('is-active');
+      $('.mobile-navi').toggleClass('is-active');
+    });
 
-	// Smoth scroll
-	$('a[href^="#section"]').click( function() {
-        var el = $(this).attr('href');
-        $('body, html').animate({
-            scrollTop: $(el).offset().top}, 1000);
-        return false;
-	});
 
-  // HAMBURGER TOGGLER
-  $('[js-hamburger]').on('click', function(){
-    $(this).toggleClass('is-active');
-    $('.mobile-navi').toggleClass('is-active');
-  });
+  //////////
+  // TRIGGERED EACH TIME PJAX DONE
+  //////////
+
+  function pageReady(){
+    if( $('.homepage').length > 0 ){
+      initSlick();
+      listenScroll();
+      initFancybox();
+
+      _window.on('resize', debounce(listenScroll, 300))
+    }
+  }
+
+  pageReady();
+
 
 
   //////////
   // HORIZONTAL SCROLLER
   // with slick carousel
   //////////
-
-  if( $('.homepage').length > 0 ){
-    initSlick();
-    listenScroll();
-
-    _window.on('resize', debounce(listenScroll, 300))
-  }
-
   var slickEl;
 
   function initSlick(){
@@ -106,6 +109,7 @@ $(document).ready(function(){
     }
 
     slickEl.slick(slickOptions);
+    // .slick('slickFilter', '  .stage-slide');
 
     slickEl.on('beforeChange', function(event, slick, currentSlide, nextSlide){
       var nextSlideIndex = nextSlide + 1;
@@ -129,7 +133,7 @@ $(document).ready(function(){
   }
 
   // click handler
-  $('[js-stage-nav]').on('click', 'li', function(e){
+  $(document).on('click', '[js-stage-nav] li', function(e){
     // navigate slick
     var section = $(this).data('stage');
     slickEl.slick("slickGoTo", section - 1)
@@ -162,6 +166,8 @@ $(document).ready(function(){
         } else if ( delta < 0 ){
           slickEl.slick("slickPrev")
         }
+
+
       }, 300, {
         'leading': true
       });
@@ -178,59 +184,61 @@ $(document).ready(function(){
   //////////
   // GALLERY
   //////////
-  $().fancybox({
-    selector : '[js-fancybox] > span',
-    loop     : true,
-    infobar  : false,
-    protect  : true,
-    buttons : [
-      // 'slideShow',
-      // 'fullScreen',
-      // 'thumbs',
-      // 'share',
-      //'download',
-      //'zoom',
-      'close'
-    ],
-    image : {
-      // Wait for images to load before displaying
-      // Requires predefined image dimensions
-      // If 'auto' - will zoom in thumbnail if 'width' and 'height' attributes are found
-      preload : "auto"
-    },
-    // Transition effect between slides
-    //
-    // Possible values:
-    //   false            - disable
-    //   "fade'
-    //   "slide'
-    //   "circular'
-    //   "tube'
-    //   "zoom-in-out'
-    //   "rotate'
-    //
-    transitionEffect : "zoom-in-out",
-    thumbs   : {
-      autoStart : true
-    },
-    btnTpl : {
+  function initFancybox(){
+    $().fancybox({
+      selector : '[js-fancybox] > span',
+      loop     : true,
+      infobar  : false,
+      protect  : true,
+      buttons : [
+        // 'slideShow',
+        // 'fullScreen',
+        // 'thumbs',
+        // 'share',
+        //'download',
+        //'zoom',
+        'close'
+      ],
+      image : {
+        // Wait for images to load before displaying
+        // Requires predefined image dimensions
+        // If 'auto' - will zoom in thumbnail if 'width' and 'height' attributes are found
+        preload : "auto"
+      },
+      // Transition effect between slides
+      //
+      // Possible values:
+      //   false            - disable
+      //   "fade'
+      //   "slide'
+      //   "circular'
+      //   "tube'
+      //   "zoom-in-out'
+      //   "rotate'
+      //
+      transitionEffect : "zoom-in-out",
+      thumbs   : {
+        autoStart : true
+      },
+      btnTpl : {
 
-        close : '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
-                    '<i class="icon icon-gallery-close"></i>' +
-                '</button>',
+          close : '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
+                      '<i class="icon icon-gallery-close"></i>' +
+                  '</button>',
 
-        // Arrows
-        arrowLeft : '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
-                        '<i class="icon icon-gallery-left"></i>' +
-                      '</button>',
+          // Arrows
+          arrowLeft : '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
+                          '<i class="icon icon-gallery-left"></i>' +
+                        '</button>',
 
-        arrowRight : '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
-                      '<i class="icon icon-gallery-right"></i>' +
-                    '</button>'
-    },
+          arrowRight : '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
+                        '<i class="icon icon-gallery-right"></i>' +
+                      '</button>'
+      },
 
-  });
+    });
 
+  }
 
   //////////
   // PNG + CANVAS FUNCTIONS
@@ -239,7 +247,7 @@ $(document).ready(function(){
   // TRIGGER WITH TRANSPARENT BG CLICK THROUG
   var ctx = document.createElement("canvas").getContext("2d");
 
-  $('[js-png-clickthrough]').on("mousedown", function(event) {
+  $(document).on("mousedown", '[js-png-clickthrough]', function(event) {
 
     // Get click coordinates
     var x = event.pageX - this.offsetLeft,
@@ -269,7 +277,7 @@ $(document).ready(function(){
   });
 
   // mobile toggler
-  $('[js-start-gallery]').on('click', function(e){
+  $(document).on('click', '[js-start-gallery]', function(e){
     var galleryId = $(this).data('for-gallery');
 
     if ( galleryId ){
@@ -277,7 +285,7 @@ $(document).ready(function(){
     }
   })
 
-  $('[js-png-hover]').on("mousemove", throttle(function(event) {
+  $(document).on("mousemove", '[js-png-hover]', throttle(function(event) {
     // Get click coordinates
     var x = event.pageX - this.offsetLeft,
         y = event.offsetY - this.offsetTop,
@@ -302,7 +310,7 @@ $(document).ready(function(){
 
 
   // stage car click handler
-  $('.stage-car').on('click', function(e){
+  $(document).on('click', '.stage-car', function(e){
     if ( $(e.target).is('img') ){
 
     } else {
@@ -310,6 +318,64 @@ $(document).ready(function(){
       e.stopPropagation();
     }
 
+  });
+
+
+
+
+
+  //////////
+  // BARBA PJAX
+  //////////
+
+
+  Barba.Pjax.Dom.containerClass = "page";
+
+  var FadeTransition = Barba.BaseTransition.extend({
+    start: function() {
+      Promise
+        .all([this.newContainerLoading, this.fadeOut()])
+        .then(this.fadeIn.bind(this));
+    },
+
+    fadeOut: function() {
+      return $(this.oldContainer).animate({ opacity: .5 }, 200).promise();
+    },
+
+    fadeIn: function() {
+      var _this = this;
+      var $el = $(this.newContainer);
+
+      $(this.oldContainer).hide();
+
+      $el.css({
+        visibility : 'visible',
+        opacity : .5
+      });
+
+      $el.animate({ opacity: 1 }, 200, function() {
+        document.body.scrollTop = 0;
+        _this.done();
+      });
+    }
+  });
+
+  Barba.Pjax.getTransition = function() {
+    return FadeTransition;
+  };
+
+  Barba.Prefetch.init();
+  Barba.Pjax.start();
+
+  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+    // console.log(oldStatus.url.split("/").pop())
+    // if ( oldStatus.url.split("/").pop() !== "homepage.html" ){
+    //   $('body').css('height', 'auto')
+    // } else {
+    //   initHomeScroll();
+    // }
+
+    pageReady();
   });
 
 

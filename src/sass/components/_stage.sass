@@ -34,7 +34,7 @@
       transition: transform .5s ease-in, opacity .3s linear
       &.is-active
         // !!! refactor
-        pointer-events: none
+        pointer-events: all
         opacity: 1
         transform: translate3d(0,0%,0)
       &.is-hovered
@@ -48,12 +48,14 @@
 
 // STAGE SLIDER
 .stage-slider
+  z-index: 4
   font-size: 0
 
 .stage-slide
   position: relative
   min-height: 100vh
 
+.stages
   &::after
     display: inline-block
     content: ' '
@@ -61,22 +63,23 @@
     top: 0
     left: 0
     right: 0
-    z-index: -1
+    z-index: 1
     bottom: calc(5vh + 84px + 150px)
     background: linear-gradient( to bottom, #ded5c5 0%, #d8bb91 100%)
     transition: background .2s ease
+
 +r($wide)
-  .stage-slide
+  .stages
     &::after
       bottom: calc(5vh + 64px + 80px)
 
 +r($desktop)
-  .stage-slide
+  .stages
     &::after
       bottom: calc(5vh + 54px + 60px)
 
 +r($tablet)
-  .stage-slide
+  .stages
     &::after
       bottom: 0
 
