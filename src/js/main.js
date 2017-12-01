@@ -105,6 +105,7 @@ $(document).ready(function(){
 
       // update states
       $('[js-stage-global]').attr('data-stage', nextSlideIndex);
+      $('[js-stage-nav]').attr('data-stage', nextSlideIndex);
       setStageNav( nextSlideIndex );
       setStagePhoto(nextSlideIndex);
     });

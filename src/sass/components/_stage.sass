@@ -60,18 +60,18 @@
     top: 0
     left: 0
     right: 0
-    bottom: calc(5vh + 84px)
+    bottom: calc(5vh + 84px + 150px)
     background: linear-gradient( to bottom, #ded5c5 0%, #d8bb91 100%)
 
 +r($wide)
   .stage-slide
     &::after
-      bottom: calc(5vh + 64px)
+      bottom: calc(5vh + 64px + 80px)
 
 +r($desktop)
   .stage-slide
     &::after
-      bottom: calc(5vh + 54px)
+      bottom: calc(5vh + 54px + 60px)
 
 +r($tablet)
   .stage-slide
@@ -337,3 +337,12 @@
     &__road
       img
         height: 200px
+
+
+
+// STAGE BACKGROUND CONTROLS
+.stages
+  &[data-stage="2"]
+    .stage-slide
+      &::after
+        background: linear-gradient( to bottom, rgb(252,234,136) 0%, rgb(157,192,196) 100%)
