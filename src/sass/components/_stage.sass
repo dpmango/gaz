@@ -1,48 +1,10 @@
 // INDEX
 
-.scroll
-  position: fixed
-  top: 0
-  left: 0
-  transition: transform .05s linear
-
-+r($tablet)
-  .scroll
-    position: static
-
-// управление параллаксом детей через width
-// Math.floor(deltaW * scrollPercent)
-
 .stages
   position: relative
   flex: 1 1 auto
   display: flex
   flex-direction: column
-  transition: transform .1s linear
-  &::after
-    display: inline-block
-    content: ' '
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
-    bottom: calc(5vh + 84px)
-    background: linear-gradient( to bottom, #ded5c5 0%, #d8bb91 100%)
-
-+r($wide)
-  .stages
-    &::after
-      bottom: calc(5vh + 64px)
-
-+r($desktop)
-  .stages
-    &::after
-      bottom: calc(5vh + 54px)
-
-+r($tablet)
-  .stages
-    &::after
-      bottom: 0
 
 // .stage
 //   position: relative
@@ -57,20 +19,22 @@
   top: 0
   left: 0
   right: 0
+  pointer-events: none
   &__wrapper
     position: relative
     img
       position: fixed
       top: 0
       left: 0
-      max-width: 100%
+      width: 100%
       transform-origin: top center
       opacity: 0
       pointer-events: none
       transform: translate3d(0,-100%,0)
       transition: transform .5s ease-in, opacity .3s linear
       &.is-active
-        pointer-events: all
+        // !!! refactor
+        pointer-events: none
         opacity: 1
         transform: translate3d(0,0%,0)
       &.is-hovered
@@ -82,11 +46,46 @@
     display: none
 
 
+// STAGE SLIDER
+.stage-slider
+
+.stage-slide
+  position: relative
+  min-height: 100vh
+
+  &::after
+    display: inline-block
+    content: ' '
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: calc(5vh + 84px)
+    background: linear-gradient( to bottom, #ded5c5 0%, #d8bb91 100%)
+
++r($wide)
+  .stage-slide
+    &::after
+      bottom: calc(5vh + 64px)
+
++r($desktop)
+  .stage-slide
+    &::after
+      bottom: calc(5vh + 54px)
+
++r($tablet)
+  .stage-slide
+    &::after
+      bottom: 0
+
+
+
 // BG
 .stage-background
+  position: absolute
   display: flex
   align-items: flex-end
-  width: 280vw
+  width: 100vw
   top: auto
   // stage nav + road offset - 10 road boarder
   bottom: calc(5vh + 84px + 155px)
@@ -109,13 +108,14 @@
 
 +r($desktop)
   .stage-background
-    width: 100vw
     bottom: calc(5vh + 54px + 86px)
 
 
 // TEXT
 .stage-text
-  width: 280vw
+  position: absolute
+  width: 100vw
+  top: 0
   bottom: calc(5vh + 84px + 100px)
   display: flex
   color: $colorRed
@@ -123,8 +123,7 @@
   pointer-events: none
   &__wrapper
     display: block
-    max-width: calc(50vw - 8.3vw)
-    margin: auto 8.3vw auto 50vw
+    margin: auto 8.3% auto 50%
     padding: 30px 0px 30px 50px
     cursor: pointer
     pointer-events: all
@@ -203,6 +202,7 @@
 
 +r($tablet)
   .stage-text
+    position: static
     width: 100vw
     align-items: flex-start
     pointer-events: all
@@ -266,7 +266,8 @@
 
 // TIMELINE
 .stage-timeline
-  width: 280vw
+  position: absolute
+  width: 100vw
   z-index: 30
   top: auto
   // stage nav offset
@@ -310,7 +311,7 @@
 
 +r($tablet)
   .stage-timeline
-    width: 100vw
+    position: static
     &__wrapper
       min-height: 350px
     &__road

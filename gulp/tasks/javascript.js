@@ -10,6 +10,7 @@ gulp.task('javascript:vendor', function() {
   return gulp.src([
       path.resolve('bower_components', 'jquery/dist/jquery.min.js'),
       path.resolve('bower_components', 'svg4everybody/dist/svg4everybody.min.js'),
+      path.resolve('bower_components', 'slick-carousel/slick/slick.js'),
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.js'),
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.hacks.js'),
       path.resolve('bower_components', 'fancybox/dist/jquery.fancybox.min.js'),

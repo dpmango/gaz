@@ -15,6 +15,7 @@
     "svg4everybody": "^2.1.9",
     "viewport-units-buggyfill": "^0.6.2",
     "scrollmagic": "^2.0.5",
-    "fancybox": "^3.2.5"
+    "fancybox": "^3.2.5",
+    "slick-carousel": "^1.8.1"
   }
 }
