@@ -105,7 +105,20 @@ $(document).ready(function(){
       useCSS: true,
       cssEase: 'ease',
       slidesToShow: 1,
-      adaptiveHeight: true
+      adaptiveHeight: true,
+      draggable: false,
+      swipe: false,
+      touchMove: false,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            draggable: true,
+            swipe: true,
+            touchMove: true,
+          }
+        }
+      ]
     }
 
     slickEl.slick(slickOptions);
