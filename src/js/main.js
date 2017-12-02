@@ -105,7 +105,7 @@ $(document).ready(function(){
       useCSS: true,
       cssEase: 'ease',
       slidesToShow: 1,
-      adaptiveHeight: true,
+      adaptiveHeight: false,
       draggable: false,
       swipe: false,
       touchMove: false,
@@ -113,6 +113,7 @@ $(document).ready(function(){
         {
           breakpoint: 800,
           settings: {
+            speed: 500,
             draggable: true,
             swipe: true,
             touchMove: true,
