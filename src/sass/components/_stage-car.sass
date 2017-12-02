@@ -2,7 +2,7 @@
 .stage-car
   flex: 0 0 auto
   cursor: default
-  img
+  img, svg
     max-width: 100%
     transform-origin: center
     cursor: pointer
@@ -10,14 +10,22 @@
     &.is-hovered, &:hover
       cursor: pointer
       transform: scale(1.02)
+  svg
+    position: relative
+    width: 100%
+    overflow: visible
   &--1_1
     align-self: flex-end
     margin-left: 17%
     margin-bottom: 30px
+    svg
+      width: 406px
   &--1_2
     align-self: flex-start
     margin-left: 13%
     margin-bottom: 55px
+    svg
+      width: 560px
 
   &--2_1
     align-self: center
@@ -93,3 +101,17 @@
     &--1_2
       max-width: 290px
       top: -60px
+
+
+// WHEEL ANIMATION
+// .stage-car
+//   .wheel_1, .wheel_2
+//     transform-origin: center center
+//     animation: wheel-rotate 4s linear infinite
+//
+//
+// @keyframes wheel-rotate
+//   from
+//     transform: rotate(0deg)
+//   to
+//     transform: rotate(360deg)

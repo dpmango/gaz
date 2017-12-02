@@ -346,7 +346,19 @@ $(document).ready(function(){
   });
 
 
-
+  //////////
+  // ANIMATE
+  //////////
+  // anime({
+  //   targets: '.stage-car .wheel_1, .stage-car .wheel_2',
+  //   // translateX: [
+  //   //   { value: 100, duration: 1200 },
+  //   //   { value: 0, duration: 800 }
+  //   // ],
+  //   rotate: '1turn',
+  //   duration: 4000,
+  //   loop: true
+  // });
 
   //////////
   // TELEPORT PLUGIN
@@ -449,3 +461,40 @@ $(document).ready(function(){
 
 
 });
+
+
+
+// GLOBAL WINDOW FUNCTIONS
+var svgNS = "http://www.w3.org/2000/svg";
+window.Custom = {}; // global obj
+
+Custom.initSvg = function(evt){
+  var svgDoc, svgEl;
+  if ( window.svgDocument == null )
+  {
+    svgDoc = evt.target.ownerDocument;
+    svgEl = evt.target;
+  }
+  addRotateTransform(svgDoc, svgEl, 'wheel_1', 4, 1);
+  addRotateTransform(svgDoc, svgEl, 'wheel_2', 4, 1);
+}
+
+function addRotateTransform(target_doc, target_el, target_class, dur, dir){
+  var my_element = target_el.getElementsByClassName(target_class)[0];
+  var a = target_doc.createElementNS(svgNS, "animateTransform");
+
+  var bb = my_element.getBBox();
+  var cx = bb.x + bb.width/2;
+  var cy = bb.y + bb.height/2;
+
+  a.setAttributeNS(null, "attributeName", "transform");
+  a.setAttributeNS(null, "attributeType", "XML");
+  a.setAttributeNS(null, "type", "rotate");
+  a.setAttributeNS(null, "dur", dur + "s");
+  a.setAttributeNS(null, "repeatCount", "indefinite");
+  a.setAttributeNS(null, "from", "0 "+cx+" "+cy);
+  a.setAttributeNS(null, "to", 360*dir+" "+cx+" "+cy);
+
+  my_element.appendChild(a);
+  a.beginElement();
+}
