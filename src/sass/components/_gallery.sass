@@ -8,6 +8,44 @@
   .fancybox-bg
     opacity: .95
 
+.fancybox-inner
+  display: flex
+  flex-direction: column
+//   padding-left: 30px
+//   padding-right: 30px
+//   padding-bottom: 100px
+
+.fancybox-caption-wrap
+  margin-top: auto
+  position: static
+
+// .fancybox-slide
+//   .fancybox-image-wrap
+//     bottom: 100px
+
+.fancybox-caption-wrap
+  display: flex
+  flex-direction: column
+  min-height: 100px
+
+
+.fancybox-caption
+  margin-bottom: auto
+  padding: 15px 0 0 0
+
++r($wide)
+  .fancybox-caption
+    font-size: 24px
+
++r($tablet)
+  .fancybox-caption
+    font-size: 20px
+
++r($mobile)
+  .fancybox-caption
+    font-size: 16px
+
+
 .fancybox-toolbar
   top: 40px
   right: 40px
@@ -20,6 +58,15 @@
 
 .fancybox-navigation button:before
   display: none
+
+
+.fancybox-can-drag
+  .fancybox-toolbar
+    opacity: 0
+  .fancybox-caption
+    opacity: 0
+  .fancybox-navigation
+    opacity: 0
 
 // show thumbs
 // @media all and (min-width: 800px)
@@ -61,12 +108,16 @@
   transform: scale(1.15)
 
 
-+r($desktop)
++r($wide)
   .fancybox-toolbar
     top: 0
     right: 0
     button
       transform: scale(.5)
+  .fancybox-navigation
+    button
+      transform: scale(.5) translateY(-50%)
 
++r($tablet)
   .fancybox-navigation
     display: none !important

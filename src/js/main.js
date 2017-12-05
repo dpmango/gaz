@@ -227,6 +227,7 @@ $(document).ready(function(){
   function initFancybox(){
     $().fancybox({
       selector : '[js-fancybox] > span',
+      margin : [50, 50, 100, 50],
       loop     : true,
       infobar  : false,
       protect  : true,
@@ -274,6 +275,9 @@ $(document).ready(function(){
           arrowRight : '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
                         '<i class="icon icon-gallery-right"></i>' +
                       '</button>'
+      },
+      mobile : {
+        margin: [0,0,0,0]
       },
 
     });
