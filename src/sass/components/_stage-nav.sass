@@ -40,39 +40,22 @@
     justify-content: center
     align-items: center
     cursor: pointer
-    .icon
-      opacity: .4
-      transition: opacity $transitionSpeed $ease
+    .ico
+      font-size: 46px
+      fill: rgba(#a88d69, .4)
+      transition: fill $transitionSpeed $ease
 
     &:hover, &.is-active
-      .icon
-        opacity: 1
-        &-stageNav-1
-          +sprite('stageNav-1-active')
-        &-stageNav-2
-          +sprite('stageNav-2-active')
-        &-stageNav-3
-          +sprite('stageNav-3-active')
-        &-stageNav-4
-          +sprite('stageNav-4-active')
-        &-stageNav-5
-          +sprite('stageNav-5-active')
-        &-stageNav-6
-          +sprite('stageNav-6-active')
-        &-stageNav-7
-          +sprite('stageNav-7-active')
-        &-stageNav-8
-          +sprite('stageNav-8-active')
-        &-stageNav-9
-          +sprite('stageNav-9-active')
-        &-stageNav10
-          +sprite('stageNav10-active')
-        &-stageNav11
-          +sprite('stageNav11-active')
-        &-stageNav12
-          +sprite('stageNav12-active')
-        &-stageNav13
-          +sprite('stageNav13-active')
+      .ico
+        fill: #7e1316
+
+  &[data-stage="2"]
+    .stage-nav__li
+      .ico
+        fill: rgba(#d5dfdc, .4)
+      &:hover, &.is-active
+        .ico
+          fill: #3c5460
 
 +r($hd)
   .stage-nav
@@ -89,12 +72,14 @@
       min-height: 64px
     &__li
       transform-origin: center center
-      transform: scale(0.8)
+      .ico
+        font-size: 36px
 
 +r($w1200)
   .stage-nav
     &__li
-      transform: scale(0.6)
+      .ico
+        font-size: 28px
 
 +r($desktop)
   .stage-nav
@@ -102,14 +87,14 @@
       padding: 0px 30px
       min-height: 54px
     &__li
-      transform: scale(0.5)
+      .ico
+        font-size: 23px
 
 +r($tablet)
   .stage-nav
     position: static
     &__li
-      // .icon
-      //   flex: 0 1 auto
+
 
 +r($mobile)
   .stage-nav
