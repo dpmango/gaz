@@ -27,10 +27,17 @@ body, html
 
 
 .page
+  position: relative
   display: flex
   flex-direction: column
-  min-height: 100vh
+  min-height: 800px
+  height: 100vh
 
++r($tablet)
+  .page
+    min-height: 100vh
+    height: auto
+    
 .container
   max-width: 1200px
   margin-left: auto

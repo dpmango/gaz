@@ -53,7 +53,13 @@
 
 .stage-slide
   position: relative
-  min-height: 100vh
+  min-height: 800px
+  height: 100vh
+
++r($tablet)
+  .stage-slide
+    min-height: 100vh
+    height: auto
 
 +r($tablet)
   .stage-slider
@@ -77,7 +83,7 @@
   &::after
     display: inline-block
     content: ' '
-    position: fixed
+    position: absolute
     top: 0
     left: 0
     right: 0
@@ -141,13 +147,11 @@
 // STAGE BACKGROUND CONTROLS + COLOR
 .stages
   &[data-stage="2"]
-    .stage-slide
-      &::after
-        background: linear-gradient( to bottom, rgb(252,234,136) 0%, rgb(157,192,196) 100%)
+    &::after
+      background: linear-gradient( to bottom, rgb(252,234,136) 0%, rgb(157,192,196) 100%)
   &[data-stage="6"]
-    .stage-slide
-      &::after
-        background: linear-gradient( to bottom, rgb(0,204,163) 0%, rgb(128,210,82) 34%, rgb(255,216,0) 100%)
+    &::after
+      background: linear-gradient( to bottom, rgb(0,204,163) 0%, rgb(128,210,82) 34%, rgb(255,216,0) 100%)
 
 
 

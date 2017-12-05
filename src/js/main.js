@@ -183,14 +183,17 @@ $(document).ready(function(){
   function listenScroll(){
     var scrollListener
 
-    if ( _window.width() > 800 ){
+    if ( _window.width() > 1023 ){
       scrollListener = debounce(function(e){
         var delta = e.originalEvent.deltaY
-        if ( delta > 0 ){
-          slickEl.slick("slickNext")
-        } else if ( delta < 0 ){
-          slickEl.slick("slickPrev")
-        }
+
+        // only when no scrollbar
+        
+        // if ( delta > 0 ){
+        //   slickEl.slick("slickNext")
+        // } else if ( delta < 0 ){
+        //   slickEl.slick("slickPrev")
+        // }
 
 
       }, 300, {
