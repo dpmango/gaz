@@ -111,7 +111,7 @@ $(document).ready(function(){
       touchMove: false,
       responsive: [
         {
-          breakpoint: 800,
+          breakpoint: 1023,
           settings: {
             speed: 500,
             draggable: true,
@@ -453,7 +453,7 @@ $(document).ready(function(){
     pageReady();
 
     // close mobile menu
-    if ( _window.width() < 800 ){
+    if ( _window.width() < 1023 ){
       $('[js-hamburger]').toggleClass('is-active');
       $('.mobile-navi').toggleClass('is-active');
     }
