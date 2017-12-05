@@ -188,7 +188,7 @@ $(document).ready(function(){
         var delta = e.originalEvent.deltaY
 
         // only when no scrollbar
-        
+
         // if ( delta > 0 ){
         //   slickEl.slick("slickNext")
         // } else if ( delta < 0 ){
@@ -206,6 +206,18 @@ $(document).ready(function(){
     }
   }
 
+  //////////
+  // FIT TEXT
+  //////////
+
+  function initFitText(){
+    if ( _window.width() < 1023 ){
+      $("[js-fit-text]").fitText(1, { minFontSize: '20px', maxFontSize: '67px' });
+    }
+  }
+
+  initFitText()
+  _window.on('resize', debounce(initFitText, 300))
 
 
 
