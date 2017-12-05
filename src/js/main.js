@@ -498,21 +498,30 @@ Custom.initSvg = function(evt){
   addRotateTransform(svgDoc, svgEl, 'wheel_2', 4, 1);
 }
 
-function addRotateTransform(target_doc, target_el, target_class, dur, dir){
+document.getElementsByClassName = function(cl) {
+  var retnode = [];
+  var elem = this.getElementsByTagName('*');
+  for (var i = 0; i < elem.length; i++) {
+    if((' ' + elem[i].className + ' ').indexOf(' ' + cl + ' ') > -1) retnode.push(elem[i]);
+  }
+  return retnode;
+};
+
+function addRotateTransform(target_doc, target_el, target_class, dur, dir) {
   var my_element = target_el.getElementsByClassName(target_class)[0];
   var a = target_doc.createElementNS(svgNS, "animateTransform");
 
   var bb = my_element.getBBox();
-  var cx = bb.x + bb.width/2;
-  var cy = bb.y + bb.height/2;
+  var cx = bb.x + bb.width / 2;
+  var cy = bb.y + bb.height / 2;
 
   a.setAttributeNS(null, "attributeName", "transform");
   a.setAttributeNS(null, "attributeType", "XML");
   a.setAttributeNS(null, "type", "rotate");
   a.setAttributeNS(null, "dur", dur + "s");
   a.setAttributeNS(null, "repeatCount", "indefinite");
-  a.setAttributeNS(null, "from", "0 "+cx+" "+cy);
-  a.setAttributeNS(null, "to", 360*dir+" "+cx+" "+cy);
+  a.setAttributeNS(null, "from", "0 " + cx + " " + cy);
+  a.setAttributeNS(null, "to", 360 * dir + " " + cx + " " + cy);
 
   my_element.appendChild(a);
   a.beginElement();
