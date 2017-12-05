@@ -7,6 +7,21 @@ $(document).ready(function(){
   var _window = $(window);
   var _document = $(document);
 
+  var settings;
+
+  function setSettings(){
+    settings = {
+      slickDelay: 500,
+      tablet: 1023
+    }
+    if ( _window.width() < settings.tablet ){
+      settings.slickDelay = 0;
+    }
+  }
+
+  setSettings();
+  _window.on('resize', debounce(setTimeout, 300));
+
   function isRetinaDisplay() {
     if (window.matchMedia) {
         var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
@@ -101,7 +116,8 @@ $(document).ready(function(){
       dots: false,
       arrows: false,
       infinite: false,
-      speed: 1000,
+      speed: 500,
+      fade: true,
       useCSS: true,
       cssEase: 'ease',
       slidesToShow: 1,
@@ -111,7 +127,7 @@ $(document).ready(function(){
       touchMove: false,
       responsive: [
         {
-          breakpoint: 1023,
+          breakpoint: settings.tablet,
           settings: {
             speed: 500,
             draggable: true,
@@ -145,6 +161,28 @@ $(document).ready(function(){
 
   }
 
+  function navSlick(id){
+    var currentSlide = $('[js-main-slider]').find('.slick-active');
+    currentSlide.addClass('slick-removing');
+    setTimeout(function(){
+      slickEl.slick("slickGoTo", id - 1);
+      currentSlide.removeClass('slick-removing')
+    }, settings.slickDelay)
+  }
+
+  function navSlickPrevNext(direction){
+    var currentSlide = $('[js-main-slider]').find('.slick-active');
+    currentSlide.addClass('slick-removing');
+    setTimeout(function(){
+      if ( direction == "next" ){
+        slickEl.slick("slickNext")
+      } else if (  direction == "prev" ) {
+        slickEl.slick("slickPrev")
+      }
+      currentSlide.removeClass('slick-removing')
+    }, settings.slickDelay)
+
+  }
   //////////
   // STAGE NAV
   //////////
@@ -159,7 +197,7 @@ $(document).ready(function(){
     var section = $(this).data('stage');
 
     if( $(document).find('.homepage').length > 0 ){
-      slickEl.slick("slickGoTo", section - 1)
+      navSlick(section);
     } else {
       window.location.href = "/#section-" + section + ""
     }
@@ -183,7 +221,7 @@ $(document).ready(function(){
   function listenScroll(){
     var scrollListener
 
-    if ( _window.width() > 1023 ){
+    if ( _window.width() > settings.tablet ){
       scrollListener = debounce(function(e){
         var scrollAvailable = false;
         var delta = e.originalEvent.deltaY
@@ -201,9 +239,9 @@ $(document).ready(function(){
         // only when no scrollbar
 
         if ( scrollAvailable && delta > 0 ){
-          slickEl.slick("slickNext")
+          navSlickPrevNext("next");
         } else if ( scrollAvailable && delta < 0 ){
-          slickEl.slick("slickPrev")
+          navSlickPrevNext("prev");
         }
 
       }, 300, {
@@ -221,7 +259,7 @@ $(document).ready(function(){
   //////////
 
   function initFitText(){
-    if ( _window.width() < 1023 ){
+    if ( _window.width() < settings.tablet ){
       $("[js-fit-text]").fitText(1, { minFontSize: '20px', maxFontSize: '67px' });
     }
   }
@@ -482,7 +520,7 @@ $(document).ready(function(){
     pageReady();
 
     // close mobile menu
-    if ( _window.width() < 1023 ){
+    if ( _window.width() < settings.tablet ){
       $('[js-hamburger]').toggleClass('is-active');
       $('.mobile-navi').toggleClass('is-active');
     }
