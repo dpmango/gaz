@@ -126,6 +126,35 @@
     // width: 100%
     height: auto
 
+  &__city, &__trees
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 200%
+    animation-iteration-count: infinite
+    animation-timing-function: linear
+    animation-name: bg-scrolling
+    background-repeat: repeat-x
+    background-size: 50% 100%
+    background-position: 0 0
+
+    img
+      opacity: 0
+  &__city
+    background-image: url('../img/stageBg-1-1.png'), url('../img/stageBg-1-1.png')
+    z-index: 1
+    animation-duration: 20s
+  &__trees
+    background-image: url('../img/stageBg-1-2.png'), url('../img/stageBg-1-2.png')
+    z-index: 2
+    animation-duration: 14s
+
+@keyframes bg-scrolling
+  100%
+    background-position: 100% 0
+
+
 
 +r($wide)
   .stage-background
