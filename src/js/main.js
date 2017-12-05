@@ -185,16 +185,26 @@ $(document).ready(function(){
 
     if ( _window.width() > 1023 ){
       scrollListener = debounce(function(e){
+        var scrollAvailable = false;
         var delta = e.originalEvent.deltaY
+
+        if ( _window.height() > 800 ){
+          scrollAvailable = true;
+        } else {
+          var scrollBottomCond = _window.scrollTop() + _window.height() > _document.height() - 40;
+          console.log(scrollBottomCond)
+          if ( scrollBottomCond && delta > 0 ){
+            scrollAvailable = true;
+          }
+        }
 
         // only when no scrollbar
 
-        // if ( delta > 0 ){
-        //   slickEl.slick("slickNext")
-        // } else if ( delta < 0 ){
-        //   slickEl.slick("slickPrev")
-        // }
-
+        if ( scrollAvailable && delta > 0 ){
+          slickEl.slick("slickNext")
+        } else if ( scrollAvailable && delta < 0 ){
+          slickEl.slick("slickPrev")
+        }
 
       }, 300, {
         'leading': true
@@ -494,8 +504,8 @@ Custom.initSvg = function(evt){
     svgDoc = evt.target.ownerDocument;
     svgEl = evt.target;
   }
-  addRotateTransform(svgDoc, svgEl, 'wheel_1', 4, 1);
-  addRotateTransform(svgDoc, svgEl, 'wheel_2', 4, 1);
+  addRotateTransform(svgDoc, svgEl, 'wheel_1', 3, 1);
+  addRotateTransform(svgDoc, svgEl, 'wheel_2', 3, 1);
 }
 
 // document.getElementsByClassName = function(cl) {
