@@ -57,8 +57,14 @@
   .stage-car
     img
       max-width: 75%
+    &--1_1
+      svg
+        width: calc(406px * 0.75)
     &--1_2
-      margin-left: 5%
+      margin-bottom: 45px
+      svg
+        width: calc(560px * 0.75)
+
     &--2_2
       margin-left: 10%
 
@@ -66,22 +72,19 @@
   .stage-car
     img
       max-width: 65%
+
     &--1_1
       margin-bottom: 25px
+      margin-left: 15%
+      svg
+        width: calc(406px * 0.65)
     &--1_2
-      margin-left: 0%
+      margin-left: 15%
       margin-bottom: 35px
+      svg
+        width: calc(560px * 0.65)
     &--2_2
       margin-left: 5%
-
-+r($desktop)
-  .stage-car
-    img
-      max-width: 55%
-    &--1_1
-      margin-bottom: 15px
-    &--1_2
-      margin-bottom: 25px
 
 // tablet and below goes as absolute
 // should be set with top/right/left/bottom
@@ -94,16 +97,18 @@
     img
       max-width: 100%
     &--1_1
-      max-width: 400px
       margin: 0
       bottom: 55px
       left: 5vw
+      svg
+        width: calc(406px * 1)
     &--1_2
-      max-width: 550px
       margin: 0
       top: -115px
       left: 20vw
       right: 2vw
+      svg
+        width: calc(560px * 1)
 
 +r($mobile)
   .stage-car
