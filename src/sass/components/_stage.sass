@@ -118,7 +118,7 @@
   width: 100vw
   top: auto
   // stage nav + road offset - 10 road boarder
-  bottom: calc(5vh + 84px + 155px)
+  bottom: calc(5vh + 84px + 160px)
   z-index: 10
   pointer-events: none
   img
@@ -145,16 +145,17 @@
   &__city
     background-image: url('../img/stageBg-1-1.png'), url('../img/stageBg-1-1.png')
     z-index: 1
-    animation-duration: 20s
+    animation-duration: 40s
+    animation-name: none
   &__trees
     background-image: url('../img/stageBg-1-2.png'), url('../img/stageBg-1-2.png')
     z-index: 2
-    animation-duration: 14s
+    animation-duration: 35s
 
 @keyframes bg-scrolling
   100%
-    background-position: 100% 0
-
+    //background-position: -100% 0
+    transform: translate3d(-50%,0,0)
 
 
 +r($wide)
@@ -417,6 +418,9 @@
     z-index: 1
     display: flex
     align-items: flex-end
+    width: 300%
+    animation: roadAnimation 15s linear infinite
+
   &__cars
     width: 100vw
     display: flex
@@ -424,6 +428,12 @@
     left: 0
     right: 0
     z-index: 2
+
+@keyframes roadAnimation
+  0%
+    transform: translate3d(0,0,0)
+  100%
+    transform: translate3d(-33%,0,0)
 
 +r($wide)
   .stage-timeline
