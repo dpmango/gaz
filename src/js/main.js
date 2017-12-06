@@ -79,6 +79,7 @@ $(document).ready(function(){
     // HAMBURGER TOGGLER
     .on('click', '[js-hamburger]', function(){
       $(this).toggleClass('is-active');
+      $('body').toggleClass('is-fixed');
       $('.mobile-navi').toggleClass('is-active');
     });
 
@@ -531,6 +532,7 @@ $(document).ready(function(){
     // close mobile menu
     if ( _window.width() < settings.tablet ){
       $('[js-hamburger]').toggleClass('is-active');
+      $('body').toggleClass('is-fixed');
       $('.mobile-navi').toggleClass('is-active');
     }
   });

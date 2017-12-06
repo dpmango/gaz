@@ -3,6 +3,10 @@ title: ГАЗ спецпроект
 bodyClass: homepage
 ---
 extends shared/_layout
+
+block header
+  include components/_stage-header
+  
 block content
   
   .stages(js-stage-global data-stage="1")

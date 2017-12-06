@@ -5,10 +5,10 @@ html(lang="ru")
     include _head
 
   body
-    block header
-      include ../components/_mobile-header
-      
     #barba-wrapper
+      block header
+        include ../components/_page-header
+        
       .page(class=bodyClass)
         block content
 

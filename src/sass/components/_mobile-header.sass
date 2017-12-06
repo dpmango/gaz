@@ -35,6 +35,7 @@
   bottom: 0
   left: 0
   right: 0
+  overflow-y: auto
   z-index: 99
   display: none
   flex-direction: column
@@ -69,21 +70,23 @@
         display: inline-block
         position: relative
         cursor: pointer
-        &::after
-          display: inline-block
-          content: ' '
-          position: absolute
-          bottom: -2px
-          height: 3px
-          left: 0
-          right: 0
-          z-index: 1
-          background: currentColor
-          transition: all $transitionSpeed ease-out
+        text-decoration: underline
+        // &::after
+        //   display: inline-block
+        //   content: ' '
+        //   position: absolute
+        //   bottom: -2px
+        //   height: 3px
+        //   left: 0
+        //   right: 0
+        //   z-index: 1
+        //   background: currentColor
+        //   transition: all $transitionSpeed ease-out
         &:hover
-          &::after
-            opacity: 0
-            bottom: -5px
+          text-decoration: none
+          // &::after
+          //   opacity: 0
+          //   bottom: -5px
 
 +rmin($tablet)
   .mobile-navi
@@ -98,8 +101,12 @@
     padding-top: 100px
     &__menu
       padding: 0 30px
+      li
+        font-size: 20px
 
 +r($mobile-s)
   .mobile-navi
     &__menu
       padding: 0 20px
+      li
+        font-size: 16px
