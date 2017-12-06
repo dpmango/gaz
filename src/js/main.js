@@ -181,8 +181,17 @@ $(document).ready(function(){
       }
       currentSlide.removeClass('slick-removing')
     }, settings.slickDelay)
-
   }
+
+  $(document)
+    .on('click', '[js-slick-prev]', function(e){
+      navSlickPrevNext("prev")
+      e.preventDefault();
+    })
+    .on('click', '[js-slick-next]', function(e){
+      navSlickPrevNext("next")
+      e.preventDefault();
+    })
   //////////
   // STAGE NAV
   //////////

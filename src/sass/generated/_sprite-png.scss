@@ -1,11 +1,11 @@
 $sprite: (
 	gallery-close: (
-		offset-x: -222px,
-		offset-y: 0px,
+		offset-x: 0px,
+		offset-y: -208px,
 		width: 73px,
 		height: 73px,
-		total-width: 295px,
-		total-height: 198px,
+		total-width: 380px,
+		total-height: 281px,
 		image: '../img/sprite.png'
 	),
 	gallery-left: (
@@ -13,8 +13,8 @@ $sprite: (
 		offset-y: 0px,
 		width: 101px,
 		height: 198px,
-		total-width: 295px,
-		total-height: 198px,
+		total-width: 380px,
+		total-height: 281px,
 		image: '../img/sprite.png'
 	),
 	gallery-right: (
@@ -22,8 +22,26 @@ $sprite: (
 		offset-y: 0px,
 		width: 101px,
 		height: 198px,
-		total-width: 295px,
-		total-height: 198px,
+		total-width: 380px,
+		total-height: 281px,
+		image: '../img/sprite.png'
+	),
+	scroll-left: (
+		offset-x: -222px,
+		offset-y: 0px,
+		width: 74px,
+		height: 141px,
+		total-width: 380px,
+		total-height: 281px,
+		image: '../img/sprite.png'
+	),
+	scroll-right: (
+		offset-x: -306px,
+		offset-y: 0px,
+		width: 74px,
+		height: 141px,
+		total-width: 380px,
+		total-height: 281px,
 		image: '../img/sprite.png'
 	),
 );
@@ -90,4 +108,10 @@ $sprite: (
 	}
 	.icon-gallery-right {
 		@include sprite(gallery-right)
+	}
+	.icon-scroll-left {
+		@include sprite(scroll-left)
+	}
+	.icon-scroll-right {
+		@include sprite(scroll-right)
 	}

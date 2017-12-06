@@ -422,7 +422,6 @@
     width: 300%
     transform: translate3d(0,0,0)
     animation: roadAnimation 15s linear infinite
-
   &__cars
     width: 100vw
     display: flex
@@ -486,3 +485,88 @@
     &__road
       img
         height: 200px
+
+
+// STAGE MOBILE NAV
+.stage-m-nav
+  display: none
+  position: relative
+  z-index: 10
+  background-image: linear-gradient( 90deg, rgb(222,213,196) 0%, rgb(216,187,145) 100%)
+  padding: 65px 40px 50px 40px
+
+
+  &__prev, &__next
+    display: flex
+    align-items: center
+    cursor: pointer
+    span
+      display: inline-block
+      font-family: 'a_BodoniOrtoTitul', serif
+      font-size: 24px
+      color: $colorRed
+      text-decoration: underline
+    .icon
+      transition: transform $transitionSpeed $ease
+    &:hover
+      span
+        text-decoration: none
+
+  &__prev
+    span
+      margin-left: 10px
+    &:hover
+      .icon
+        transform: translate3d(-20px,0,0)
+
+  &__next
+    text-align: right
+    margin-left: auto
+    span
+      margin-right: 10px
+    &:hover
+      .icon
+        transform: translate3d(20px,0,0)
+
+
++r($tablet)
+  .stage-m-nav
+    display: flex
+
++r(800)
+  .stage-m-nav
+    padding: 45px 20px 40px 20px
+    &__prev, &__next
+      span
+        font-size: 20px
+      .icon
+        transform: scale(.6)
+
++r($mobile)
+  .stage-m-nav
+    padding: 25px 0px 20px 0px
+    &__prev, &__next
+      span
+        font-size: 16px
+      .icon
+        transform: scale(.45)
+    &__prev
+      span
+        margin-left: 0px
+      &:hover
+        .icon
+          transform: scale(.45) translate3d(-20px,0,0)
+
+    &__next
+      span
+        margin-right: 0px
+      &:hover
+        .icon
+          transform: scale(.45) translate3d(20px,0,0)
+
++r(450)
+  .stage-m-nav
+    flex-direction: column
+    padding: 0px 0px 0px 0px
+    &__next
+      margin-top: -50px
