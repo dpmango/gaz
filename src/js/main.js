@@ -499,7 +499,7 @@ $(document).ready(function(){
   // BARBA PJAX
   //////////
 
-
+/*
   Barba.Pjax.Dom.containerClass = "page";
 
   var FadeTransition = Barba.BaseTransition.extend({
@@ -548,7 +548,7 @@ $(document).ready(function(){
     pageReady();
     closeMobileMenu();
   });
-
+*/
 
 });
 
