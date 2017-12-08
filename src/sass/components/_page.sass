@@ -19,6 +19,12 @@
 
 
 .page
+  min-height: 100vh
+  height: auto
+  &:not(.homepage)
+    .stage-nav
+      position: fixed
+
   &-bg-image
     position: absolute
     top: 0
@@ -180,16 +186,16 @@
 +r($hd)
   .page
     &__title
-      font-size: 55px
+      font-size: 50px
     &__navigation
       a
         font-size: 17px
         margin-right: 30px
     &__text
       p
-        font-size: 16px
+        font-size: 15px
       i, p.t-caption
-        font-size: 24px
+        font-size: 20px
 
 +r($wide)
   .page-dialog
@@ -200,18 +206,25 @@
     &__title
       font-size: 46px
       margin-left: 25px
-
+    &__text
+      p
+        font-size: 13px
+      i, p.t-caption
+        font-size: 18px
 
 +r($w1200)
   .page
+    &__logo
+      flex-basis: 150px
+
     &__title
-      font-size: 40px
+      font-size: 34px
 
     &__text
       p
-        font-size: 14px
+        font-size: 12px
       i, p.t-caption
-        font-size: 20px
+        font-size: 16px
 
     &__chars
       font-size: 14px

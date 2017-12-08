@@ -83,6 +83,14 @@ $(document).ready(function(){
       $('.mobile-navi').toggleClass('is-active');
     });
 
+  function closeMobileMenu(){
+    // close mobile menu
+    if ( _window.width() < settings.tablet ){
+      $('[js-hamburger]').removeClass('is-active');
+      $('body').removeClass('is-fixed');
+      $('.mobile-navi').removeClass('is-active');
+    }
+  }
 
   //////////
   // TRIGGERED EACH TIME PJAX DONE
@@ -148,11 +156,15 @@ $(document).ready(function(){
       // update states
       $('[js-stage-global]').attr('data-stage', nextSlideIndex);
       $('[js-stage-nav]').attr('data-stage', nextSlideIndex);
+      $('.mobile-navi__menu li:nth-child('+nextSlideIndex+')').addClass('is-current').siblings().removeClass('is-current')
       setStageNav( nextSlideIndex );
       setStagePhoto(nextSlideIndex);
 
       // histoy API
       window.location.hash = '#section-'+ nextSlideIndex;
+
+      // close mobile menu
+      closeMobileMenu();
 
     });
 
@@ -193,6 +205,7 @@ $(document).ready(function(){
       navSlickPrevNext("next")
       e.preventDefault();
     })
+
   //////////
   // STAGE NAV
   //////////
@@ -201,18 +214,30 @@ $(document).ready(function(){
     $('.stage-photos__wrapper').find('img:nth-child('+num+')').addClass('is-active').siblings().removeClass('is-active');
   }
 
-  // click handler
-  $(document).on('click', '[js-stage-nav] li', function(e){
-    // navigate slick
-    var section = $(this).data('stage');
-
-    if( $(document).find('.homepage').length > 0 ){
-      navSlick(section);
-    } else {
-      window.location.href = "/#section-" + section + ""
+  function navClickSection(section){
+    if ( section ){
+      if( $(document).find('.homepage').length > 0 ){
+        navSlick(section);
+      } else {
+        window.location.href = "/#section-" + section + ""
+      }
     }
-    e.preventDefault();
-  });
+  }
+
+  // click handler
+  $(document)
+    .on('click', '[js-stage-nav] li', function(e){
+      // navigate slick
+      var section = $(this).data('stage');
+      navClickSection(section)
+      e.preventDefault();
+    })
+    .on('click', '.mobile-navi__menu li', function(e){
+      // navigate slick
+      var section = $(this).data('stage');
+      navClickSection(section)
+      e.preventDefault();
+    })
 
   function setStageNav(num){
     var el = $('[js-stage-nav] li[data-stage='+num+']')
@@ -236,18 +261,16 @@ $(document).ready(function(){
         var scrollAvailable = false;
         var delta = e.originalEvent.deltaY
 
-        if ( _window.height() > 800 ){
+        if ( _window.height() > 900 ){
           scrollAvailable = true;
         } else {
           var scrollBottomCond = _window.scrollTop() + _window.height() > _document.height() - 40;
-          console.log(scrollBottomCond)
           if ( scrollBottomCond && delta > 0 ){
             scrollAvailable = true;
           }
         }
 
         // only when no scrollbar
-
         if ( scrollAvailable && delta > 0 ){
           navSlickPrevNext("next");
         } else if ( scrollAvailable && delta < 0 ){
@@ -339,8 +362,20 @@ $(document).ready(function(){
       },
 
     });
-
   }
+
+  function openGallery(id){
+    if ( id ){
+      $('[data-gallery="'+id+'"]').find('span').first().click()
+    }
+  }
+
+  $(document).on('click', '[js-open-gallery]', function(e){
+    var galleryId = $(this).data('for-gallery');
+    openGallery(galleryId)
+    
+    e.preventDefault();
+  })
 
   //////////
   // PNG + CANVAS FUNCTIONS
@@ -372,9 +407,7 @@ $(document).ready(function(){
     } else {
       var galleryId = $(this).data('for-gallery');
 
-      if ( galleryId ){
-        $('[data-gallery="'+galleryId+'"]').find('span').first().click()
-      }
+      openGallery(galleryId)
     }
   });
 
@@ -422,20 +455,6 @@ $(document).ready(function(){
 
   });
 
-
-  //////////
-  // ANIMATE
-  //////////
-  // anime({
-  //   targets: '.stage-car .wheel_1, .stage-car .wheel_2',
-  //   // translateX: [
-  //   //   { value: 100, duration: 1200 },
-  //   //   { value: 0, duration: 800 }
-  //   // ],
-  //   rotate: '1turn',
-  //   duration: 4000,
-  //   loop: true
-  // });
 
   //////////
   // TELEPORT PLUGIN
@@ -526,15 +545,8 @@ $(document).ready(function(){
     // } else {
     //   initHomeScroll();
     // }
-
     pageReady();
-
-    // close mobile menu
-    if ( _window.width() < settings.tablet ){
-      $('[js-hamburger]').toggleClass('is-active');
-      $('body').toggleClass('is-fixed');
-      $('.mobile-navi').toggleClass('is-active');
-    }
+    closeMobileMenu();
   });
 
 

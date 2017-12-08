@@ -14,7 +14,6 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.js'),
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.hacks.js'),
       path.resolve('bower_components', 'fancybox/dist/jquery.fancybox.min.js'),
-      path.resolve('bower_components', 'animejs/anime.min.js'),      
       config.src.js + '/vendor/**/*.js'
      ])
     .pipe(plumber({ errorHandler: config.errorHandler }))

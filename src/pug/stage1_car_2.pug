@@ -17,7 +17,7 @@ block content
       .page__navigation
         a(href="stage1_car_1.html" ) газ-АA
         a(href="stage1_info.html" ) проект века
-        a(href="stage1_faces.html" ) лица периода
+        a(href="stage1_faces.html" ) История в лицах
     
     .page__content
       .page__text
@@ -27,7 +27,7 @@ block content
         p К слову, машина именно модели ГАЗ-А стала стотысячной по счёту, которая сошла с конвейера Горьковского автомобильного завода 17 апреля 1935 года.  
 
       .page__chars
-        img(src='img/popup/popupStage1_car_2.png' srcset='img/popup/popupStage1_car_2@2x.png 2x')
+        img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_car_2.png' srcset='img/popup/popupStage1_car_2@2x.png 2x')
         
         .page__chars-heading Годы производства: 1932 — 1938
         .page__chars-table-row
@@ -86,7 +86,8 @@ block content
 
       .page__image
         figure
-          img(src='img/popup/popupStage1_car_3.png' srcset='img/popup/popupStage1_car_3@2x.png 2x')
+          img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_car_3.png' srcset='img/popup/popupStage1_car_3@2x.png 2x')
           figcaption Автомобиль ГАЗ-А в подарок наркому тяжелого <br> машиностроения СССР Серго Орджоникидзе.<br> 1935 г.
 
   include components/_stage-nav
+  include components/_gallery

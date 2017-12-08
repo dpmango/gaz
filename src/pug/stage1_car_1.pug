@@ -16,7 +16,7 @@ block content
       .page__navigation
         a(href="stage1_car_2.html" ) газ-А
         a(href="stage1_info.html" ) проект века
-        a(href="stage1_faces.html" ) лица периода
+        a(href="stage1_faces.html" ) История в лицах
     
     .page__content.page__content--order1
       .page__text
@@ -64,7 +64,8 @@ block content
             td 1500 кг
 
       .page__image
-        img(src='img/popup/popupStage1_car_1.png' srcset='img/popup/popupStage1_car_1@2x.png 2x')
+        img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_car_1.png' srcset='img/popup/popupStage1_car_1@2x.png 2x')
         
   
   include components/_stage-nav
+  include components/_gallery

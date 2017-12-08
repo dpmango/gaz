@@ -16,14 +16,14 @@ block content
       .page__navigation
         a(href="stage1_car_1.html" ) газ-А
         a(href="stage1_car_2.html" ) газ-АА
-        a(href="stage1_faces.html" ) лица периода
+        a(href="stage1_faces.html" ) История в лицах
 
     .page__content
       .page__text
         p.t-caption
           i За два года до того, как заводской гудок возвестил о запуске первого в СССР автомобильного завода конвейерной сборки, был подписан этот документ.
 
-        img(src='img/popup/popupStage1_info_1.png' srcset='img/popup/popupStage1_info_1@2x.png 2x')
+        img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_info_1.png' srcset='img/popup/popupStage1_info_1@2x.png 2x')
       
       .page__text.page__text--narrow
         p Американская Ford Motor Company и Высший совет народного хозяйства СССР заключили соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. 
@@ -33,7 +33,8 @@ block content
         p 29 января 1932 года с конвейера сошёл первый автомобиль — грузовик НАЗ-АА. Впоследствии более известный как ГАЗ-АА. 
 
       .page__image
-        img(src='img/popup/popupStage1_info_2.png' srcset='img/popup/popupStage1_info_2@2x.png 2x')
+        img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_info_2.png' srcset='img/popup/popupStage1_info_2@2x.png 2x')
         
         
   include components/_stage-nav
+  include components/_gallery

@@ -53,7 +53,7 @@
 
 .stage-slide
   position: relative
-  min-height: 800px
+  min-height: 900px
   height: 100vh
   overflow: hidden
 
@@ -151,7 +151,7 @@
   &__trees
     background-image: url('../img/stageBg-1-2.png'), url('../img/stageBg-1-2.png')
     z-index: 2
-    animation-duration: 35s
+    animation-duration: 55s
 
 @keyframes bg-scrolling
   100%
@@ -258,7 +258,7 @@
         //   opacity: 0
         //   bottom: 5px
   &__title
-    width: 100%
+    // width: 100%
     font-size: 67px
     font-family: 'a_BodoniOrtoTitul', serif
     text-transform: uppercase
@@ -304,9 +304,9 @@
 +r($hd)
   .stage-text
     &__title
-      font-size: 55px
+      font-size: 50px
     &__short
-      font-size: 17px
+      font-size: 16px
 
 +r($wide)
   .stage-text
@@ -342,6 +342,7 @@
     &__mobile
       display: block
     &__title
+      width: 100%
       max-width: calc(100vw - 60px)
       font-size: 60px
       margin-right: auto
@@ -421,7 +422,7 @@
     align-items: flex-end
     width: 300%
     transform: translate3d(0,0,0)
-    animation: roadAnimation 15s linear infinite
+    animation: roadAnimation 30s linear infinite
   &__cars
     width: 100vw
     display: flex
@@ -566,7 +567,34 @@
 
 +r(450)
   .stage-m-nav
-    flex-direction: column
-    padding: 0px 0px 0px 0px
+    &__prev, &__next
+      span
+        font-size: 12px
+      .icon
+        transform: scale(.35)
+    &__prev
+      span
+        margin-left: -15px
+      &:hover
+        .icon
+          transform: scale(.35) translate3d(-20px,0,0)
+
     &__next
-      margin-top: -50px
+      span
+        margin-right: -15px
+      &:hover
+        .icon
+          transform: scale(.35) translate3d(20px,0,0)
+
+    // flex-direction: column
+    // padding: 0px 0px 0px 0px
+    // &__next
+    //   margin-top: -50px
+
++r(375)
+  .stage-m-nav
+    &__prev, &__next
+      margin-top: -25px
+      margin-bottom: -25px
+      span
+        font-size: 11px

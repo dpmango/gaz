@@ -11,7 +11,7 @@ block content
     .page__top
       .page__logo
         img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
-      .page__title лица периода
+      .page__title История в лицах
       
       .page__navigation
         a(href="stage1_car_1.html" ) газ-А
@@ -21,7 +21,7 @@ block content
     .page__content
       .page__faces-col
         .page__faces-image
-          img(src='img/popup/popupStage1_face_1.png' srcset='img/popup/popupStage1_face_1@2x.png 2x')
+          img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_face_1.png' srcset='img/popup/popupStage1_face_1@2x.png 2x')
 
         .page__text
           p <span>Сергей Дьяконов</span> возглавлял завод с 1932 по 1938 гг. Он сыграл неоценимую роль в становлении и развитии Горьковского автозавода. За время своей работы он сумел запустить в производство более 17 модификаций автомобилей. 
@@ -30,7 +30,7 @@ block content
       
       .page__faces-col
         .page__faces-image
-          img(src='img/popup/popupStage1_face_2.png' srcset='img/popup/popupStage1_face_2@2x.png 2x')
+          img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_face_2.png' srcset='img/popup/popupStage1_face_2@2x.png 2x')
 
         .page__text
           p <span>Андрей Александрович Липгарт</span> с 1933 по 1951 год был главным конструктором Горьковского автомобильного завода. 
@@ -39,3 +39,4 @@ block content
   
   
   include components/_stage-nav
+  include components/_gallery
