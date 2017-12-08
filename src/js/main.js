@@ -449,8 +449,8 @@ $(document).ready(function(){
     if ( $(e.target).is('img') ){
 
     } else {
-      e.preventDefault();
-      e.stopPropagation();
+      //e.preventDefault();
+      //e.stopPropagation();
     }
 
   });
