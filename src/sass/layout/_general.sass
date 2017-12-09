@@ -24,6 +24,7 @@ body, html
   overflow-x: hidden
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  backface-visibility: hidden
 
 body.is-fixed
   height: 100vh
@@ -33,8 +34,16 @@ body.is-fixed
   position: relative
   display: flex
   flex-direction: column
-  min-height: 900px
+  min-height: 1000px
   height: 100vh
+
++r($hd)
+  .page
+    min-height: 900px
+
++r($wide)
+  .page
+    min-height: 750px
 
 +r($tablet)
   .page

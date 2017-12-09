@@ -10,37 +10,19 @@ html.mfp-helper
     height: 100%
     -webkit-transform: translateZ(0)
 
-.popup-dialog
-  background: #eeeeee
-  padding: 50px 0px calc(5vh + 84px) 50px
-  text-align: left
-  max-width: 100%
-  margin: 0px
-  min-height: 100vh
-  position: relative
-  &::after
-    display: block
-    content: ' '
-    position: absolute 0
-    // height: 100vh
-    z-index: 1
-    opacity: .5
-    background-image: linear-gradient( to bottom, rgb(222,213,196) 0%, rgb(216,187,145) 100%)
-
-
 // Fade-slide animation
 .popup-buble
   z-index: 100 !important
   .mfp-container
     padding: 0
-  .popup-dialog
+  .page-dialog
     opacity: 0.5
     transition: all 0.2s ease-in-out
     transform: translate3d(100%,0,0)
-  &.mfp-ready .popup-dialog
+  &.mfp-ready .page-dialog
     opacity: 1
     transform: translate3d(0%,0,0)
-  &.mfp-removing .popup-dialog
+  &.mfp-removing .page-dialog
     transform: translate3d(-100%,0,0)
     opacity: 0.5
   &.mfp-bg
@@ -53,152 +35,152 @@ html.mfp-helper
     opacity: 0
 
 
-
-.popup
-  &-bg-image
-    position: absolute
-    top: 0
-    right: 0
-    img
-      max-width: 100%
-    &--bottom
-      top: auto
-      // bottom: calc(5vh + 84px)
-      bottom: 0
-  &__top
-    position: relative
-    z-index: 2
-    display: flex
-    align-items: center
-    padding-right: 50px
-
-  &__logo
-    flex: 0 1 250px
-    img
-      max-width: 100%
-
-  &__title
-    margin-left: 50px
-    font-size: 67px
-    font-family: 'a_BodoniOrtoTitul', serif
-    text-transform: uppercase
-    color: $colorRed
-
-  &__navigation
-    color: $colorRed
-    font-family: 'a_BodoniOrtoTitul', serif
-    text-transform: uppercase
-    margin-left: auto
-    a
-      display: inline-block
-      position: relative
-      font-size: 18px
-      text-transform: uppercase
-      margin-right: 40px
-      cursor: pointer
-      &:last-child
-        margin-right: 0
-      &::after
-        display: inline-block
-        content: ' '
-        position: absolute
-        left: 0
-        right: 0
-        bottom: -1px
-        height: 1px
-        background: $colorRed
-        transition: all $transitionSpeed $ease
-      &:hover
-        &::after
-          bottom: 2px
-          opacity: 0
-
-  &__content
-    position: relative
-    z-index: 2
-    margin-top: 30px
-    margin-bottom: 50px
-    display: flex
-
-  &__text
-    flex: 0 1 36%
-    padding: 0 20px 0 0
-    p
-      font-size: 17px
-      line-height: 1.48
-      color: #5f4f3a
-    i, p.t-caption
-      font-size: 27px
-      font-weight: 300
-      font-style: italic
-      color: $colorRed
-    span
-      color: $colorRed
-      display: inline-block
-    img
-      max-width: 100%
-
-    &--narrow
-      flex-basis: 25%
-
-  &__chars
-    flex: 0 1 auto
-    padding: 0 20px
-    align-self: flex-end
-    font-size: 16px
-    line-height: 1.48
-    color: #5f4f3a
-    &-heading
-      font-style: italic
-      font-weight: 700
-    table
-      margin: 30px 0
-      font-size: 14px
-      font-weight: 700
-      td
-        padding: 2px
-        min-height: 10px
-        &:first-child
-          padding-left: 0
-        &:last-child
-          padding-left: 10px
-    &-table-row
-      display: flex
-      table
-        padding-right: 30px
-        &:last-child
-          padding-right: 0
-
-  &__image
-    flex: 0 2 auto
-    margin-left: auto
-    display: flex
-    flex-direction: column
-    img
-      max-width: 100%
-      margin-left: auto
-    figure
-      flex: 1 1 auto
-      display: flex
-      flex-direction: column
-      margin: 0
-      figcaption
-        color: $colorRed
-        font-size: 14px
-        line-height: 1.48
-        font-weight: 300
-        font-style: italic
-        padding: 20px 0px 0px 50px
-
-  &__faces
-    &-col
-      flex: 0 1 50%
-      display: flex
-      .popup__text
-        margin-top: 5%
-    &-image
-      flex: 0 1 auto
-      padding-right: 20px
-      margin-right: 2%
-      img
-        max-width: 100%
+//
+// .popup
+//   &-bg-image
+//     position: absolute
+//     top: 0
+//     right: 0
+//     img
+//       max-width: 100%
+//     &--bottom
+//       top: auto
+//       // bottom: calc(5vh + 84px)
+//       bottom: 0
+//   &__top
+//     position: relative
+//     z-index: 2
+//     display: flex
+//     align-items: center
+//     padding-right: 50px
+//
+//   &__logo
+//     flex: 0 1 250px
+//     img
+//       max-width: 100%
+//
+//   &__title
+//     margin-left: 50px
+//     font-size: 67px
+//     font-family: 'a_BodoniOrtoTitul', serif
+//     text-transform: uppercase
+//     color: $colorRed
+//
+//   &__navigation
+//     color: $colorRed
+//     font-family: 'a_BodoniOrtoTitul', serif
+//     text-transform: uppercase
+//     margin-left: auto
+//     a
+//       display: inline-block
+//       position: relative
+//       font-size: 18px
+//       text-transform: uppercase
+//       margin-right: 40px
+//       cursor: pointer
+//       &:last-child
+//         margin-right: 0
+//       &::after
+//         display: inline-block
+//         content: ' '
+//         position: absolute
+//         left: 0
+//         right: 0
+//         bottom: -1px
+//         height: 1px
+//         background: $colorRed
+//         transition: all $transitionSpeed $ease
+//       &:hover
+//         &::after
+//           bottom: 2px
+//           opacity: 0
+//
+//   &__content
+//     position: relative
+//     z-index: 2
+//     margin-top: 30px
+//     margin-bottom: 50px
+//     display: flex
+//
+//   &__text
+//     flex: 0 1 36%
+//     padding: 0 20px 0 0
+//     p
+//       font-size: 17px
+//       line-height: 1.48
+//       color: #5f4f3a
+//     i, p.t-caption
+//       font-size: 27px
+//       font-weight: 300
+//       font-style: italic
+//       color: $colorRed
+//     span
+//       color: $colorRed
+//       display: inline-block
+//     img
+//       max-width: 100%
+//
+//     &--narrow
+//       flex-basis: 25%
+//
+//   &__chars
+//     flex: 0 1 auto
+//     padding: 0 20px
+//     align-self: flex-end
+//     font-size: 16px
+//     line-height: 1.48
+//     color: #5f4f3a
+//     &-heading
+//       font-style: italic
+//       font-weight: 700
+//     table
+//       margin: 30px 0
+//       font-size: 14px
+//       font-weight: 700
+//       td
+//         padding: 2px
+//         min-height: 10px
+//         &:first-child
+//           padding-left: 0
+//         &:last-child
+//           padding-left: 10px
+//     &-table-row
+//       display: flex
+//       table
+//         padding-right: 30px
+//         &:last-child
+//           padding-right: 0
+//
+//   &__image
+//     flex: 0 2 auto
+//     margin-left: auto
+//     display: flex
+//     flex-direction: column
+//     img
+//       max-width: 100%
+//       margin-left: auto
+//     figure
+//       flex: 1 1 auto
+//       display: flex
+//       flex-direction: column
+//       margin: 0
+//       figcaption
+//         color: $colorRed
+//         font-size: 14px
+//         line-height: 1.48
+//         font-weight: 300
+//         font-style: italic
+//         padding: 20px 0px 0px 50px
+//
+//   &__faces
+//     &-col
+//       flex: 0 1 50%
+//       display: flex
+//       .popup__text
+//         margin-top: 5%
+//     &-image
+//       flex: 0 1 auto
+//       padding-right: 20px
+//       margin-right: 2%
+//       img
+//         max-width: 100%
