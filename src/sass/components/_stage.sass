@@ -460,8 +460,15 @@
     animation-iteration-count: infinite
     backface-visibility: hidden
     transform-style: preserve-3d
+    // img
+    //   width: 100%
+    background-image: url('../img/road.png')
+    background-repeat: repeat-x
+    background-position: 0 0
+    background-size: 50% 100%
     img
-      width: 100%
+      opacity: 0
+
   &__cars
     width: 100vw
     display: flex
@@ -471,10 +478,14 @@
     z-index: 2
 
 @keyframes roadAnimation
-  0%
-    transform: translate3d(0,0,0)
   100%
-    transform: translate3d(-33.3333%,0,0)
+    background-position: -100% 0
+
+// @keyframes roadAnimation
+//   0%
+//     transform: translate3d(0,0,0)
+//   100%
+//     transform: translate3d(-33.3333%,0,0)
 
 +r($wide)
   .stage-timeline
