@@ -140,6 +140,11 @@
     width: 100vw
     // width: 100%
     height: auto
+    &.buildings
+      +rmin($tablet)
+        width: auto
+        max-width: 100%
+        max-height: 55vh
 
   // &__city, &__trees
   &__trees

@@ -175,7 +175,7 @@
       .page__text
         margin-top: 5%
     &-image
-      flex: 0 1 auto
+      flex: 0 5 auto
       padding-right: 20px
       margin-right: 2%
       img
@@ -261,6 +261,17 @@
 +r($tablet)
   .page-dialog
     padding-top: 130px
+    .mfp-close
+      position: absolute
+      right: 30px
+      top: 20px
+      z-index: 1050
+      display: block !important
+      font-size: 0
+      background: url('../img/but_close.png') no-repeat center
+      background-size: 50px
+
+
   .page
     &__navigation
       display: none

@@ -312,7 +312,7 @@ $(document).ready(function(){
     fixedContentPos: true,
     fixedBgPos: true,
     alignTop: true,
-    overflowY: 'scroll',
+    overflowY: 'auto',
     closeBtnInside: true,
     preloader: false,
     midClick: true,
@@ -321,11 +321,13 @@ $(document).ready(function(){
     callbacks: {
       beforeOpen: function() {
         startWindowScroll = _window.scrollTop();
-        // $('html').addClass('mfp-helper');
+        $('html').addClass('mfp-helper');
+        $('.mobile-header').addClass('is-hidden');
       },
       close: function() {
-        // $('html').removeClass('mfp-helper');
+        $('html').removeClass('mfp-helper');
         _window.scrollTop(startWindowScroll);
+        $('.mobile-header').removeClass('is-hidden');
       }
     }
   });
