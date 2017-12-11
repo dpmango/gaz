@@ -542,41 +542,61 @@ var svgNS = "http://www.w3.org/2000/svg";
 window.Custom = {}; // global obj
 
 Custom.initSvg = function(evt){
-  var svgDoc, svgEl;
-  if ( window.svgDocument == null )
-  {
-    svgDoc = evt.target.ownerDocument;
-    svgEl = evt.target;
-  }
-  addRotateTransform(svgDoc, svgEl, 'wheel_1', 3, 1);
-  addRotateTransform(svgDoc, svgEl, 'wheel_2', 3, 1);
+  // var svgDoc, svgEl;
+  // if ( window.svgDocument == null )
+  // {
+  //   svgDoc = evt.target.ownerDocument;
+  //   svgEl = evt.target;
+  // }
+  // addRotateTransform(svgDoc, svgEl, 'wheel_1', 3, 1);
+  // addRotateTransform(svgDoc, svgEl, 'wheel_2', 3, 1);
 }
 
-// document.getElementsByClassName = function(cl) {
-//   var retnode = [];
-//   var elem = this.getElementsByTagName('*');
-//   for (var i = 0; i < elem.length; i++) {
-//     if((' ' + elem[i].className + ' ').indexOf(' ' + cl + ' ') > -1) retnode.push(elem[i]);
-//   }
-//   return retnode;
-// };
+$(window).on('load', function(){
 
-function addRotateTransform(target_doc, target_el, target_class, dur, dir) {
-  var my_element = target_el.getElementsByClassName(target_class)[0];
-  var a = target_doc.createElementNS(svgNS, "animateTransform");
+  parseSvgCars();
+  $(window).on('resize', debounce(parseSvgCars, 300))
 
-  var bb = my_element.getBBox();
+})
+
+function parseSvgCars(){
+  $('.stage-car svg').each(function(i, svg){
+    var _this = $(svg);
+
+    addTransformOrigin(_this, 'wheel_1');
+    addTransformOrigin(_this, 'wheel_2')
+  });
+}
+
+function addTransformOrigin(target_el, target_class){
+  var findClass = "." + target_class;
+  var my_element = target_el.find(findClass);
+
+  var bb = my_element.get(0).getBBox();
   var cx = bb.x + bb.width / 2;
   var cy = bb.y + bb.height / 2;
 
-  a.setAttributeNS(null, "attributeName", "transform");
-  a.setAttributeNS(null, "attributeType", "XML");
-  a.setAttributeNS(null, "type", "rotate");
-  a.setAttributeNS(null, "dur", dur + "s");
-  a.setAttributeNS(null, "repeatCount", "indefinite");
-  a.setAttributeNS(null, "from", "0 " + cx + " " + cy);
-  a.setAttributeNS(null, "to", 360 * dir + " " + cx + " " + cy);
-
-  my_element.appendChild(a);
-  a.beginElement();
+  var bodyStyle = "<style>"+ "." + $(target_el).parent().attr('class').split(' ')[1] + " ." + target_class + " { transform-origin: "+cx + 'px ' + cy + 'px'+"; }</style>"
+  $( bodyStyle ).appendTo( "body" )
 }
+
+//
+// function addRotateTransform(target_doc, target_el, target_class, dur, dir) {
+//   var my_element = target_el.getElementsByClassName(target_class)[0];
+//   var a = target_doc.createElementNS(svgNS, "animateTransform");
+//
+//   var bb = my_element.getBBox();
+//   var cx = bb.x + bb.width / 2;
+//   var cy = bb.y + bb.height / 2;
+//
+//   // a.setAttributeNS(null, "attributeName", "transform");
+//   // a.setAttributeNS(null, "attributeType", "XML");
+//   // a.setAttributeNS(null, "type", "rotate");
+//   // a.setAttributeNS(null, "dur", dur + "s");
+//   // a.setAttributeNS(null, "repeatCount", "indefinite");
+//   // a.setAttributeNS(null, "from", "0 " + cx + " " + cy);
+//   // a.setAttributeNS(null, "to", 360 * dir + " " + cx + " " + cy);
+//   //
+//   // my_element.appendChild(a);
+//   // a.beginElement();
+// }
