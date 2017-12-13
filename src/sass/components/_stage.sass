@@ -194,11 +194,53 @@
 .stages
   &[data-stage="2"]
     &::after
-      background: linear-gradient( to bottom, rgb(252,234,136) 0%, rgb(157,192,196) 100%)
+      background: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 100%)
+  &[data-stage="3"]
+    &::after
+      background: linear-gradient( to top, rgb(252,161,136) 0%, rgb(246,205,169) 100%)
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 2
+      mix-blend-mode: lighten
+      background: url('../img/stage3BgBefore.png') no-repeat center
+      background-size: cover
+
+  &[data-stage="4"]
+    &::after
+      background: linear-gradient( to top, rgb(210,252,136) 0%, rgb(129,142,78) 100%)
+
+  &[data-stage="5"]
+    &::after
+      background: linear-gradient( to bottom, rgb(81,3,5) 0%, rgb(201,2,7) 100%)
+
   &[data-stage="6"]
     &::after
-      background: linear-gradient( to bottom, rgb(0,204,163) 0%, rgb(128,210,82) 34%, rgb(255,216,0) 100%)
+      background: linear-gradient( to top, rgb(0,204,163) 0%, rgb(128,210,82) 34%, rgb(255,216,0) 100%)
+  &[data-stage="7"]
+    &::after
+      background: linear-gradient( to top, rgb(255,242,223) 0%, rgb(224,247,235) 62%, rgb(192,252,247) 100%)
 
+  &[data-stage="8"]
+    &::after
+      background: linear-gradient( to bottom, rgb(243,246,160) 0%, rgb(236,205,238) 100%)
+  &[data-stage="9"]
+    &::after
+      background: linear-gradient( to top, rgb(218,147,88) 0%, rgb(130,50,192) 100%)
+  &[data-stage="10"]
+    &::after
+      background: linear-gradient( to top, rgb(133,206,113) 0%, rgb(63,167,197) 100%)
+  &[data-stage="11"]
+    &::after
+      background: linear-gradient( to top, rgb(133,206,113) 0%, rgb(63,167,197) 100%)
+  &[data-stage="12"]
+    &::after
+      background: linear-gradient( to top, rgb(133,206,113) 0%, rgb(63,167,197) 100%)
 
 
 .stage-slide
@@ -210,37 +252,37 @@
       color: #f93115
       &__short
         color: #8a1211
+    .stage-timeline__road
+      background-image: url('../img/roadStage3.png')
   &[data-stage="4"]
     .stage-text
       color: #566229
   &[data-stage="5"]
     .stage-text
-      color: #566229
+      color: white
+    .stage-timeline__road
+      background-image: url('../img/roadStage5.png')
   &[data-stage="6"]
     .stage-text
       color: #059d7b
   &[data-stage="7"]
     .stage-text
-      color: #566229
+      color: #a17e4d
   &[data-stage="8"]
     .stage-text
-      color: #566229
+      color: #416a9e
   &[data-stage="9"]
     .stage-text
-      color: #566229
+      color: #fdf9d0
   &[data-stage="10"]
     .stage-text
-      color: #566229
+      color: #fff9bd
   &[data-stage="11"]
     .stage-text
       color: #566229
   &[data-stage="12"]
     .stage-text
       color: #566229
-  &[data-stage="13"]
-    .stage-text
-      color: #566229
-
 
 
 
