@@ -99,10 +99,10 @@ $(document).ready(function(){
   function pageReady(){
     if( $(document).find('.homepage').length > 0 ){
       initSlick();
-      listenScroll();
+      //listenScroll();
       initFancybox();
 
-      _window.on('resize', debounce(listenScroll, 300))
+//      _window.on('resize', debounce(listenScroll, 300))
     }
   }
 

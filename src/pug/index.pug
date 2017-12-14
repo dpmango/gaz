@@ -1,6 +1,7 @@
 ---
 title: ГАЗ спецпроект
 bodyClass: homepage
+hBodyClass: index
 ---
 extends shared/_layout
 
@@ -16,15 +17,15 @@ block content
         img.is-active(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-1.png' srcset='img/stagePhoto-1@2x.png 2x')
         img(js-png-clickthrough js-png-hover data-for-gallery="2" src='img/stagePhoto-2.png' srcset='img/stagePhoto-2@2x.png 2x')
         img(js-png-clickthrough js-png-hover data-for-gallery="3" src='img/stagePhoto-3.png' srcset='img/stagePhoto-3@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="4" src='img/stagePhoto-4.png' srcset='img/stagePhoto-4@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="5" src='img/stagePhoto-5.png' srcset='img/stagePhoto-5@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="6" src='img/stagePhoto-6.png' srcset='img/stagePhoto-6@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="7" src='img/stagePhoto-7.png' srcset='img/stagePhoto-7@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="8" src='img/stagePhoto-8.png' srcset='img/stagePhoto-8@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="9" src='img/stagePhoto-9.png' srcset='img/stagePhoto-9@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="10" src='img/stagePhoto-10.png' srcset='img/stagePhoto-10@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="11" src='img/stagePhoto-4.png' srcset='img/stagePhoto-4@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="12" src='img/stagePhoto-4.png' srcset='img/stagePhoto-4@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-4.png' srcset='img/stagePhoto-4@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-5.png' srcset='img/stagePhoto-5@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-6.png' srcset='img/stagePhoto-6@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-7.png' srcset='img/stagePhoto-7@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-8.png' srcset='img/stagePhoto-8@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-9.png' srcset='img/stagePhoto-9@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-10.png' srcset='img/stagePhoto-10@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-4.png' srcset='img/stagePhoto-4@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-4.png' srcset='img/stagePhoto-4@2x.png 2x')
     
     
     // SLIDING SECTION
@@ -34,12 +35,15 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
+            a.stage-text__top(href="stage1_info.html")
               .stage-text__title Проект<br>века
               .stage-text__logo
                 img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
-            .stage-text__short Американская компания Ford Motor Company и Высший совет народного хозяйства СССР заключают соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. В итоге благодаря западным технологиям и советскому энтузиазму завод построили в рекордные сроки — за полтора года. В соответствии с соглашением ГАЗ получал техническую поддержку от Ford Motor Company на протяжении пяти лет после пуска завода.
+            .stage-text__short
+              a(href="/stage1_info.html") Американская компания Ford Motor Company и Высший совет народного хозяйства СССР заключают соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. В итоге благодаря западным технологиям и советскому энтузиазму завод построили в рекордные сроки — за&nbsp;полтора года. В&nbsp;соответствии с соглашением ГАЗ получал техническую поддержку от&nbsp;Ford Motor Company на протяжении пяти лет после пуска завода.
+              a(href="/stage1_info.html")
+                img(src='img/px.png' class='px')
         
         // BACKGROUND
         .stage-background
@@ -63,10 +67,10 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
               
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_2.html" )
+              a.stage-car.stage-car--1_1(href="stage1_car_2.html" )
                 include ../inline-svg/car1_1.svg
                 // img(src='img/car1_1.png' srcset='img/car1_1@2x.png 2x')
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_1.html")
+              a.stage-car.stage-car--1_2(href="stage1_car_1.html")
                 // img(src='img/car1_2.png' srcset='img/car1_2@2x.png 2x')
                 include ../inline-svg/car1_2.svg
         
@@ -86,11 +90,11 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
+            a.stage-text__top(href="stage1_info.html")
               .stage-text__title(js-fit-text) Испытано<br> бездорожьем
             img.stage-text__mobile(js-start-gallery data-for-gallery="2" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short
-              p Практически нет уголка в нашей стране, где бы не оставили следы своих шин газов- ские автомобили. Они побывали во всех климатических зонах, прошли испытания в российском полюсе холода в Якутии, первыми преодолели непроходимые болота Забайкалья, участвовали во Всесоюзных автопробегах. За ходом таких испытаний следила вся страна. Участников горячо приветствовали в каждом населённом пункте, куда они прибывали.
+              p Практически нет уголка в нашей стране, где бы не оставили следы своих шин газовские автомобили. Они побывали во всех климатических зонах, прошли испытания в&nbsp;российском полюсе холода в&nbsp;Якутии, первыми преодолели непроходимые болота Забайкалья, участвовали во Всесоюзных автопробегах. За&nbsp;ходом таких испытаний следила вся страна. Участников горячо приветствовали в&nbsp;каждом населённом пункте, куда они прибывали.
               p Газета «Правда» назвала участников одного из крупнейших пробегов 1933 года покорителями пустыни, а всё происходящее сравнила с полётом в стратосферу, который совершили к тому времени советские воздухоплаватели.
           
         // BACKGROUND
@@ -107,10 +111,10 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
 
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
-                include ../inline-svg/car2_1.svg
               a.stage-car.stage-car--1_2(href="stage1_car_2.html")
                 include ../inline-svg/car2_2.svg
+              a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
+                include ../inline-svg/car2_1.svg
 
         // MOBILE-NAVI
         .stage-m-nav
@@ -127,8 +131,8 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
-              .stage-text__title(js-fit-text) Спорт — это радость побед
+            a.stage-text__top(href="stage1_info.html")
+              .stage-text__title.small-title Спорт — это радость побед
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short ГЛ-1 — первый советский гоночный автомобиль, созданный на промышленном предприятии. Предположительно, машина получила название ГЛ-1 в честь главного конструктора ГАЗа Андрея Липгарта. «Гоночная Липгарта» — так называли её конструкторы ГАЗа, в том числе и создатель автомобиля Евгений Агитов. С выпуска первого серийного советского гоночного авто прошло почти 80 лет, машины. ГАЗа поменяли свой облик, но традиция завоёвывать первые места в спортивных автомобильных состязаниях остаётся неизменной до сих пор.
 
@@ -148,9 +152,9 @@ block content
               img(src='img/roadStage3.png' srcset="img/roadStage3@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--3_1(href="stage1_car_1.html" )
                 include ../inline-svg/car3_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--3_2(href="stage1_car_2.html")
                 include ../inline-svg/car3_2.svg
                 
       // STAGE 4
@@ -158,8 +162,8 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
-              .stage-text__title(js-fit-text) На пике трудового энтузиазма
+            a.stage-text__top(href="stage1_info.html")
+              .stage-text__title.small-title На&nbsp;пике&nbsp;трудового энтузиазма
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short В августе 1935 г. донецкий шахтёр Алексей Стаханов установил трудовой рекорд: он перевыполнил дневную норму в 14 раз, добыв 102 тонны угля. Но Стаханов не просто стал известным рабочим. Своим подвигом он положил начало стаханов- скому движению. Оно охватило рабочих по всему Советскому Союзу. Труженики самых разных отраслей стремились стать подобно Стаханову, в том числе и те, кто работал на ГАЗе.
 
@@ -178,11 +182,11 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--4_1(href="stage1_car_1.html" )
                 include ../inline-svg/car4_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car4_2.svg
-              a.stage-car.stage-car--4_3(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_3(href="stage1_car_2.html")
                 include ../inline-svg/car4_3.svg
                 
       // STAGE 5
@@ -190,8 +194,8 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
-              .stage-text__title(js-fit-text) НА ЗАЩИТЕ ВОЕННЫХ РУБЕЖЕЙ
+            a.stage-text__top(href="stage1_info.html")
+              .stage-text__title.small-title НА&nbsp;ЗАЩИТЕ ВОЕННЫХ&nbsp;РУБЕЖЕЙ
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short Великая Отечественная война потребовала переориентации завода на выпуск боевой техники. Заводские конструкторы и технологи оперативно разработали и подготовили к производству новые машины: внедорожники ГАЗ-64 и ГАЗ-67, бронеавтомобили БА-64, БА-64Б, танки Т-60, Т-70. Наряду с грузовыми автомо- билями завод развернул выпуск самоходных орудий, боеприпасов и различного военного снаряжения.
 
@@ -210,9 +214,9 @@ block content
               img(src='img/roadStage5.png' srcset="img/roadStage5@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
                 include ../inline-svg/car5_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--1_2(href="stage1_car_2.html")
                 include ../inline-svg/car5_2.svg
 
               
@@ -221,7 +225,7 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
+            a.stage-text__top(href="stage1_info.html")
               .stage-text__title(js-fit-text) «ГАЗ» и Победа неразделимы
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short Страна вышла из войны победителем. Но всё, что с таким трудом создавалось в годы пятилеток, было уничтожено фашистами. 26 августа 1945 года ГКО принял специальное постановление «О восстановлении и развитии автомобильной промышленности». Перед трудящимися поставили задачу восстановить довоенное производство и перейти на выпуск новых типов автомобилей. План послевоенной пятилетки предусматривал резкое увеличение выпуска машин. И Горьковскому автомобильному заводу была отведена в этом деле ключевая роль.
@@ -241,9 +245,9 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--3_1(href="stage1_car_1.html" )
                 include ../inline-svg/car6_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--3_2(href="stage1_car_2.html")
                 include ../inline-svg/car6_2.svg
                 
       // STAGE 7
@@ -251,8 +255,8 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
-              .stage-text__title(js-fit-text) «ГАЗ» КОРМИТ СТРАНУ
+            a.stage-text__top(href="stage1_info.html")
+              .stage-text__title.small-title «ГАЗ» КОРМИТ<br> СТРАНУ
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short После войны стране надо было восстанавливаться быстрыми темпами. Были мобилизованы все силы. В частности, Горьковский автомобильный завод оснастил все сельское хозяйство СССР миллионами неприхотливых грузовиков. В 1950–1980-е годы безотказные ГАЗ-51, ГАЗ-51А, ГАЗ-63, джипы-вездеходы ГАЗ-69 были надёжными помощниками и на работах в колхозе, и на новых стройках.
 
@@ -271,9 +275,9 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
                 include ../inline-svg/car7_2.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--1_2(href="stage1_car_2.html")
                 include ../inline-svg/car7_1.svg
               
       // STAGE 8
@@ -281,8 +285,8 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
-              .stage-text__title(js-fit-text) Признание в условиях «холодной войны»
+            a.stage-text__top(href="stage1_info.html")
+              .stage-text__title.small-title Признание в&nbsp;условиях «холодной&nbsp;войны»
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short Десятилетие, начавшееся после смерти Сталина в 1953 году, принято называть временем «оттепели»: освобождали политзаключенных, ликвидировали ГУЛАГ, в стране появилась некоторая свобода слова и открытость Западу. В это время, а именно в 1958 году, в Брюсселе прошла Всемирная выставка. Она во многом изменила отношение Европы к Советскому Союзу. Страна, победившая фашизм, и здесь была во всеоружии. Такого успеха не ожидал никто.
 
@@ -301,11 +305,11 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--4_1(href="stage1_car_1.html" )
                 include ../inline-svg/car8_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car8_2.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car8_3.svg
                 
       // STAGE 9
@@ -313,7 +317,7 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
+            a.stage-text__top(href="stage1_info.html")
               .stage-text__title(js-fit-text) «ГАЗ» — двигатель прогресса
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short В конце 1950-х годов на Горьковском автозаводе получило широкое развитие новое движение ударников — соревнование за звание бригад коммунистического труда. Звания ударников присваивались бригадам, цехам, отдельным рабочим завода, которые систематически добивались высоких производственных показателей. Трудовые достижения автозаводцев широко освещались в прессе, на радио. Фотографии передовиков размещались на Досках почёта. Но заводчане стремились не только к количественным показателям, также было понимание того, что необходимо улучшать и качество выпускаемой продукции. В 1959 году на ГАЗе проходила масштабная кампания под девизом &quot;Сделано на Горьковском автомобильном заводе — сделано на отлично!&quot;.
@@ -333,9 +337,9 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
                 include ../inline-svg/car9_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--1_2(href="stage1_car_2.html")
                 include ../inline-svg/car9_2.svg
 
       // STAGE 10
@@ -343,7 +347,7 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
+            a.stage-text__top(href="stage1_info.html")
               .stage-text__title(js-fit-text) герой отечественного кинематографа
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short «Камера, мотор, поехали!» Автомобили «ГАЗ» были не только главными помощниками на советских стройках и в колхозах. Они также становились звездами кинематографа. Причем многие машины не просто появлялись в эпизодах в качестве реквизита, а порой становились полноценными героями картины.
@@ -363,13 +367,13 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--4_1(href="stage1_car_1.html" )
                 include ../inline-svg/car10_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car10_2.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_3(href="stage1_car_2.html")
                 include ../inline-svg/car10_3.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car10_4.svg
                   
       // STAGE 11
@@ -377,7 +381,7 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
+            a.stage-text__top(href="stage1_info.html")
               .stage-text__title(js-fit-text) герой отечественного кинематографа
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short «Камера, мотор, поехали!» Автомобили «ГАЗ» были не только главными помощниками на советских стройках и в колхозах. Они также становились звездами кинематографа. Причем многие машины не просто появлялись в эпизодах в качестве реквизита, а порой становились полноценными героями картины.
@@ -397,13 +401,13 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--4_1(href="stage1_car_1.html" )
                 include ../inline-svg/car10_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car10_2.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car10_3.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car10_4.svg
                   
       // STAGE 12
@@ -411,7 +415,7 @@ block content
         // TEXT
         .stage-text
           .stage-text__wrapper
-            a.stage-text__top(js-popup href="stage1_info.html")
+            a.stage-text__top(href="stage1_info.html")
               .stage-text__title(js-fit-text) герой отечественного кинематографа
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
             .stage-text__short «Камера, мотор, поехали!» Автомобили «ГАЗ» были не только главными помощниками на советских стройках и в колхозах. Они также становились звездами кинематографа. Причем многие машины не просто появлялись в эпизодах в качестве реквизита, а порой становились полноценными героями картины.
@@ -431,13 +435,13 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(js-popup href="stage1_car_1.html" )
+              a.stage-car.stage-car--4_1(href="stage1_car_1.html" )
                 include ../inline-svg/car10_1.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car10_2.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car10_3.svg
-              a.stage-car.stage-car--1_2(js-popup href="stage1_car_2.html")
+              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
                 include ../inline-svg/car10_4.svg
                 
   include components/_stage-nav

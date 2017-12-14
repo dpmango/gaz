@@ -1,51 +1,40 @@
-// modal content which is loaded via ajax
-.page-dialog
-  .page-bg-image.page-bg-image--bottom 
-    img(src='img/popup/popupBgStage1_info.png' srcset='img/popup/popupBgStage1_info@2x.png 2x')
-    
-  .page__top
-    .page__logo
-      img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
-    .page__title Проект века
-    
-    .page__navigation
-      a(js-close-popup class='no-decor')
-        img(src='img/but_close.png')
-
-  .page__content
-    .page__text
-      p.t-caption
-        i За два года до того, как заводской гудок возвестил о запуске первого в СССР автомобильного завода конвейерной сборки, был подписан этот документ.
-
-      img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_info_1.png' srcset='img/popup/popupStage1_info_1@2x.png 2x')
-    
-    .page__text.page__text--narrow
-      p Американская Ford Motor Company и Высший совет народного хозяйства СССР заключили соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. 
-
-      p После того как ударили по рукам, приступили к строительству. 2 мая 1930 года под Нижним Новгородом был заложен первый камень в фундамент будущего автомобильного завода. Через полтора года строительство уже было окончено. А 1 января 1932 года автозавод начал полноценный рабочий процесс. В этот же день в ремонтно-механическом цехе состоялась общезаводская профсоюзная конференция, на которой было принято решение присвоить автозаводу имя председателя Совета народных комиссаров Вячеслава Молотова. 
-
-      p 29 января 1932 года с конвейера сошёл первый автомобиль — грузовик НАЗ-АА. Впоследствии более известный как ГАЗ-АА. 
-
-    .page__image
-      img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_info_2.png' srcset='img/popup/popupStage1_info_2@2x.png 2x')
+---
+title: ГАЗ спецпроект
+hBodyClass: ispopup
+---
+extends shared/_layout
+block content
+  
+  .page-dialog
+    .page-bg-image.page-bg-image--bottom 
+      img(src='img/popup/popupBgStage1_info.png' srcset='img/popup/popupBgStage1_info@2x.png 2x')
       
-  .page__top
-    .page__title История в лицах
-  .page__content
-    .page__faces-col
-      .page__faces-image
-        img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_face_1.png' srcset='img/popup/popupStage1_face_1@2x.png 2x')
+    a(href="/" class='no-decor')
+      img(src='img/but_close2.png' class='close-popup')
 
+    .page__top
+      .page__logo
+        img(src='img/old_logo.png' srcset="img/old_logo@2x.png 2x")
+      .page__title Проект века
+      .page__navigation
+        a(href="/stage1_car_2.html") газ-А
+        a(href="/stage1_car_1.html") газ-АА
+        a(href="/stage1_faces.html") история в лицах
+      
+    .page__content
       .page__text
-        p <span>Сергей Дьяконов</span> возглавлял завод с 1932 по 1938 гг. Он сыграл неоценимую роль в становлении и развитии Горьковского автозавода. За время своей работы он сумел запустить в производство более 17 модификаций автомобилей. 
+        p.t-caption
+          i За два года до того, как заводской гудок возвестил о запуске первого в СССР автомобильного завода конвейерной сборки, был подписан этот документ.
 
-        p В марте 1934 года был удостоен ордена Ленина, который получил за успешное освоение производства автомашин нескольких модификаций. В 1938 году подвергся гонениям, был репрессирован. Сегодня его имя носит одна из улиц в Нижнем Новгороде.
-    
-    .page__faces-col
-      .page__faces-image
-        img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_face_2.png' srcset='img/popup/popupStage1_face_2@2x.png 2x')
+        img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_info_1.png' srcset='img/popup/popupStage1_info_1@2x.png 2x')
+      
+      .page__text.page__text--narrow
+        p Американская Ford Motor Company и Высший совет народного хозяйства СССР заключили соглашение о технической помощи по организации массового производства легковых и грузовых автомобилей. 
 
-      .page__text
-        p <span>Андрей Александрович Липгарт</span> с 1933 по 1951 год был главным конструктором Горьковского автомобильного завода. 
+        p После того как ударили по рукам, приступили к строительству. 2 мая 1930 года под Нижним Новгородом был заложен первый камень в фундамент будущего автомобильного завода. Через полтора года строительство уже было окончено. А 1 января 1932 года автозавод начал полноценный рабочий процесс. В этот же день в ремонтно-механическом цехе состоялась общезаводская профсоюзная конференция, на которой было принято решение присвоить автозаводу имя председателя Совета народных комиссаров Вячеслава Молотова. 
 
-        p Под его началом сформировалась конструкторская школа отечественного автомобилестроения. Пятикратный лауреат Сталинских премий Липгарт спроектировал 67 моделей автомобилей, 27 из которых пошли в производство. 
+        p 29 января 1932 года с конвейера сошёл первый автомобиль — грузовик НАЗ-АА. Впоследствии более известный как ГАЗ-АА. 
+
+      .page__image
+        img(js-open-gallery data-for-gallery="1" src='img/popup/popupStage1_info_2.png' srcset='img/popup/popupStage1_info_2@2x.png 2x')
+        
