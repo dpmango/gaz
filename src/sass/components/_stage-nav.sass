@@ -58,14 +58,6 @@
     font-size: 12px
     color: $colorPrimary
 
-  &[data-stage="2"]
-    .stage-nav__li
-      .ico
-        fill: rgba(#d5dfdc, .4)
-      &:hover, &.is-active
-        .ico
-          fill: #3c5460
-
 +r($hd)
   .stage-nav
     &__menu
@@ -115,72 +107,138 @@
   &[data-stage="2"]
     .stage-nav
       &__wrapper::after
-        background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
+        background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%)
       &__menu
         background-color: #9fb6a8
+      &__li
+        .ico
+          fill: rgba(#d5dfdc, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #3c5460
+
   &[data-stage="3"]
     .stage-nav
       &__wrapper::after
-        // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
+        background-image: linear-gradient( to bottom, rgb(252,161,136) 0%, rgb(246,205,169) 100%)
       &__menu
         background-color: #fca087
+      &__li
+        .ico
+          fill: rgba(#f7e3ab, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #fc3214
+
   &[data-stage="4"]
     .stage-nav
       &__wrapper::after
-        // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
+        background-image: linear-gradient( to bottom, rgb(210,252,136) 0%, rgb(129,142,78) 100%)
       &__menu
         background-color: #cbdd6e
+      &__li
+        .ico
+          fill: rgba(#a0ae36, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #566229
+
   &[data-stage="5"]
     .stage-nav
       &__wrapper::after
-        // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
+        background-image: linear-gradient( to top, rgb(81,3,5) 0%, rgb(201,2,7) 100%)
       &__menu
-        background-color: #fca087
+        background-color: #c20207
+      &__li
+        .ico
+          fill: rgba(#580205, .4)
+        &:hover, &.is-active
+          .ico
+            fill: white
+
   &[data-stage="6"]
     .stage-nav
       &__wrapper::after
         // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
       &__menu
         background-color: #059d7b
+      &__li
+        .ico
+          fill: rgba(#69dd60, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #e1f113
   &[data-stage="7"]
     .stage-nav
       &__wrapper::after
-        // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
+        background-image: linear-gradient( to bottom, rgb(255,242,223) 0%, rgb(224,247,235) 62%, rgb(192,252,247) 100%)
       &__menu
-        background-color: #fca087
+        background-color: #d1a246
+      &__li
+        .ico
+          fill: rgba(#f2da71, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #feef9f
+
   &[data-stage="8"]
     .stage-nav
       &__wrapper::after
-        // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
+        background-image: linear-gradient( to top, rgb(243,246,160) 0%, rgb(240,226,199) 38%, rgb(236,205,238) 100%)
       &__menu
-        background-color: #fca087
+        background-color: #e4c0d9
+      &__li
+        .ico
+          fill: rgba(#79add7, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #f3f6a1
   &[data-stage="9"]
     .stage-nav
       &__wrapper::after
-        // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
+        background-image: linear-gradient( to bottom, rgb(218,147,88) 0%, rgb(130,50,192) 100%)
       &__menu
-        background-color: #fca087
+        background-color: #d08952
+      &__li
+        .ico
+          fill: rgba(#b46985, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #8e3fb3
   &[data-stage="10"]
     .stage-nav
       &__wrapper::after
-        // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
+        background-image: linear-gradient( to bottom, rgb(133,206,113) 0%, rgb(63,167,197) 100%)
       &__menu
-        background-color: #fca087
+        background-color: #d5af4b
+      &__li
+        .ico
+          fill: rgba(#fff9be, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #fff9be
+
   &[data-stage="11"]
     .stage-nav
       &__wrapper::after
         // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
       &__menu
         background-color: #fca087
+      &__li
+        .ico
+          fill: rgba(#a0ae36, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #566229
   &[data-stage="12"]
     .stage-nav
       &__wrapper::after
         // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
       &__menu
         background-color: #fca087
-  &[data-stage="13"]
-    .stage-nav
-      &__wrapper::after
-        // background-image: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 57%);
-      &__menu
-        background-color: #fca087
+      &__li
+        .ico
+          fill: rgba(#a0ae36, .4)
+        &:hover, &.is-active
+          .ico
+            fill: #566229
