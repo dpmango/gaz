@@ -1,11 +1,47 @@
 $sprite: (
-	gallery-close: (
+	car1_1_wheel1: (
+		offset-x: -208px,
+		offset-y: -208px,
+		width: 76px,
+		height: 78px,
+		total-width: 463px,
+		total-height: 301px,
+		image: '../img/sprite.png'
+	),
+	car1_1_wheel2: (
+		offset-x: -294px,
+		offset-y: -208px,
+		width: 76px,
+		height: 78px,
+		total-width: 463px,
+		total-height: 301px,
+		image: '../img/sprite.png'
+	),
+	car1_2_wheel1: (
 		offset-x: 0px,
 		offset-y: -208px,
+		width: 94px,
+		height: 93px,
+		total-width: 463px,
+		total-height: 301px,
+		image: '../img/sprite.png'
+	),
+	car1_2_wheel2: (
+		offset-x: -104px,
+		offset-y: -208px,
+		width: 94px,
+		height: 93px,
+		total-width: 463px,
+		total-height: 301px,
+		image: '../img/sprite.png'
+	),
+	gallery-close: (
+		offset-x: -390px,
+		offset-y: 0px,
 		width: 73px,
 		height: 73px,
-		total-width: 380px,
-		total-height: 281px,
+		total-width: 463px,
+		total-height: 301px,
 		image: '../img/sprite.png'
 	),
 	gallery-left: (
@@ -13,8 +49,8 @@ $sprite: (
 		offset-y: 0px,
 		width: 101px,
 		height: 198px,
-		total-width: 380px,
-		total-height: 281px,
+		total-width: 463px,
+		total-height: 301px,
 		image: '../img/sprite.png'
 	),
 	gallery-right: (
@@ -22,8 +58,8 @@ $sprite: (
 		offset-y: 0px,
 		width: 101px,
 		height: 198px,
-		total-width: 380px,
-		total-height: 281px,
+		total-width: 463px,
+		total-height: 301px,
 		image: '../img/sprite.png'
 	),
 	scroll-left: (
@@ -31,8 +67,8 @@ $sprite: (
 		offset-y: 0px,
 		width: 74px,
 		height: 141px,
-		total-width: 380px,
-		total-height: 281px,
+		total-width: 463px,
+		total-height: 301px,
 		image: '../img/sprite.png'
 	),
 	scroll-right: (
@@ -40,8 +76,8 @@ $sprite: (
 		offset-y: 0px,
 		width: 74px,
 		height: 141px,
-		total-width: 380px,
-		total-height: 281px,
+		total-width: 463px,
+		total-height: 301px,
 		image: '../img/sprite.png'
 	),
 );
@@ -100,6 +136,18 @@ $sprite: (
 
 
 
+	.icon-car1_1_wheel1 {
+		@include sprite(car1_1_wheel1)
+	}
+	.icon-car1_1_wheel2 {
+		@include sprite(car1_1_wheel2)
+	}
+	.icon-car1_2_wheel1 {
+		@include sprite(car1_2_wheel1)
+	}
+	.icon-car1_2_wheel2 {
+		@include sprite(car1_2_wheel2)
+	}
 	.icon-gallery-close {
 		@include sprite(gallery-close)
 	}

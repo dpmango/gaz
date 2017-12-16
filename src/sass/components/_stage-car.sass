@@ -1,9 +1,14 @@
 
+$car1: 406
+$car2: 560
+
 .stage-car
+  display: inline-block
+  position: relative
   flex: 0 0 auto
   cursor: default
-  transition: transform .4s .4s linear
-  transform: translate3d(-60vw, 0,0)
+  // transition: transform .4s .4s linear
+  // transform: translate3d(-60vw, 0,0)
   img, svg
     max-width: 100%
     transform-origin: center
@@ -11,23 +16,43 @@
     transition: transform .3s ease
     &.is-hovered, &:hover
       cursor: pointer
-      transform: scale(1.02)
+      // transform: scale(1.02)
   svg
     position: relative
     width: 100%
     overflow: visible
+  img
+    position: relative
+    z-index: 1
+  .wheel1, .wheel2
+    position: absolute
+    z-index: 2
+
   &--1_1
     align-self: flex-end
     margin-left: 17%
     margin-bottom: 30px
     svg
       width: 406px
+    .wheel1
+      left: 11%
+      bottom: 7.5%
+    .wheel2
+      right: 8.5%
+      bottom: 7.5%
+
   &--1_2
     align-self: flex-start
     margin-left: 13%
     margin-bottom: 55px
     svg
       width: 560px
+    .wheel1
+      left: 17%
+      bottom: 9%
+    .wheel2
+      right: 2.5%
+      bottom: 9%
 
   &--3_1
     align-self: center
@@ -52,17 +77,16 @@
     margin-bottom: 80px
 
 .slick-active
-  .stage-car
+  .stage-timeline__cars
     transform: translate3d(0,0,0)
 
 .slick-removing
-  .stage-car
+  .stage-timeline__cars
     transition-delay: 0s
     transition-timing-function: easeInExpo
     transform: translate3d(-100vw,0,0)
 
 .stage-car
-
   &--3_1
     svg
       width: calc(560px * 0.9)
@@ -82,8 +106,8 @@
 
 +r($hd)
   .stage-car
-    img
-      max-width: 90%
+    transform: scale(.9)
+    transform-origin: left bottom
     &--1_1
       svg
         width: calc(406px * 0.9)
@@ -110,12 +134,12 @@
 
 +r($wide)
   .stage-car
-    img
-      max-width: 75%
+    transform: scale(.75)
     &--1_1
       svg
         width: calc(406px * 0.75)
     &--1_2
+      margin-left: 5%
       margin-bottom: 45px
       svg
         width: calc(560px * 0.75)
@@ -144,16 +168,14 @@
 
 +r($w1200)
   .stage-car
-    img
-      max-width: 65%
-
+    transform: scale(.65)
     &--1_1
       margin-bottom: 25px
       margin-left: 15%
       svg
         width: calc(406px * 0.65)
     &--1_2
-      margin-left: 15%
+      margin-left: 5%
       margin-bottom: 35px
       svg
         width: calc(560px * 0.65)
@@ -187,8 +209,9 @@
 +r($tablet)
   .stage-car
     position: absolute
-    width: auto
+    // width: 100%
     img
+      display: block
       max-width: 100%
     &--1_1
       margin: 0
@@ -200,7 +223,6 @@
       margin: 0
       top: -115px
       left: 20vw
-      right: 2vw
       svg
         width: calc(560px * 1)
 
@@ -242,11 +264,9 @@
 +r($mobile)
   .stage-car
     &--1_1
-      max-width: 240px
-      bottom: 40px
+      bottom: 30px
     &--1_2
-      max-width: 290px
-      top: -60px
+      top: -140px
 
     &--3_1
       max-width: 240px
@@ -257,14 +277,15 @@
 
 
 // WHEEL ANIMATION
-// .stage-car
-//   .wheel_1, .wheel_2
-//     // transform-origin: center center
-//     animation: wheel-rotate 4s linear infinite
-//
-//
-// @keyframes wheel-rotate
-//   from
-//     transform: rotate(0deg)
-//   to
-//     transform: rotate(360deg)
+.stage-car
+  .wheel1, .wheel2
+    .icon
+      // transform-origin: center center
+      animation: wheel-rotate 4s linear infinite
+
+
+@keyframes wheel-rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)

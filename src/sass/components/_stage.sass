@@ -540,6 +540,8 @@
     left: 0
     right: 0
     z-index: 2
+    transition: transform .4s .4s linear
+    transform: translate3d(-60vw, 0,0)
 
 @keyframes roadAnimation
   100%
@@ -583,7 +585,8 @@
         height: 350px
     &__cars
       flex: 0 0 auto
-      display: block
+      display: flex
+      width: 1000px
 
 +r($mobile)
   .stage-timeline
