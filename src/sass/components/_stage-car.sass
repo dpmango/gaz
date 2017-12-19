@@ -1,7 +1,4 @@
-
-$car1: 406
-$car2: 560
-
+/* stage car
 .stage-car
   display: inline-block
   position: relative
@@ -9,7 +6,7 @@ $car2: 560
   cursor: default
   // transition: transform .4s .4s linear
   // transform: translate3d(-60vw, 0,0)
-  img, svg
+  img
     max-width: 100%
     transform-origin: center
     cursor: pointer
@@ -17,10 +14,6 @@ $car2: 560
     &.is-hovered, &:hover
       cursor: pointer
       // transform: scale(1.02)
-  svg
-    position: relative
-    width: 100%
-    overflow: visible
   img
     position: relative
     z-index: 1
@@ -32,21 +25,16 @@ $car2: 560
     align-self: flex-end
     margin-left: 17%
     margin-bottom: 30px
-    svg
-      width: 406px
     .wheel1
       left: 11%
       bottom: 7.5%
     .wheel2
       right: 8.5%
       bottom: 7.5%
-
   &--1_2
     align-self: flex-start
     margin-left: 13%
     margin-bottom: 55px
-    svg
-      width: 560px
     .wheel1
       left: 17%
       bottom: 9%
@@ -54,27 +42,171 @@ $car2: 560
       right: 2.5%
       bottom: 9%
 
+  &--2_1
+    align-self: center
+    margin-left: 15%
+    margin-bottom: 20px
+    .wheel1
+      left: 15.3%
+      bottom: 9%
+    .wheel2
+      right: 7%
+      bottom: 9%
+  &--2_2
+    align-self: flex-start
+    margin-left: 20%
+    margin-bottom: 25px
+    .wheel1
+      left: 18%
+      bottom: 7.4%
+    .wheel2
+      right: 6.5%
+      bottom: 7.4%
+
+
   &--3_1
-    align-self: center
-    margin-left: 7%
-    margin-bottom: -20px
+    align-self: flex-start
+    margin-left: 15%
+    margin-bottom: 50px
+    .wheel1
+      left: 12%
+      bottom: 11%
+    .wheel2
+      right: 8.5%
+      bottom: 11%
   &--3_2
-    align-self: center
+    align-self: flex-end
     margin-left: 10%
-    margin-bottom: 10px
+    margin-bottom: 35px
+    .wheel1
+      left: 12%
+      bottom: 11%
+    .wheel2
+      right: 8.5%
+      bottom: 11%
 
   &--4_1
-    align-self: center
-    margin-left: 5%
-    margin-bottom: 80px
+    align-self: flex-start
+    margin-left: 4%
+    margin-top: -50px
+    .wheel1
+      left: 18%
+      bottom: 7.4%
+    .wheel2
+      right: 6.5%
+      bottom: 7.4%
   &--4_2
-    align-self: center
-    margin-left: 5%
-    margin-bottom: 10px
+    margin-left: 3%
+    margin-bottom: 30px
+    align-self: flex-end
+    .wheel1
+      left: 14.7%
+      bottom: 7.1%
+    .wheel2
+      right: 5.5%
+      bottom: 7.7%
   &--4_3
+    align-self: flex-end
+    margin-left: 3%
+    margin-bottom: 30px
+    .wheel1
+      left: 17%
+      bottom: 9%
+    .wheel2
+      right: 2.5%
+      bottom: 9%
+
+  &--5_1
+    align-self: flex-end
+    margin-left: 20%
+    margin-bottom: 10px
+    .wheel1
+      left: 12.5%
+      bottom: 7.5%
+    .wheel2
+      right: 8%
+      bottom: 7.5%
+  &--5_2
+    margin-left: 10%
+    margin-bottom: 60px
+    align-self: flex-end
+
+  &--6_1
+    align-self: flex-end
+    margin-left: 15%
+    margin-bottom: 30px
+    .wheel1
+      z-index: 1
+      left: 17.5%
+      bottom: 11%
+    .wheel2
+      right: 12%
+      bottom: 11%
+  &--6_2
+    align-self: flex-start
+    margin-left: 8%
+    margin-bottom: 65px
+    .wheel1
+      left: 17.5%
+      bottom: 9%
+    .wheel2
+      right: 13.5%
+      bottom: 9%
+
+
+  &--7_1
+    align-self: flex-end
+    margin-left: 10%
+    margin-bottom: 30px
+    .wheel1
+      z-index: 1
+      left: 17.5%
+      bottom: 10%
+    .wheel2
+      right: 5.7%
+      bottom: 10%
+  &--7_2
     align-self: center
-    margin-left: 5%
-    margin-bottom: 80px
+    margin-left: 11%
+    margin-bottom: 20px
+    .wheel1
+      left: 13%
+      bottom: 11%
+    .wheel2
+      right: 8%
+      bottom: 11%
+
+
+  &--8_1
+    align-self: center
+    margin-left: 4%
+    margin-bottom: 30px
+    .wheel1
+      left: 18%
+      bottom: 7.4%
+    .wheel2
+      right: 11%
+      bottom: 7.4%
+  &--8_2
+    margin-left: 3%
+    margin-bottom: 0px
+    align-self: center
+    .wheel1
+      left: 18%
+      bottom: 13%
+    .wheel2
+      right: 7.5%
+      bottom: 13%
+  &--8_3
+    align-self: center
+    margin-left: 3%
+    margin-bottom: 30px
+    .wheel1
+      left: 19.7%
+      bottom: 12%
+    .wheel2
+      right: 9.5%
+      bottom: 12%
 
 .slick-active
   .stage-timeline__cars
@@ -86,85 +218,21 @@ $car2: 560
     transition-timing-function: easeInExpo
     transform: translate3d(-100vw,0,0)
 
-.stage-car
-  &--3_1
-    svg
-      width: calc(560px * 0.9)
-  &--3_2
-    svg
-      width: calc(560px * 0.9)
 
-  &--4_1
-    svg
-      width: calc(456px * 0.9)
-  &--4_2
-    svg
-      width: calc(400px * 0.9)
-  &--4_3
-    svg
-      width: calc(490px * 0.9)
-
+/* responsive cars
 +r($hd)
   .stage-car
     transform: scale(.9)
     transform-origin: left bottom
-    &--1_1
-      svg
-        width: calc(406px * 0.9)
-    &--1_2
-      svg
-        width: calc(560px * 0.9)
 
-    &--3_1
-      svg
-        width: calc(560px * 0.9)
-    &--3_2
-      svg
-        width: calc(560px * 0.9)
-
-    &--4_1
-      svg
-        width: calc(456px * 0.9)
-    &--4_2
-      svg
-        width: calc(400px * 0.9)
-    &--4_3
-      svg
-        width: calc(490px * 0.9)
 
 +r($wide)
   .stage-car
     transform: scale(.75)
     &--1_1
-      svg
-        width: calc(406px * 0.75)
     &--1_2
       margin-left: 5%
       margin-bottom: 45px
-      svg
-        width: calc(560px * 0.75)
-
-    &--3_1
-      svg
-        width: calc(560px * 0.75)
-    &--3_2
-      svg
-        width: calc(560px * 0.75)
-
-    &--2_2
-      margin-left: 10%
-
-    &--4_1
-      svg
-        width: calc(406px * 0.7)
-    &--4_2
-      margin-bottom: 45px
-      svg
-        width: calc(460px * 0.7)
-    &--4_3
-      margin-bottom: 45px
-      svg
-        width: calc(460px * 0.7)
 
 +r($w1200)
   .stage-car
@@ -172,35 +240,9 @@ $car2: 560
     &--1_1
       margin-bottom: 25px
       margin-left: 15%
-      svg
-        width: calc(406px * 0.65)
     &--1_2
       margin-left: 5%
       margin-bottom: 35px
-      svg
-        width: calc(560px * 0.65)
-
-    &--2_2
-      margin-left: 5%
-
-    &--3_1
-      svg
-        width: calc(560px * 0.65)
-    &--3_2
-      svg
-        width: calc(560px * 0.65)
-
-    &--4_1
-      svg
-        width: calc(406px * 0.6)
-    &--4_2
-      margin-bottom: 45px
-      svg
-        width: calc(460px * 0.6)
-    &--4_3
-      margin-bottom: 45px
-      svg
-        width: calc(460px * 0.6)
 
 // tablet and below goes as absolute
 // should be set with top/right/left/bottom
@@ -217,49 +259,10 @@ $car2: 560
       margin: 0
       bottom: 55px
       left: 5vw
-      svg
-        width: calc(406px * 1)
     &--1_2
       margin: 0
       top: -115px
       left: 20vw
-      svg
-        width: calc(560px * 1)
-
-    &--3_1
-      margin: 0
-      bottom: 55px
-      left: 5vw
-      svg
-        width: calc(560px * 1)
-    &--3_2
-      margin: 0
-      top: -115px
-      left: 20vw
-      right: 2vw
-      svg
-        width: calc(560px * 1)
-
-    &--4_1
-      margin: 0
-      bottom: 55px
-      left: 5vw
-      svg
-        width: calc(506px * 0.7)
-    &--4_2
-      margin: 0
-      top: -50px
-      left: 20vw
-      right: 2vw
-      svg
-        width: calc(560px * 0.7)
-    &--4_3
-      margin: 0
-      top: 80px
-      left: 50vw
-      right: 2vw
-      svg
-        width: calc(560px * 0.7)
 
 +r($mobile)
   .stage-car
@@ -268,12 +271,6 @@ $car2: 560
     &--1_2
       top: -140px
 
-    &--3_1
-      max-width: 240px
-      bottom: 40px
-    &--3_2
-      max-width: 290px
-      top: -60px
 
 
 // WHEEL ANIMATION

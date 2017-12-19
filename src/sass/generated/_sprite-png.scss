@@ -1,83 +1,317 @@
 $sprite: (
 	car1_1_wheel1: (
-		offset-x: -208px,
-		offset-y: -208px,
+		offset-x: -364px,
+		offset-y: -422px,
 		width: 76px,
 		height: 78px,
-		total-width: 463px,
-		total-height: 301px,
+		total-width: 609px,
+		total-height: 581px,
 		image: '../img/sprite.png'
 	),
 	car1_1_wheel2: (
-		offset-x: -294px,
-		offset-y: -208px,
+		offset-x: -533px,
+		offset-y: 0px,
 		width: 76px,
 		height: 78px,
-		total-width: 463px,
-		total-height: 301px,
+		total-width: 609px,
+		total-height: 581px,
 		image: '../img/sprite.png'
 	),
 	car1_2_wheel1: (
-		offset-x: 0px,
-		offset-y: -208px,
+		offset-x: -429px,
+		offset-y: 0px,
 		width: 94px,
 		height: 93px,
-		total-width: 463px,
-		total-height: 301px,
+		total-width: 609px,
+		total-height: 581px,
 		image: '../img/sprite.png'
 	),
 	car1_2_wheel2: (
-		offset-x: -104px,
-		offset-y: -208px,
+		offset-x: -429px,
+		offset-y: -103px,
 		width: 94px,
 		height: 93px,
-		total-width: 463px,
-		total-height: 301px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car2_1_wheel1: (
+		offset-x: -372px,
+		offset-y: -513px,
+		width: 59px,
+		height: 59px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car2_1_wheel2: (
+		offset-x: -303px,
+		offset-y: -513px,
+		width: 59px,
+		height: 59px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car2_2_wheel1: (
+		offset-x: -92px,
+		offset-y: -422px,
+		width: 82px,
+		height: 81px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car2_2_wheel2: (
+		offset-x: 0px,
+		offset-y: -422px,
+		width: 82px,
+		height: 81px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car3_1_wheel1: (
+		offset-x: -188px,
+		offset-y: -329px,
+		width: 84px,
+		height: 83px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car3_1_wheel2: (
+		offset-x: 0px,
+		offset-y: -329px,
+		width: 84px,
+		height: 83px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car3_2_wheel1: (
+		offset-x: -94px,
+		offset-y: -329px,
+		width: 84px,
+		height: 83px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car3_2_wheel2: (
+		offset-x: -429px,
+		offset-y: -206px,
+		width: 84px,
+		height: 83px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car4_2_wheel1: (
+		offset-x: -533px,
+		offset-y: -173px,
+		width: 76px,
+		height: 75px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car4_2_wheel2: (
+		offset-x: -533px,
+		offset-y: -88px,
+		width: 76px,
+		height: 75px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car5_1_wheel1: (
+		offset-x: -274px,
+		offset-y: -422px,
+		width: 80px,
+		height: 79px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car5_1_wheel2: (
+		offset-x: -184px,
+		offset-y: -422px,
+		width: 80px,
+		height: 79px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car6_1_wheel1: (
+		offset-x: -533px,
+		offset-y: -422px,
+		width: 72px,
+		height: 71px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car6_1_wheel2: (
+		offset-x: -222px,
+		offset-y: -121px,
+		width: 72px,
+		height: 71px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car6_2_wheel1: (
+		offset-x: -450px,
+		offset-y: -422px,
+		width: 72px,
+		height: 71px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car6_2_wheel2: (
+		offset-x: -533px,
+		offset-y: -341px,
+		width: 72px,
+		height: 71px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car7_1_wheel1: (
+		offset-x: 0px,
+		offset-y: -208px,
+		width: 113px,
+		height: 111px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car7_1_wheel2: (
+		offset-x: -222px,
+		offset-y: 0px,
+		width: 113px,
+		height: 111px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car7_2_wheel1: (
+		offset-x: -375px,
+		offset-y: -329px,
+		width: 83px,
+		height: 82px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car7_2_wheel2: (
+		offset-x: -282px,
+		offset-y: -329px,
+		width: 83px,
+		height: 82px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car8_1_wheel1: (
+		offset-x: -233px,
+		offset-y: -208px,
+		width: 100px,
+		height: 99px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car8_1_wheel2: (
+		offset-x: -123px,
+		offset-y: -208px,
+		width: 100px,
+		height: 99px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car8_2_wheel1: (
+		offset-x: 0px,
+		offset-y: -513px,
+		width: 69px,
+		height: 68px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car8_2_wheel2: (
+		offset-x: -79px,
+		offset-y: -513px,
+		width: 66px,
+		height: 65px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car8_3_wheel1: (
+		offset-x: -229px,
+		offset-y: -513px,
+		width: 64px,
+		height: 63px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	car8_3_wheel2: (
+		offset-x: -155px,
+		offset-y: -513px,
+		width: 64px,
+		height: 63px,
+		total-width: 609px,
+		total-height: 581px,
 		image: '../img/sprite.png'
 	),
 	gallery-close: (
-		offset-x: -390px,
-		offset-y: 0px,
+		offset-x: -533px,
+		offset-y: -258px,
 		width: 73px,
 		height: 73px,
-		total-width: 463px,
-		total-height: 301px,
+		total-width: 609px,
+		total-height: 581px,
 		image: '../img/sprite.png'
 	),
 	gallery-left: (
-		offset-x: 0px,
-		offset-y: 0px,
-		width: 101px,
-		height: 198px,
-		total-width: 463px,
-		total-height: 301px,
-		image: '../img/sprite.png'
-	),
-	gallery-right: (
 		offset-x: -111px,
 		offset-y: 0px,
 		width: 101px,
 		height: 198px,
-		total-width: 463px,
-		total-height: 301px,
+		total-width: 609px,
+		total-height: 581px,
+		image: '../img/sprite.png'
+	),
+	gallery-right: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 101px,
+		height: 198px,
+		total-width: 609px,
+		total-height: 581px,
 		image: '../img/sprite.png'
 	),
 	scroll-left: (
-		offset-x: -222px,
-		offset-y: 0px,
+		offset-x: -345px,
+		offset-y: -151px,
 		width: 74px,
 		height: 141px,
-		total-width: 463px,
-		total-height: 301px,
+		total-width: 609px,
+		total-height: 581px,
 		image: '../img/sprite.png'
 	),
 	scroll-right: (
-		offset-x: -306px,
+		offset-x: -345px,
 		offset-y: 0px,
 		width: 74px,
 		height: 141px,
-		total-width: 463px,
-		total-height: 301px,
+		total-width: 609px,
+		total-height: 581px,
 		image: '../img/sprite.png'
 	),
 );
@@ -147,6 +381,84 @@ $sprite: (
 	}
 	.icon-car1_2_wheel2 {
 		@include sprite(car1_2_wheel2)
+	}
+	.icon-car2_1_wheel1 {
+		@include sprite(car2_1_wheel1)
+	}
+	.icon-car2_1_wheel2 {
+		@include sprite(car2_1_wheel2)
+	}
+	.icon-car2_2_wheel1 {
+		@include sprite(car2_2_wheel1)
+	}
+	.icon-car2_2_wheel2 {
+		@include sprite(car2_2_wheel2)
+	}
+	.icon-car3_1_wheel1 {
+		@include sprite(car3_1_wheel1)
+	}
+	.icon-car3_1_wheel2 {
+		@include sprite(car3_1_wheel2)
+	}
+	.icon-car3_2_wheel1 {
+		@include sprite(car3_2_wheel1)
+	}
+	.icon-car3_2_wheel2 {
+		@include sprite(car3_2_wheel2)
+	}
+	.icon-car4_2_wheel1 {
+		@include sprite(car4_2_wheel1)
+	}
+	.icon-car4_2_wheel2 {
+		@include sprite(car4_2_wheel2)
+	}
+	.icon-car5_1_wheel1 {
+		@include sprite(car5_1_wheel1)
+	}
+	.icon-car5_1_wheel2 {
+		@include sprite(car5_1_wheel2)
+	}
+	.icon-car6_1_wheel1 {
+		@include sprite(car6_1_wheel1)
+	}
+	.icon-car6_1_wheel2 {
+		@include sprite(car6_1_wheel2)
+	}
+	.icon-car6_2_wheel1 {
+		@include sprite(car6_2_wheel1)
+	}
+	.icon-car6_2_wheel2 {
+		@include sprite(car6_2_wheel2)
+	}
+	.icon-car7_1_wheel1 {
+		@include sprite(car7_1_wheel1)
+	}
+	.icon-car7_1_wheel2 {
+		@include sprite(car7_1_wheel2)
+	}
+	.icon-car7_2_wheel1 {
+		@include sprite(car7_2_wheel1)
+	}
+	.icon-car7_2_wheel2 {
+		@include sprite(car7_2_wheel2)
+	}
+	.icon-car8_1_wheel1 {
+		@include sprite(car8_1_wheel1)
+	}
+	.icon-car8_1_wheel2 {
+		@include sprite(car8_1_wheel2)
+	}
+	.icon-car8_2_wheel1 {
+		@include sprite(car8_2_wheel1)
+	}
+	.icon-car8_2_wheel2 {
+		@include sprite(car8_2_wheel2)
+	}
+	.icon-car8_3_wheel1 {
+		@include sprite(car8_3_wheel1)
+	}
+	.icon-car8_3_wheel2 {
+		@include sprite(car8_3_wheel2)
 	}
 	.icon-gallery-close {
 		@include sprite(gallery-close)
