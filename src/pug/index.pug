@@ -25,7 +25,7 @@ block content
         img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-9.png' srcset='img/stagePhoto-9@2x.png 2x')
         img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-10.png' srcset='img/stagePhoto-10@2x.png 2x')
         img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-4.png' srcset='img/stagePhoto-4@2x.png 2x')
-        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-4.png' srcset='img/stagePhoto-4@2x.png 2x')
+        img(js-png-clickthrough js-png-hover data-for-gallery="1" src='img/stagePhoto-12.png' srcset='img/stagePhoto-12@2x.png 2x')
     
     
     // SLIDING SECTION
@@ -400,10 +400,18 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--1_1(href="stage1_car_1.html" )
-                include ../inline-svg/car9_1.svg
-              a.stage-car.stage-car--1_2(href="stage1_car_2.html")
-                include ../inline-svg/car9_2.svg
+              a.stage-car.stage-car--9_1(href="stage1_car_1.html" )
+                img(src='img/car9_1.png' srcset='img/car9_1@2x.png 2x')
+                .wheel1
+                  i.icon.icon-car9_1_wheel1
+                .wheel2
+                  i.icon.icon-car9_1_wheel2
+              a.stage-car.stage-car--9_2(href="stage1_car_2.html")
+                img(src='img/car9_2.png' srcset='img/car9_2@2x.png 2x')
+                .wheel1
+                  i.icon.icon-car9_2_wheel1
+                .wheel2
+                  i.icon.icon-car9_2_wheel2
 
       // STAGE 10
       .stage-slide(data-stage="10")
@@ -430,14 +438,26 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--4_1(href="stage1_car_1.html" )
-                include ../inline-svg/car10_1.svg
-              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
-                include ../inline-svg/car10_2.svg
-              a.stage-car.stage-car--4_3(href="stage1_car_2.html")
-                include ../inline-svg/car10_3.svg
-              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
-                include ../inline-svg/car10_4.svg
+              a.stage-car.stage-car--10_1(href="stage1_car_2.html")
+                img(src='img/car10_1.png' srcset='img/car10_1@2x.png 2x')
+                .wheel1
+                  i.icon.icon-car10_1_wheel1
+                .wheel2
+                  i.icon.icon-car10_1_wheel2
+              a.stage-car.stage-car--10_2(href="stage1_car_2.html")
+                img(src='img/car10_2.png' srcset='img/car10_2@2x.png 2x')
+              a.stage-car.stage-car--10_3(href="stage1_car_2.html")
+                img(src='img/car10_3.png' srcset='img/car10_3@2x.png 2x')
+                .wheel1
+                  i.icon.icon-car10_3_wheel1
+                .wheel2
+                  i.icon.icon-car10_3_wheel2
+              a.stage-car.stage-car--10_4(href="stage1_car_2.html")
+                img(src='img/car10_4.png' srcset='img/car10_4@2x.png 2x')
+                .wheel1
+                  i.icon.icon-car10_4_wheel1
+                .wheel2
+                  i.icon.icon-car10_4_wheel2
                   
       // STAGE 11
       .stage-slide(data-stage="11")
@@ -445,16 +465,18 @@ block content
         .stage-text
           .stage-text__wrapper
             a.stage-text__top(href="stage1_info.html")
-              .stage-text__title(js-fit-text) герой отечественного кинематографа
+              .stage-text__title(js-fit-text) Строим новую Россию вместе
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-1.png' srcset='img/stagePhotoMobile-1@2x.png 2x')
-            .stage-text__short «Камера, мотор, поехали!» Автомобили «ГАЗ» были не только главными помощниками на советских стройках и в колхозах. Они также становились звездами кинематографа. Причем многие машины не просто появлялись в эпизодах в качестве реквизита, а порой становились полноценными героями картины.
+            .stage-text__short 1990е – время больших перемен в стране. Перед обществом появились совершенно новые задачи. В корне изменилась экономическая ситуация. Появившемуся малому бизнесу потребовались новые машины. Конструкторы «ГАЗа» на этот запрос предложили обновленную «полуторку». Тогда еще никто и не предполагал, что в итоге, именно этот автомобиль станет самым востребованным из грузовиков современной России.
 
         // BACKGROUND
         .stage-background
-          picture
-            source(media="(min-width: 800px)" srcset="img/stageBg-10.png 1x, img/stageBg-10@2x.png 2x")
-            source(media="(max-width: 800px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
-            img(src="img/stageBg-10.png")
+          .stage-background__city
+            img(src="img/stageBg-11-1.png" srcset="img/stageBg-11-1@2x.png 2x" class="buildings")
+          
+          .stage-background__trees
+            img(src="img/stageBg-11-2.png" srcset="img/stageBg-11-2@2x.png 2x")
+
               
         // TIMELINE
         .stage-timeline
@@ -464,31 +486,33 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--4_1(href="stage1_car_1.html" )
-                include ../inline-svg/car10_1.svg
-              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
-                include ../inline-svg/car10_2.svg
-              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
-                include ../inline-svg/car10_3.svg
-              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
-                include ../inline-svg/car10_4.svg
-                  
+              a.stage-car.stage-car--11_1(href="stage1_car_1.html" )
+                img(src='img/car11_1.png' srcset='img/car11_1@2x.png 2x')
+              a.stage-car.stage-car--11_2(href="stage1_car_2.html")
+                img(src='img/car11_2.png' srcset='img/car11_2@2x.png 2x')
+              a.stage-car.stage-car--11_2(href="stage1_car_2.html")
+                img(src='img/car11_3.png' srcset='img/car11_3@2x.png 2x')
+              a.stage-car.stage-car--11_2(href="stage1_car_2.html")
+                img(src='img/car11_4.png' srcset='img/car11_4@2x.png 2x')
+
       // STAGE 12
       .stage-slide(data-stage="12")
         // TEXT
         .stage-text
           .stage-text__wrapper
             a.stage-text__top(href="stage1_info.html")
-              .stage-text__title(js-fit-text) герой отечественного кинематографа
+              .stage-text__title(js-fit-text) «NEXT» — новое поколение для всей страны
             img.stage-text__mobile(js-start-gallery data-for-gallery="1" src='img/stagePhotoMobile-12.png' srcset='img/stagePhotoMobile-12@2x.png 2x')
-            .stage-text__short «Камера, мотор, поехали!» Автомобили «ГАЗ» были не только главными помощниками на советских стройках и в колхозах. Они также становились звездами кинематографа. Причем многие машины не просто появлялись в эпизодах в качестве реквизита, а порой становились полноценными героями картины.
+            .stage-text__short В 2017 году завод «ГАЗ» отмечает юбилей – 85 лет со дня основания. За это время с конвейера сошли свыше 18 миллионов грузовых и легковых автомобилей, запущены в производство более 250 моделей и модификаций. За последние пять лет ГАЗ полностью обновил модельный ряд и разработал новое поколение автомобилей семейства NEXT. Эти машины получили премию «Автомобиль года» и «ТОП 5 Авто», стали бестселлерами не только в России, но и за рубежом.
 
         // BACKGROUND
         .stage-background
-          picture
-            source(media="(min-width: 800px)" srcset="img/stageBg-10.png 1x, img/stageBg-10@2x.png 2x")
-            source(media="(max-width: 800px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
-            img(src="img/stageBg-10.png")
+          .stage-background__city
+            img(src="img/stageBg-12-1.png" srcset="img/stageBg-12-1@2x.png 2x" class="buildings")
+          
+          .stage-background__trees
+            img(src="img/stageBg-12-2.png" srcset="img/stageBg-12-2@2x.png 2x")
+
               
         // TIMELINE
         .stage-timeline
@@ -498,14 +522,16 @@ block content
               img(src='img/road.png' srcset="img/road@2x.png 2x")
             
             .stage-timeline__cars
-              a.stage-car.stage-car--4_1(href="stage1_car_1.html" )
-                include ../inline-svg/car10_1.svg
-              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
-                include ../inline-svg/car10_2.svg
-              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
-                include ../inline-svg/car10_3.svg
-              a.stage-car.stage-car--4_2(href="stage1_car_2.html")
-                include ../inline-svg/car10_4.svg
+              a.stage-car.stage-car--12_1(href="stage1_car_1.html" )
+                img(src='img/car12_1.png' srcset='img/car12_1@2x.png 2x')
+              a.stage-car.stage-car--12_2(href="stage1_car_2.html")
+                img(src='img/car12_2.png' srcset='img/car12_2@2x.png 2x')
+              a.stage-car.stage-car--12_3(href="stage1_car_2.html")
+                img(src='img/car12_3.png' srcset='img/car12_3@2x.png 2x')
+              a.stage-car.stage-car--12_4(href="stage1_car_2.html")
+                img(src='img/car12_4.png' srcset='img/car12_4@2x.png 2x')
+              a.stage-car.stage-car--12_5(href="stage1_car_2.html")
+                img(src='img/car12_5.png' srcset='img/car12_5@2x.png 2x')
                 
   include components/_stage-nav
 
