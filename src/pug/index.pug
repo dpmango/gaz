@@ -52,8 +52,12 @@ block content
           //-   source(media="(max-width: 800px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
           //-   img(src="img/stageBg-1.png")
           .stage-background__city
-            img(src="img/stageBg-1-1.png" srcset="img/stageBg-1-1@2x.png 2x" class="buildings")
-          
+            picture
+              source(media="(min-width: 1024px)" srcset="img/stageBg-1-1.png 1x, img/stageBg-1-1@2x.png 2x")
+              source(media="(max-width: 1024px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
+              img(src="img/stageBg-1-1.png")
+            //- img(src="img/stageBg-1-1.png" srcset="img/stageBg-1-1@2x.png 2x" class="buildings")
+
           .stage-background__trees
             img(src="img/stageBg-1-2.png" srcset="img/stageBg-1-2@2x.png 2x")
 
@@ -104,8 +108,12 @@ block content
           
         // BACKGROUND
         .stage-background
-          img(src='img/stageBg-2.png' srcset="img/stageBg-2@2x.png 2x")
-                  
+          // img(src='img/stageBg-2.png' srcset="img/stageBg-2@2x.png 2x")
+          picture
+            source(media="(min-width: 1024px)" srcset="img/stageBg-2.png 1x, img/stageBg-2@2x.png 2x")
+            source(media="(max-width: 1024px)" srcset="img/stageBgMobile-2.png 1x, img/stageBgMobile-2@2x.png 2x")
+            img(src="img/stageBg-2.png")
+              
         // TIMELINE
         .stage-timeline
           .stage-timeline__wrapper
@@ -133,7 +141,7 @@ block content
             i.icon.icon-scroll-left
             span Проект<br> века
           .stage-m-nav__next(js-slick-next)
-            span Испытано<br> бездорожьем
+            span Спорт — <br> это радость <br> побед
             i.icon.icon-scroll-right
                       
                         
@@ -151,7 +159,7 @@ block content
         .stage-background
           picture
             source(media="(min-width: 800px)" srcset="img/stageBg-3.png 1x, img/stageBg-3@2x.png 2x")
-            source(media="(max-width: 800px)" srcset="img/stageBgMobile-1.png 1x, img/stageBgMobile-1@2x.png 2x")
+            source(media="(max-width: 800px)" srcset="img/stageBgMobile-3.png 1x, img/stageBgMobile-3@2x.png 2x")
             img(src="img/stageBg-3.png")
               
         // TIMELINE
@@ -175,7 +183,16 @@ block content
                   i.icon.icon-car3_2_wheel1
                 .wheel2
                   i.icon.icon-car3_2_wheel2
-                
+                    
+        // MOBILE-NAVI
+        .stage-m-nav
+          .stage-m-nav__prev(js-slick-prev)
+            i.icon.icon-scroll-left
+            span Испытано<br> бездорожьем
+          .stage-m-nav__next(js-slick-next)
+            span На пике <br> трудового <br> энтузиазма
+            i.icon.icon-scroll-right  
+                  
       // STAGE 4
       .stage-slide(data-stage="4")
         // TEXT

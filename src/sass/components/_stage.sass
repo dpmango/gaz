@@ -263,15 +263,26 @@
 
 .stage-slide
   &[data-stage="2"]
+    .stage-m-nav
+      background: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 100%)
+      &__prev, &__next
+        span
+          color: #3c5460
     .stage-text
       color: #3c5460
   &[data-stage="3"]
+    .stage-m-nav
+      background: linear-gradient( to top, rgb(252,161,136) 0%, rgb(246,205,169) 100%)
+      &__prev, &__next
+        span
+          color: #f93115
     .stage-text
       color: #f93115
       &__short
         color: #8a1211
     .stage-timeline__road
       background-image: url('../img/roadStage3.png')
+
   &[data-stage="4"]
     .stage-text
       color: #566229

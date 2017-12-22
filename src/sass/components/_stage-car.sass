@@ -311,15 +311,11 @@
       margin-left: 5%
       margin-bottom: 45px
 
-+r($w1200)
-  .stage-car
-    transform: scale(.65)
-    &--1_1
-      margin-bottom: 25px
-      margin-left: 15%
-    &--1_2
+    &--2_2
       margin-left: 5%
-      margin-bottom: 35px
+    &--3_2
+      margin-left: 0%
+
 
 // tablet and below goes as absolute
 // should be set with top/right/left/bottom
@@ -327,28 +323,49 @@
 
 +r($tablet)
   .stage-car
+    margin: 0
     position: absolute
     // width: 100%
     img
       display: block
       max-width: 100%
     &--1_1
-      margin: 0
       bottom: 55px
       left: 5vw
     &--1_2
-      margin: 0
       top: -115px
       left: 20vw
 
+    &--2_1
+      bottom: 55px
+      left: 5vw
+    &--2_2
+      top: -115px
+      left: 20vw
+    &--3_1
+      bottom: 55px
+      left: 10vw
+    &--3_2
+      top: -95px
+      left: 30vw
+
 +r($mobile)
   .stage-car
+    transform: scale(.65)
     &--1_1
       bottom: 30px
     &--1_2
       top: -140px
-
-
+    &--2_1
+      bottom: 40px
+    &--2_2
+      top: -130px
+    &--3_1
+      bottom: 45px
+      left: 5vw
+    &--3_2
+      top: -125px
+      left: 20vw
 
 // WHEEL ANIMATION
 .stage-car
