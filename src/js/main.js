@@ -458,7 +458,7 @@ $(document).ready(function(){
     }
   })
 
-  $(document).on("mousemove", '[js-png-hover]', throttle(function(event) {
+  $(document).on("mousemove", '[js-png-hover]', debounce(function(event) {
     // Get click coordinates
     var x = event.pageX - this.offsetLeft,
         y = event.offsetY - this.offsetTop,
@@ -475,7 +475,9 @@ $(document).ready(function(){
     // retrieve the element underneath and trigger it's click event
     if( alpha===0 ) {
       $(this).removeClass('is-hovered');
-
+      $(this).hide();
+      $(document.elementFromPoint(event.clientX, event.clientY)).trigger("mousemove");
+      $(this).show();
     } else {
       $(this).addClass('is-hovered')
     }
