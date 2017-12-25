@@ -1,0 +1,23 @@
+---
+title: ГАЗ спецпроект
+hBodyClass: ispopup
+---
+extends shared/_layout
+block content
+  
+  .page-dialog.page-stage2
+
+    a(href="/" class='no-decor')
+      img(src='img/but_close2.png' class='close-popup')
+
+    .page__top
+      .page__title Автобус ГАЗ-0330
+      .page__navigation
+        a(href="/stage2_info.html") проверено бездорожьем
+        a(href="/stage2_car_1.html") газ-м-1
+      
+    .page__content
+      picture
+        source(media="(min-width: 1024px)" srcset="img/placeholders/stage2_0330.png 1x, img/placeholders/stage2_0330@2x.png 2x")
+        source(media="(max-width: 1024px)" srcset="img/placeholders/stage2_0330.png 1x, img/placeholders/stage2_0330@2x.png 2x")
+        img.page-placeholder-img(src="img/placeholders/stage2_0330.png")

@@ -18,13 +18,27 @@
   .mfp-close
     display: none !important
 
+.page-stage2
+  background: linear-gradient( to top, rgb(252,234,136) 0%, rgb(157,192,196) 100%)
+
+  .page
+    &__title
+      margin-left: 0
+      color: #3c5460
+    &__navigation
+      color: #3c5460
+      a
+        &::after
+          background-color: #3c5460
+      
 .page
   min-height: 100vh
   height: auto
   &:not(.homepage)
     .stage-nav
       position: fixed
-
+  &-placeholder-img
+    width: 100%
   &-bg-image
     position: absolute
     top: 0
